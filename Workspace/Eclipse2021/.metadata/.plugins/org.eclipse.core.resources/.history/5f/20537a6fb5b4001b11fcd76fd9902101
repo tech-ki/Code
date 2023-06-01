@@ -1,0 +1,21 @@
+/*
+ * Program.cpp
+ *
+ *  Created on: May 13, 2021
+ *      Author: ciarraw
+ */
+
+#include "Program.h"
+
+namespace GenericStackDemo {
+
+Program::Program() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Program::~Program() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace GenericStackDemo */

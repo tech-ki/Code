@@ -1,0 +1,11 @@
+//2022.01.08 [Sun] @6:24 pm
+
+
+namespace HelloWorld{
+    class Program{
+        static void Main(string[] args){
+            Console.WriteLine("Hello World");
+            Console.ReadLine();
+        }
+    }
+}
