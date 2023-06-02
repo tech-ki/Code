@@ -74,5 +74,3 @@ value = 4*(1-total)
 
 print("The approximation of pi is ",value)
 print("---")
-
-

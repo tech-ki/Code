@@ -1,0 +1,15 @@
+/*CSS Comment*/
+p {
+    color: black;
+    }
+  
+html {
+    font-size: 14px; 
+    font-family: "Nunito", sans-serif; 
+    }
+
+ .box {
+    border: 04px solid purple;
+    border-radius: 9em;
+    background-color: #BF55FF50;
+    }
