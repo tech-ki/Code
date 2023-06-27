@@ -22,6 +22,4 @@ for i in range(1,month+24):
     print(month ,'  %.2f  ' % start,'%.2f  ' % a,'%.2f  ' % princ,'%.2f  ' % monthpay,'%.2f ' % endpay )
     month+=1
     start = endpay - princ
-
-    !!
     #Broken code, loops infinately.

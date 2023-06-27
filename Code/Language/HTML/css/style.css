@@ -1,0 +1,30 @@
+/*CSS Comment*/
+html {
+    background-color:rgb(251, 251, 247);
+    }
+p {
+    color: black;
+    }
+  
+html {
+    font-size: 16px; 
+    font-family: "Nunito", sans-serif; 
+    }
+
+ .box1 {
+    border: 01px solid purple;
+    border-radius: 9em;
+    background-color: #BF55FF50;
+    }
+
+ .box2 {
+        border: 01px solid blue;
+        border-radius: 9em;
+        background-color: #55d4ff50;
+        }
+
+ .box-tag {
+            border: 01px solid red;
+            border-radius: 9em;
+            background-color: #ff555550;
+            }

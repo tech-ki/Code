@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+/Users/musicality/eclipse-workspace/Home/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-664400253.index
-2237969661.index
-31310256.index
-146399081.index
-1668935583.index
-1364162017.index
