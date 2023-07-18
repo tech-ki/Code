@@ -1,0 +1,96 @@
+<html>
+<style>
+    html {
+        font-family: "Nunito";
+    }
+    p {
+        color: rgb(0, 0, 0);
+        line-height: 1.4;
+    }
+    strong {
+        color: rgb(25, 121, 255);
+    }
+    li {
+        color:rgb(158, 153, 155);
+        padding: 0.2em;
+        padding-inline: 0.2em;
+    }
+    /*color the active step */
+    li.active {
+        color: blue;
+        background-color: rgb(243, 244, 162);
+    }
+  </style>
+
+<script>
+// Add javascript
+    // Add a "checked" symbol when clicking on a list item
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function(ev) {
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+      }
+    }, false);
+    
+    // Create a new list item when clicking on the "Add" button
+    function newElement() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("myInput").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("You must write something!");
+      } else {
+        document.getElementById("list-group").appendChild(li);
+      }
+      document.getElementById("myInput").value = "";
+    
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("*");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+    
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+    }
+    </script>
+
+
+<h1> To-Do</h1>
+  
+<!--Add button to add item-->
+<button type="button" onclick="newElement()" class="addBtn">Add</button>
+
+<!--Deletes an item from the list-->
+<button type="button" onclick="alert('Deletes an item from the list!')">Delete</button>
+
+<!--Adds a sub-item to the list-->
+<button type="button" onclick="alert('Adds a sub-item to the list!')">Add++</button>
+
+<!--Deletes a sub item from the list-->
+<button type="button" onclick="alert('Deletes a sub-item from the list!')">Delete--</button>
+
+<hr>
+ <!--Create input holder-->
+<ul><input type="text" id="myInput" placeholder=" item"></ul>
+
+<!--Create a list-->
+<ul id="list-group">
+    <!--Create a list-item -->
+    <li class="list-group-item active">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+    <!--Create a sub-list-->
+    <ul>
+        <li>Second</li>
+    </ul>
+  </ul>
+
+</html>
