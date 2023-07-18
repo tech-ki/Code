@@ -1,5 +1,59 @@
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* Style badges inside the list group */
+span.badge {
+  background-color: #7784fe;
+  color: #fcfcfb;
+  font-weight: bold;
+  border-radius: 30%;
+  padding: 5px 10px;
+  text-align: right;
+  margin-right: 5px;
+}
+span.badge-done {
+  background-color: #0dff00;
+  color: #4c4c40;
+  font-weight: bold;
+  border-radius: 30%;
+  padding: 5px 10px;
+  text-align: right;
+  margin-right: 5px;
+}
+
+  li.goal {
+    background-color: #2063ff;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    font-size: 15px;
+    padding-inline: 0.8em;
+    margin-left: 52px;
+     background-color: rgba(44, 71, 249, 0.914);
+      color: #f6f6f6;
+      border-radius: 6px;
+      font-weight: bolder;
+      padding-bottom: 12px;
+      margin-bottom: -8.2px;
+      margin-top: 1px;
+  }
+  
+  .active, .goal:hover {
+    background-color: #1940e9;
+  }
+  
+
+  .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow:hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    margin-bottom: 12px;
+    margin-left: 52px;
+    margin-right: 150px;
+  }
     html {
         font-family: "Nunito";
     }
@@ -18,30 +72,20 @@
         margin-bottom: 0.03em;
     }
     /*color the active step */
-    li.active {
+    li.focus {
         color:rgb(0, 0, 0);
-        background-color: rgba(244, 243, 162, 0.594);
+        background-color: rgba(246, 239, 98, 0.833);
         border: 2px solid rgb(69, 13, 255);
         border-radius: 6px; /*round corners*/
         box-shadow: 5px 2.7px 1px 0.5px rgba(5, 2, 230, 0.639);
         font-weight: bold;
     }
-    li.zero {
-      background-color: rgb(242, 242, 242);
 
-    }
-    li.goal {
+    li.goal:hover {
       background-color: rgba(44, 71, 249, 0.914);
-      color: #f6f6f6;
-      border: 1px solid;
-      border-radius: 6px;
-      font-weight: bolder;
-      padding-bottom: 14px;
-      margin-bottom: 17px;
-      margin-top: 4px;
 
     }
-    li.done {
+    ul li.done {
       background-color: rgba(127, 255, 168, 0.921);
       color: rgba(3, 174, 117, 0.722);
       border-color: #2bb35b;
@@ -49,14 +93,26 @@
       border-radius: 6px;
 
     }
-    ul {
-      margin-left: -1.5em;
-      margin-bottom: 1em;
-    }
+/* Darker background-color on hover for done*/
+ul li.done:hover {
+  background: #2bff87;
+}
+    /* Darker background-color on hover */
+ul li:hover {
+  background: #e7e7e7;
+}
+/* Darker background-color on hover for goal*/
+ul li.goal:hover {
+  background: #0d30f7;}
+
+ /* Darker background-color on for active */
+ul li.focus:hover {
+  background: #ffe600;
+}
     ul {
       list-style-type:none; /* Remove bullets */
       padding: 0px; /* Remove padding */
-      margin: 0; /* Remove margins */
+      margin: 0; /* Remove margins */ 
     }
     
     ul li {
@@ -64,10 +120,26 @@
       margin-top: -1px; /* Prevent double borders */
       background-color: #f6f6f6; /* Add a grey background color */
       padding: 6px; /* Add some padding */
-      border-radius: 1px;
+      border-radius: 2px;
+      padding-inline: 9px;
+      margin-left: 52px;
+      margin-right: 152px;
     }
 
 
+.goal:after {
+  content: '+'; 
+  font-size: 18px;
+  color: rgb(246, 255, 191);
+  float: right;
+  padding-inline: 4px;
+}
+
+.active:after {
+  content: "-"; 
+}
+
+    
   </style>
 
 <script>
@@ -76,7 +148,7 @@
     var list = document.querySelector('ul');
     list.addEventListener('click', function(ev) {
       if (ev.target.tagName === 'LI') {
-        ev.target.classList.toggle('checked');
+        ev.target.classList.toggle('done');
       }
     }, false);
     
@@ -94,9 +166,6 @@
       document.getElementById("myInput").value = "";
     
       var span = document.createElement("SPAN");
-      var txt = document.createTextNode("*");
-      span.className = "close";
-      span.appendChild(txt);
       li.appendChild(span);
     
       for (i = 0; i < close.length; i++) {
@@ -108,9 +177,26 @@
     }
     </script>
 
+    <script> /*Add collapable function with javascript*/
+      var coll = document.getElementsByClassName("goal");
+      var i;
+      
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } 
+        });
+      }
+      </script> 
+  
+
 
 <h1> To-Do</h1>
-  
 <!--Add button to add item-->
 <button type="button" onclick="newElement()" class="addBtn">Add</button>
 
@@ -118,10 +204,10 @@
 <button type="button" onclick="alert('Deletes an item from the list!')">Delete</button>
 
 <!--Adds a sub-item to the list-->
-<button type="button" onclick="alert('Adds a sub-item to the list!')">Add++</button>
+<button type="button" onclick="alert('Adds a sub-item to the list!')">Add Goal++</button>
 
 <!--Deletes a sub item from the list-->
-<button type="button" onclick="alert('Deletes a sub-item from the list!')">Delete--</button>
+<button type="button" onclick="alert('Deletes a sub-item from the list!')">Delete Goal--</button>
 
 <hr>
  <!--Create input holder-->
@@ -129,34 +215,79 @@
 
 <!--Create a list-->
 <ul id="list-group">
-    <!--Create a list-item -->
-    <li class="list-group-item goal">Create a simple to do list</li>
-    <li class="list-group-item done">Create a list</li>
+    <!--Create a goal -->
+    <li class="list-group-item goal"><span class="badge-done">5</span><span class="badge-done">5</span>Create a simple to do list</li>
+    <!--Create items to be collapsed-->
+    <div class = content>
+      <p>Description goes here.</p>
+     <li>Begin list</li>
+     <li class="list-group-item done">Create a list</li>
+    <li class="list-group-item">Create a <strong>nested</strong> list risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+    <ul class="nested">
+      <li>01 Black Tea</li> 
+    </div>
+
+    <!--Create a goal -->
+    <!--Create un done badge-->
+    <!--Create done badge-->
+    <li class="list-group-item goal"><span class="badge-done">1</span><span class="badge">5</span>Create a list </li>
+    <div class = content>
+      <p>Description goes here.</p>
+     <li>Begin list</li>
+     <li class="list-group-item done">Create a list</li>
+    <li class="list-group-item">Create a <strong>nested</strong> list risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+    <ul class="nested">
+      <li>01 Black Tea</li> 
+    </div>
+
     <li class="list-group-item">Create a <strong>nested</strong> list risus</li>
     <li class="list-group-item">Porta ac consectetur ac</li>
     <li class="list-group-item">Vestibulum at eros</li>
     <!--Create a sub-list-->
     <ul class="nested">
-      <li class="zero">01 Black Tea</li> 
+      <li>01 Black Tea</li> 
     <ul>
         <li>02 Second</li>
         <ul class="nested">
-          <li class=done>03 Black Tea</li>
+          <li class=done>03 Style list</li>
           <ul class="nested">
-            <li class = done>04 Black Tea</li>
+            <li class = done>04 Remove nested lists for collapsable sections instead</li>
             <ul class="nested">
-              <li class = active>05 Add <strong>styling</strong> to active list element</li>
+              <li class = done>05 Add <strong>collapable</strong> to function to list</li>
               <ul class="nested">
-                <li>06 Black Tea</li>
+                <li class="focus">06 Black Tea</li>
+                <li>Other </li>
+
                 <ul class="nested">
-                  <li>07 Black Tea</li>
+                  <li>07 Add delete button</li>
                   <ul class="nested">
-                    <li>08 Black Tea</li>
+                    <li>08 soon</li>
                     <ul class="nested">
-                      <li>09 Black Tea</li>
+                      <li>09 soon</li>
                       <ul class="nested">
-                        <li>10 Black Tea</li>
+                        <li>10 Add function to set to done</li>
     </ul>
   </ul>
+
+<script>
+  var coll = document.getElementsByClassName("goal");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+  </script>
 
 </html>
