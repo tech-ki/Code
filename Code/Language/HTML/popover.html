@@ -1,0 +1,38 @@
+<html> 
+    
+  <style>
+    html {
+        font-family: "Nunito";
+    }
+    p {
+        color: rgb(0, 0, 0);
+        line-height: 1.4;
+    }
+    strong {
+        color: rgb(25, 121, 255);
+    }
+  </style>
+<h1> Popover</h1>
+<!-- The parts -->
+<p>Hello World</p>
+<script>
+// index.jsx
+import * as React from 'react';
+import * as Popover from '@radix-ui/react-popover';
+
+const PopoverDemo = () => (
+  <Popover.Root>
+    <Popover.Trigger>More info</Popover.Trigger>
+    <Popover.Portal>
+      <Popover.Content>
+        Some more info…
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover.Portal>
+  </Popover.Root>
+);
+
+export default PopoverDemo;
+</script> 
+ </html>
+ <!-- Documentation @ Popoever.md -->
