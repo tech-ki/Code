@@ -9,17 +9,65 @@
     }
     strong {
         color: rgb(25, 121, 255);
+        
     }
     li {
         color:rgb(158, 153, 155);
         padding: 0.2em;
         padding-inline: 0.2em;
+        margin-bottom: 0.03em;
     }
     /*color the active step */
     li.active {
-        color: blue;
-        background-color: rgb(243, 244, 162);
+        color:rgb(0, 0, 0);
+        background-color: rgba(244, 243, 162, 0.594);
+        border: 2px solid rgb(69, 13, 255);
+        border-radius: 6px; /*round corners*/
+        box-shadow: 5px 2.7px 1px 0.5px rgba(5, 2, 230, 0.639);
+        font-weight: bold;
     }
+    li.zero {
+      background-color: rgb(242, 242, 242);
+
+    }
+    li.goal {
+      background-color: rgba(44, 71, 249, 0.914);
+      color: #f6f6f6;
+      border: 1px solid;
+      border-radius: 6px;
+      font-weight: bolder;
+      padding-bottom: 14px;
+      margin-bottom: 17px;
+      margin-top: 4px;
+
+    }
+    li.done {
+      background-color: rgba(127, 255, 168, 0.921);
+      color: rgba(3, 174, 117, 0.722);
+      border-color: #2bb35b;
+      border: 1px solid ;
+      border-radius: 6px;
+
+    }
+    ul {
+      margin-left: -1.5em;
+      margin-bottom: 1em;
+    }
+    ul {
+      list-style-type:none; /* Remove bullets */
+      padding: 0px; /* Remove padding */
+      margin: 0; /* Remove margins */
+    }
+    
+    ul li {
+      border: 1px solid #ddd; /* Add a thin border to each list item */
+      margin-top: -1px; /* Prevent double borders */
+      background-color: #f6f6f6; /* Add a grey background color */
+      padding: 6px; /* Add some padding */
+      border-radius: 1px;
+    }
+
+
   </style>
 
 <script>
@@ -82,14 +130,32 @@
 <!--Create a list-->
 <ul id="list-group">
     <!--Create a list-item -->
-    <li class="list-group-item active">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
+    <li class="list-group-item goal">Create a simple to do list</li>
+    <li class="list-group-item done">Create a list</li>
+    <li class="list-group-item">Create a <strong>nested</strong> list risus</li>
     <li class="list-group-item">Porta ac consectetur ac</li>
     <li class="list-group-item">Vestibulum at eros</li>
     <!--Create a sub-list-->
+    <ul class="nested">
+      <li class="zero">01 Black Tea</li> 
     <ul>
-        <li>Second</li>
+        <li>02 Second</li>
+        <ul class="nested">
+          <li class=done>03 Black Tea</li>
+          <ul class="nested">
+            <li class = done>04 Black Tea</li>
+            <ul class="nested">
+              <li class = active>05 Add <strong>styling</strong> to active list element</li>
+              <ul class="nested">
+                <li>06 Black Tea</li>
+                <ul class="nested">
+                  <li>07 Black Tea</li>
+                  <ul class="nested">
+                    <li>08 Black Tea</li>
+                    <ul class="nested">
+                      <li>09 Black Tea</li>
+                      <ul class="nested">
+                        <li>10 Black Tea</li>
     </ul>
   </ul>
 
