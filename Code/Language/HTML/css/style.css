@@ -28,3 +28,27 @@ html {
             border-radius: 9em;
             background-color: #ff555550;
             }
+span.person{ /*a class*/
+    color:blue;
+}
+
+#person { /*unique identifier*/
+    color:rgb(0, 60, 255);
+    font-weight: bold;
+}
+#numitems {
+    color:rgb(0, 102, 254);
+    font-weight: bold;
+}
+#items {
+    color:rgb(0, 102, 254);
+    font-weight: bold;
+}
+#place {
+    color:rgb(22, 96, 255);
+    font-weight: bold
+}
+#language {
+    color:rgb(255, 25, 67);
+    font-weight: bold
+}
