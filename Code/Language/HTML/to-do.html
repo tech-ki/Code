@@ -38,11 +38,32 @@ span.badge-done {
       margin-bottom: -8.2px;
       margin-top: 1px;
   }
-  
+
+  li.goal-inbox {
+    background-color: #1e2533;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    font-size: 15px;
+    padding-inline: 0.8em;
+    margin-left: 52px;
+     background-color: rgba(68, 74, 114, 0.914);
+      color: #f6f6f6;
+      border-radius: 6px;
+      font-weight: bolder;
+      padding-bottom: 12px;
+      margin-bottom: -8.2px;
+      margin-top: 1px;
+  }
+
   .active, .goal:hover {
     background-color: #1940e9;
   }
   
+  .active, .goal-inbox:hover {
+    background-color: rgba(45, 51, 84, 0.914);
+  }
 
   .content {
     padding: 0 18px;
@@ -105,6 +126,9 @@ ul li:hover {
 ul li.goal:hover {
   background: #0d30f7;}
 
+ul li.goal-inbox:hover {
+    background-color: rgba(52, 54, 72, 0.914);
+}
  /* Darker background-color on for active */
 ul li.focus:hover {
   background: #ffe600;
@@ -139,6 +163,11 @@ ul li.focus:hover {
   content: "-"; 
 }
 
+button {
+  color:#3e3e28;
+  
+
+}
     
   </style>
 
@@ -244,6 +273,12 @@ ul li.focus:hover {
       <li>01 Black Tea</li> 
     </div>
 
+    <!-- Create an inbox -->
+    <li class="list-group-item goal list-group-item goal-inbox">
+      <span class="badge">-</span>
+      <span class="badge">2,127</span>Inbox </li>
+    <div class = content>
+      <p>All ungrouped tasks go here!.</p>
     <li class="list-group-item">Create a <strong>nested</strong> list risus</li>
     <li class="list-group-item">Porta ac consectetur ac</li>
     <li class="list-group-item">Vestibulum at eros</li>
@@ -261,17 +296,27 @@ ul li.focus:hover {
               <ul class="nested">
                 <li class="focus">06 Black Tea</li>
                 <li>Other </li>
-
                 <ul class="nested">
                   <li>07 Add delete button</li>
                   <ul class="nested">
                     <li>08 soon</li>
                     <ul class="nested">
                       <li>09 soon</li>
-                      <ul class="nested">
-                        <li>10 Add function to set to done</li>
+                      <li>Peaches & Cream</li>
+                      <li>Strawberry & Mango</li>
+                      <li>How many rows until scroll?</li>
+                      <li>Are we there yet?</li>
+                      <li> 01</li>
+                      <li> 02</li>
+                      <li>03</li>
+                      <li>04</li>
+                      <li>05</li>
+                      <li>06</li>
+                      
     </ul>
   </ul>
+</div>
+
 
 <script>
   var coll = document.getElementsByClassName("goal");
