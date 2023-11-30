@@ -1,0 +1,296 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Postman Data Tool",
+		"_postman_id": "c81900ff-77ba-e925-f22d-409ce7832d5f",
+		"description": "Tool to populate data for the InComm Account Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/_ah/health",
+			"request": {
+				"url": "{{domain}}/_ah/health",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Health check to determine system availability"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/accounts",
+			"request": {
+				"url": "{{domain}}/api/accounts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Add an account"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/accounts",
+			"request": {
+				"url": "{{domain}}/api/accounts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get account balance and id"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/accounts",
+			"request": {
+				"url": "{{domain}}/api/accounts",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"balance\": 25000\n}"
+				},
+				"description": "Update account balance"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/accounts",
+			"request": {
+				"url": "{{domain}}/api/accounts",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Delete an account\n\nNOTE: This does not delete transactions associated with an account"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions (credit)",
+			"request": {
+				"url": "{{domain}}/api/transactions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": \"credit\",\n\t\"amount\": 1701,\n\t\"description\": \"ATM Deposit: 250 Williams St. Atlanta GA 30303-1041\"\n}"
+				},
+				"description": "Create a new transaction\n\nThis transaction represents an account credit from an ATM deposit."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions (debit)",
+			"request": {
+				"url": "{{domain}}/api/transactions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": \"debit\",\n\t\"amount\": 1701,\n\t\"description\": \"ATM Withdrawal: 250 Williams St. Atlanta GA 30303-1041\"\n}"
+				},
+				"description": "Create a new transaction\n\nThis transaction represents an accoun debit from an ATM withdrawal."
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions",
+			"request": {
+				"url": "{{domain}}/api/transactions",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get all transactions associtate with account"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions?after=2017-09-01&before=2017-10-01",
+			"request": {
+				"url": {
+					"raw": "{{domain}}/api/transactions?after=2017-09-01&before=2017-10-01",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "after",
+							"value": "2017-09-01",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "before",
+							"value": "2017-10-01",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "type",
+							"value": "debit",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						},
+						{
+							"key": "counterParty",
+							"value": "DFVyeKJKSRzkW2mBq65GSAHgnsistnJq",
+							"equals": true,
+							"description": "",
+							"disabled": true
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get all transactions posted after date"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions/<id>",
+			"request": {
+				"url": "{{domain}}/api/transactions/5659645909663744",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get transaction with id"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions/delete",
+			"request": {
+				"url": "{{domain}}/api/transactions",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Delete all transactions associated with account"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/transactions/delete/{id}",
+			"request": {
+				"url": "{{domain}}/api/transactions/5732694713434112",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Delete transaction with id"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/data",
+			"request": {
+				"url": "{{domain}}/api/data/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authorizationToken}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"transactions\": \n\t[\n\t\t{\n\t    \t\"counterParty\": \"DFVyeKJKSRzkW2mBq65GSAHgnsistnJq\",\n\t\t\t\"type\": \"credit\",\n\t\t\t\"amount\": 20000,\n\t\t\t\"description\": \"ATM Deposit: 250 Williams St. Atlanta GA 30303-1041\",\n\t    \t\"date\": \"2017-09-01T15:04:15.824Z\"\n\t\t},\n\t\t{\n\t    \t\"counterParty\": \"DFVyeKJKSRzkW2mBq65GSAHgnsistnJq\",\n\t\t\t\"type\": \"debit\",\n\t\t\t\"amount\": 1701,\n\t\t\t\"description\": \"ATM Withdrawal: 250 Williams St. Atlanta GA 30303-1041\",\n\t    \t\"date\": \"2017-09-02T15:04:15.824Z\"\n\t\t}\n\t]\n}"
+				},
+				"description": "Populate account with transaction data"
+			},
+			"response": []
+		}
+	]
+}
