@@ -101,6 +101,7 @@ class home:
 
     print(a)
     print(a.strftime("The day of the year is ""%j out of 365"))
+    print(a.strftime("There are""%j - 365 days left in this year"))
     
     print("This note is due",due)
     print("--\nIt has been",due,"days since you have",thing)
@@ -138,7 +139,7 @@ class home:
        print("Please select a correct option.")
     
     print("Hello")    
-    print(things["b"]["area"])
+    #print(things["b"]["area"])
     #print("My Status\n",status)
     #print("My Needs \n",needs)
 
