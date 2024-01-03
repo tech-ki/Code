@@ -2,5 +2,6 @@
     "editor.fontFamily": "\"Lexie Readable\"",
     "editor.codeLensFontFamily": "Lexie Readable",
     "notebook.output.fontFamily": "Comic Mono",
-    "terminal.integrated.fontFamily": "Comic Code"
+    "terminal.integrated.fontFamily": "Comic Code",
+    "dotnet.defaultSolution": "HelloWorld.sln"
 }
