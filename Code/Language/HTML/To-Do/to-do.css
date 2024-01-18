@@ -237,17 +237,17 @@ li {
   
 }
 li.done::before {
-  content: "  " url("/Code/Language/HTML/gold-star(inf-sm).gif");
+  content: "  " url("/Code/Language/HTML/image/gold-star(inf-sm).gif");
   padding-right:8px;
 }
 
 li.doing::before {
-  content: " " url("/Code/Language/HTML/pink-star(sm).png");
+  content: " " url("/Code/Language/HTML/image/pink-star(sm).png");
   padding-right:8px;
 }
 
 li::before {
-  content: " " url("/Code/Language/HTML/no-star1(sm).png");
+  content: " " url("/Code/Language/HTML/image/no-star1\(sm\).png");
   padding-right:8px;
 }
 
@@ -262,14 +262,14 @@ li::after {
             border-radius: 8px;;
             float:right;
 }
-li.doing::after {
-  content: "in-progress";
+li.late::after {
+  content: "due";
   margin-left: 200px;
-  background-color: rgba(255, 225, 56, 0.897);
+  background-color: rgba(21, 6, 74, 0.897);
   padding: 02px;
             text-align: left;
             padding-inline: 0.4em;
-            color: #191313;
+            color: #fefbfb;
             border-radius: 8px;;
             float:right;
 }
@@ -292,6 +292,17 @@ li.done::after {
             text-align: left;
             padding-inline: 0.4em;
             color: #191313;
+            border-radius: 8px;;
+            float:right;
+}
+li.pause::after {
+  content: "paused";
+  margin-left: 200px;
+  background-color: rgb(206, 214, 234);
+  padding: 02px;
+            text-align: left;
+            padding-inline: 0.4em;
+            color: #0c0c0c;
             border-radius: 8px;;
             float:right;
 }
@@ -328,7 +339,7 @@ ul.breadcrumb li a:hover {
   }
 /* Style badges inside the list group */
 span.badge0 {
-  background-color: rgba(255, 0, 68, 0.845);
+  background-color: rgba(17, 4, 79, 0.845);
   color: #fff;
   font-weight: bold;
   border-radius: 8px;
@@ -339,8 +350,8 @@ span.badge0 {
 }
 /* Style badges inside the list group */
 span.badge1 {
-  background-color: rgba(255, 221, 0, 0.845);
-  color: #171414;
+  background-color: rgba(255, 0, 72, 0.845);
+  color: #f8f5f5;
   font-weight: bold;
   border-radius: 8px;
   padding: 2px 5px;
@@ -355,6 +366,14 @@ span.badge2 {
   border-radius: 8px;
   padding: 2px 5px;
   text-align: center;
-  margin-inline-start: 20px;
+  margin-inline-start: 10px;
   float:right;
+}
+ul.doing{
+  background-color: rgba(0, 38, 255, 0.751);
+  padding: 02px;
+  text-align: left;
+  padding-inline: 0.4em;
+  color: #fff7f7;
+  border-radius: 8px;;
 }
