@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code", "Code", "{A744B376-F211-4F76-833B-FDBCCB792012}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Language", "Language", "{02D44811-7072-4D19-97AE-76B80C03FBE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C#", "C#", "{03B0EE99-077D-4FBB-A115-74452D5931E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Window", "Code\Language\C#\Window\Window.csproj", "{9D86764E-4795-402E-AC2A-CD3F9489A0EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearWin", "ClearWin\ClearWin.csproj", "{B4530F51-87A3-4B27-8399-77EA4423B8D4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D86764E-4795-402E-AC2A-CD3F9489A0EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D86764E-4795-402E-AC2A-CD3F9489A0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D86764E-4795-402E-AC2A-CD3F9489A0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D86764E-4795-402E-AC2A-CD3F9489A0EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4530F51-87A3-4B27-8399-77EA4423B8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4530F51-87A3-4B27-8399-77EA4423B8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4530F51-87A3-4B27-8399-77EA4423B8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4530F51-87A3-4B27-8399-77EA4423B8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02D44811-7072-4D19-97AE-76B80C03FBE4} = {A744B376-F211-4F76-833B-FDBCCB792012}
+		{03B0EE99-077D-4FBB-A115-74452D5931E0} = {02D44811-7072-4D19-97AE-76B80C03FBE4}
+		{9D86764E-4795-402E-AC2A-CD3F9489A0EA} = {03B0EE99-077D-4FBB-A115-74452D5931E0}
+	EndGlobalSection
+EndGlobal

@@ -250,6 +250,7 @@ li::before {
   content: " " url("/Code/Language/HTML/no-star1(sm).png");
   padding-right:8px;
 }
+
 li::after {
   content: "undone";
   margin-left: 200px;
@@ -325,3 +326,35 @@ ul.breadcrumb li a:hover {
     color: black;
     content: "💚";
   }
+/* Style badges inside the list group */
+span.badge0 {
+  background-color: rgba(255, 0, 68, 0.845);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 5px;
+  text-align: center;
+  margin-inline-start: 20px;
+  float:right;
+}
+/* Style badges inside the list group */
+span.badge1 {
+  background-color: rgba(255, 221, 0, 0.845);
+  color: #171414;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 5px;
+  text-align: center;
+  margin-inline-start: 20px;
+  float:right;
+}
+span.badge2 {
+  background-color: rgba(0, 255, 145, 0.845);
+  color: #171414;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 2px 5px;
+  text-align: center;
+  margin-inline-start: 20px;
+  float:right;
+}
