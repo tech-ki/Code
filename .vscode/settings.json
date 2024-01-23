@@ -3,5 +3,6 @@
     "editor.codeLensFontFamily": "Lexie Readable",
     "notebook.output.fontFamily": "Comic Mono",
     "terminal.integrated.fontFamily": "Comic Code",
-    "dotnet.defaultSolution": "Clear.sln"
+    "dotnet.defaultSolution": "Clear.sln",
+    "python.analysis.typeCheckingMode": "off"
 }

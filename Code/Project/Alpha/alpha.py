@@ -115,7 +115,7 @@ class home:
     print("You are wanted in 17 areas with 102 things.")
     print("--\n",status,"\n--")
 
-    print("Uh, oh, you've been given a", "\033[31m", "warning", "\033[0m")
+    #print("Uh, oh, you've been given a", "\033[31m", "warning", "\033[0m")
     
     #dictionary = key:value
     print(job01["job"])
