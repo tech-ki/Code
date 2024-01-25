@@ -1,0 +1,15 @@
+F:\Muse~\Code\Code\Code\Language\C#\Clear\bin\Debug\net8.0\Clear.exe
+F:\Muse~\Code\Code\Code\Language\C#\Clear\bin\Debug\net8.0\Clear.deps.json
+F:\Muse~\Code\Code\Code\Language\C#\Clear\bin\Debug\net8.0\Clear.runtimeconfig.json
+F:\Muse~\Code\Code\Code\Language\C#\Clear\bin\Debug\net8.0\Clear.dll
+F:\Muse~\Code\Code\Code\Language\C#\Clear\bin\Debug\net8.0\Clear.pdb
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.GeneratedMSBuildEditorConfig.editorconfig
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.AssemblyInfoInputs.cache
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.AssemblyInfo.cs
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.csproj.CoreCompileInputs.cache
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.sourcelink.json
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.dll
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\refint\Clear.dll
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.pdb
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\Clear.genruntimeconfig.cache
+F:\Muse~\Code\Code\Code\Language\C#\Clear\obj\Debug\net8.0\ref\Clear.dll
