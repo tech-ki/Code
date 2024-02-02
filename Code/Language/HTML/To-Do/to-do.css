@@ -447,3 +447,37 @@ border-radius: 6px;
 border-style:outset;
 font-weight: 600;;
 }
+span.amt{
+  background-color:rgb(87, 87, 249);
+  color:whitesmoke;
+  padding-bottom:1px;
+  float:right;
+}
+span.date{
+  background-color:rgb(250, 220, 228);
+  color:#725e5e;
+  padding-bottom:1px;
+  float:right;
+}
+span.ago{
+  background-color:rgb(250, 220, 228);
+  color:#7f304a;
+  padding-bottom:1px;
+  float:right;
+}
+button.lvl{
+  background-color:rgb(199, 1, 249);
+  color:rgb(250, 249, 249);
+  float:inline-end;
+}
+li.upgrade::after {
+  content: "upgrade";
+  margin-left: 20px;
+  background-color:rgb(199, 1, 249);
+  color:rgb(250, 249, 249);
+  padding: 02px;
+            text-align: left;
+            padding-inline: 0.4em;
+            border-radius: 8px;;
+            float:right;
+  }
