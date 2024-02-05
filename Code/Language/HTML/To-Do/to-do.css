@@ -270,13 +270,13 @@ li.no::before {
   }
 
   li.no::after {
-    content: " ";
+    content: "a ";
     margin-left: 20px;
     background-color: rgb(213, 213, 207);
     padding: 02px;
               text-align: left;
               padding-inline: 0.4em;
-              color: #191313;
+              color: #ba5050;
               border-radius: 8px;;
               float:right; }
 
@@ -349,12 +349,22 @@ color: black;
 content:url("/Code/Language/HTML/gold-star(inf-sm).gif");
 padding-right:8px;
 }
-ul.no li+li:before {
+ul.no li:before {
 padding: 4px;
 color: black;
-content:url("/Code/Language/HTML/no-star(sm).png");
+content:url(" ");
 padding-right:8px;
+content: "\25B6";
+  color: black;
+  display: inline-block;
+  margin-right: 6px;
 }
+ul.no li:after {
+  padding: 4px;
+  color: black;
+  content:none;
+  padding-right:8px;
+  }
 
 /* Add a color to all links inside the list */
 ul.breadcrumb li a {
@@ -405,11 +415,11 @@ margin-inline-start: 10px;
 float:right;
 }
 ul.doing{
-background-color: rgba(0, 38, 255, 0.751);
+background-color: rgba(199, 208, 231, 0.751);
 padding: 02px;
 text-align: left;
 padding-inline: 0.4em;
-color: #fff7f7;
+color: #292121;
 border-radius: 8px;;
 }
 
@@ -464,6 +474,8 @@ span.ago{
   color:#7f304a;
   padding-bottom:1px;
   float:right;
+  margin-right:4px;
+  margin-left:10px;
 }
 button.lvl{
   background-color:rgb(199, 1, 249);
