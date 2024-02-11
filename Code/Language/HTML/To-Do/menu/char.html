@@ -7,6 +7,10 @@
     </head>
         <body> Hello <strong>name</strong>. Welcome to <strong>skilled</strong>
     <p>Here is information about your character.</p>
+
+    <body onload="startTime()">
+    <p id="min"></p>
+
 <h2>Character</h2>
   <table> 
    
@@ -24,27 +28,27 @@
     <table>
     <tr>
       <td style="background-color:rgba(7, 145, 90, 0.76);">Time</td>
-      <td>12:43 am</td>
+      <td><span id="dtime" style="background-color:transparent"></span></td>
       <tr>
         <tr>
           <td style="background-color:rgba(7, 145, 90, 0.76);">Day</td>
-          <td>23</td>
+          <td><span id="dday" style="background-color:transparent"></td>
           <tr> 
             <tr>
               <td style="background-color:rgba(32, 180, 121, 0.76);">DayWeek</td>
-              <td>02 (Tue)</td>
+              <td><span id="dweek" style="background-color:transparent"></td>
               <tr>
                 <tr>
                   <tr>
                     <td style="background-color:rgba(32, 180, 121, 0.76);">Week</td>
-                    <td>02</td>
+                    <td>-</td>
                     <tr>
                       <td style="background-color:rgba(7, 145, 90, 0.76);">Month</td>
-                  <td>01 (Jan)</td>
+                  <td><span id="dmonth" style="background-color:transparent"></span></td>
                   <tr>
                     <tr>
                       <td style="background-color:rgba(7, 145, 90, 0.76);">Year</td>
-                      <td>2023</td>
+                      <td><span id="dyear" style="background-color:transparent"></td>
                       <tr> 
     <tr>
     </table>
@@ -65,6 +69,50 @@
   </ul>
 </body>
 <br>
+
+<script>
+  //Get current month
+const d = new Date(); 
+const months = ["Jan (01)","Feb (02)","Mar (03)","Apr (04)","May (05)","Jun (06)","Jul (07)","Aug (08)","Sep (09)","Oct (10)","Nov (11)","Dec (12)"];
+
+let amonth = months[d.getMonth()];
+document.getElementById("dmonth").innerHTML = amonth;
+</script>
+
+<script>
+  //Get current day of week
+const days = ["Sun (00)","Mon (01)","Tue (02)","Wed (03)","Thu (04)","Fri (05)","Sat (06)"];
+
+let day = days[d.getDay()];
+document.getElementById("dweek").innerHTML = day;
+</script>
+
+<script> //Get year
+  document.getElementById("dyear").innerHTML = d.getFullYear();
+  </script>
+
+  <script>//Get day
+    document.getElementById("dday").innerHTML = d.getUTCDate();
+    </script>
+
+    <script> //Get week
+      
+      </script>
+
+    <script>//Get time
+    hour = d.getHours();
+    if (d.getHours() < 13) {
+      houra =  hour;
+      ma = " am";
+    } else if (hour > 12) {
+      houra = hour - 12;
+      ma = " pm"
+    }
+    document.getElementById("dtime").innerHTML = houra +" " + d.getMinutes() + ma;
+
+    
+      </script>
+
 <p> <!--Navigation-->
   <button onclick="document.location='../to-do.html'">Home</button> 
   <button onclick="document.location='quest-ra02.html'">Next</button>

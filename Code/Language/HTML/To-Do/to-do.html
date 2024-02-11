@@ -6,7 +6,9 @@
         <script src="to-do.js"></script> 
     </head>
         <body> Hello <strong>name</strong>. Welcome to <strong>skilled</strong>
-            
+          <br>
+        <body onload="startTime()">
+        <strong><div id="min"></div></strong>    
 <h1 class="quest">Quests</h2>
 
   <button type="button" class="collapsible" style="background-color:rgb(176, 154, 158);""><h2>Locked</h2></button>
@@ -279,7 +281,18 @@
           <button onclick="document.location='./menu/stats.html'">Stats</button>
         <button class="01" onclick="document.location='./menu/skills.html'">Skills</button>    
         <button class="01" onclick="document.location='./menu/dump.html'">Log</button>
-        <button class="01" onclick="document.location='./menu/char.html'">Char</button>   
+        <button class="01" onclick="document.location='./menu/char.html'">Char</button>  
+        <button class="01" onclick="document.location='./menu/time.html'">Time</button>    
+
+        <p id="items">Hi</p>
+
+
+        <script>
+          //Show how many listed items there are.
+          const myCollection = document.getElementsByTagName("li");
+
+          document.getElementById("items").innerHTML = "This document contains " + myCollection.length + " items.";
+          </script>
 
 </body>
 <script src="to-do.js"></script> 
