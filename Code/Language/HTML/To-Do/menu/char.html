@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <td>Age</td>
-      <td>27</td>
+      <td><span id="bday" style="background-color:transparent"></span></td>
     </tr>
     </table>
 
@@ -104,13 +104,25 @@ document.getElementById("dweek").innerHTML = day;
     if (d.getHours() < 13) {
       houra =  hour;
       ma = " am";
-    } else if (hour > 12) {
+      document.getElementById("dtime").innerHTML = "0"+ houra +" : " + d.getMinutes() + ma;
+    } 
+    
+    else if (hour > 12) {
       houra = hour - 12;
       ma = " pm"
+      document.getElementById("dtime").innerHTML = "0"+ houra +" :" + d.getMinutes() + ma;
     }
-    document.getElementById("dtime").innerHTML = houra +" " + d.getMinutes() + ma;
+   
+      </script>
 
-    
+      <script>
+        //Get current day of week
+      //const bdays = ;
+      year =  d.getFullYear();
+      byear = 1995;
+      bday = year - byear;
+      //let day = days[d.getDay()];
+      document.getElementById("bday").innerHTML = bday;
       </script>
 
 <p> <!--Navigation-->

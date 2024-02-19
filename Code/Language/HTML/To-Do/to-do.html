@@ -3,7 +3,7 @@
     <head>
         <h1>To-Do</h1>
         <link rel="stylesheet" href="to-do.css">
-        <script src="to-do.js"></script> 
+        <script src=".to-do.js"></script> 
     </head>
         <body> Hello <strong>name</strong>. Welcome to <strong>skilled</strong>
           <br>
@@ -19,8 +19,8 @@
     style="background-color:rgb(233, 224, 226);color:black;">Back End Developer</button>
      <div class="content">
       <p>Serve your bites.</p>
-   <li><span class="lock">Above the Clouds</span></li>
-   <li><span class="lock">Show me the Data</span></li>
+   <li class="lock">Above the Clouds</span></li>
+   <li class="lock">Show me the Data</span></li>
     </li>
 </div>
 </div>
@@ -30,7 +30,7 @@
      <div class="content">
       <p>Prepare a Meal for the Gods.</p>
    <li><span class="lock">Spagetti Monster</span></li>
-   <li><span class="lock">Going Fishing</span></li>
+   <li class="done">Going Fishing</span></li>
     </li>
 </div>
 
@@ -38,7 +38,7 @@
     style="background-color:rgb(233, 224, 226);color:black;">Fashion Designer</button>
      <div class="content">
       <p>Stretch to Express.</p>
-   <li><span class="quest-doing">The Valley of Fabric</span></li>
+   <li class="doing">The Valley of Fabric</span></li>
    <li><span class="quest">Stripes and Stiches</span></li>
    <li class="done">Good Will</span></li>
    <li><span class="lock">Summer Edition</span></li>
@@ -47,17 +47,17 @@
    <li class="done">Blue Gems</span></li>
    <li><span class="lock">Yellow Gems</span></li>
    <li><span class="lock">Red Gems</span></li>
-   <li><span class="quest-doing">Dress Up</span></li>
+   <li class="doing">Dress Up</span></li>
    <li><span class="lock">Homey Den</span></li>
-   <li class="doing">Lava Lagoon</span></li>
+   <li class="done">Lava Lagoon</span></li>
     </li>
 </div> <!--End of Sub Category-->
 <button type="button" class="collapsible2"
     style="background-color:rgb(233, 224, 226);color:black;">Business Woman</button>
      <div class="content">
       <p>Run the roles, Tag you're it.</p>
-   <li><span class="lock">Above the Clouds</span></li>
-   <li><span class="lock">Show me the Data</span></li>
+   <li><span class="lock">iPhone Home</span></li>
+   <li><span class="lock">Window to the Wall</span></li>
     </li>
 </div>
 
@@ -67,12 +67,12 @@
       <p>Dweller and Guardian of the Home.</p>
    <li><span class="lock">Phone Home</span></li>
    <li><span class="lock">Paper beats Rock</span></li>
-   <li><span class="lock">Dust Wrangler</span></li>
-   <li><span class="lock">Water Skating</span></li>
+   <li class="done">Dust Wrangler</span></li>
+   <li class="done">Water Skating</span></li>
    <li><span class="lock">Wind Funnel</span></li>
    <li><span class="lock">Metal Gobins</span></li>
     </li>
-    <li><span class="lock">Green Pastures</span></li>
+    <li class="lock">Green Pastures</span></li>
 </div> <!--End of Sub Category-->
 
 <button type="button" class="collapsible2"
@@ -118,9 +118,9 @@
 </div> <!--End of Sub Category-->
 
 <button type="button" class="collapsible2"
-    style="background-color:rgb(233, 224, 226);color:black;">Juggler</button>
+    style="background-color:rgb(233, 224, 226);color:black;">Huntress</button>
      <div class="content">
-      <p>Embark in the jungle of job hunting.</p>
+      <p>Embark in the realm of job hunting.</p>
    <li><span class="lock">Shake Hands</span></li>
    <li><span class="lock">Letters of Labor</span></li>
    <li><span class="lock">On the Hunt</span></li>
@@ -165,7 +165,6 @@
       <p>Weave your website.</p>
    <li><span class="lock">Host a Party</span></li>
    <li><span class="badge">Little Spider Big Bite</span></li>
-   <li><span class="lock">Push Gravity</span></li>
 
 </div> <!--End of Locked-->
 
@@ -179,7 +178,6 @@
      
      <button type="button" class="collapsible2">Tutorial</button>
      <div class="content">
-        <li><span class="quest">Roger's apple</span>
          <li><span class="quest">Hunting for Food</span></li>
         </div>
         <button type="button" class="collapsible2">Homestead</button>
@@ -194,7 +192,6 @@
          <div class="content">
           <p>Weave your websites.</p>
        <li><span class="lock">Network the thread</span></li>
-       <li><span class="lock">Ready Set Javascript</span></li>
        <li class="doing">Get me a Table</span></li>
         </li>
         <li><span class="lock">Talk to Me</span></li>
@@ -211,12 +208,13 @@
 
     <button type="button" class="collapsible2">Tutorial</button>
      <div class="content">
-        <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
+        <li class="done"><a href="./quests/restore/restore.html">Restore</a></li>
 </div>
 
 <button type="button" class="collapsible2">Web Weaver</button>
          <div class="content">
           <p>Weave your websites.</p>
+          <li class="doing">Ready Set Javascript</span></li>
           <ul class="doing">Full Stack</span>
             <p>Can I have a burger with a server of fries.</p>
         
@@ -229,7 +227,7 @@
             <ul class="doing">Show me the Data</span>
                 <li class="doing"><a href="./quests/diet-sql.html"> Diet SQL</a></li></ul>
         </ul> </ul>
-          <li><span class="lock">Pythasaurus</span></li>
+          <li class="pause">Pythasaurus</li>
         </div>
       </div>
     </div>
@@ -289,9 +287,8 @@
 
         <script>
           //Show how many listed items there are.
-          const myCollection = document.getElementsByTagName("li");
-
-          document.getElementById("items").innerHTML = "This document contains " + myCollection.length + " items.";
+          const myCollection = document.getElementsByClassName("doing");
+          document.getElementById("items").innerHTML = "I am doing " + myCollection.length + " things.";
           </script>
 
 </body>

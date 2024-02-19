@@ -46,19 +46,24 @@ for (i = 0; i < coll2.length; i++) {
     //m = checkTime(m);
     mm = m +(h *60);
     
-
     //current day of year
     var now = new Date();
     var start = new Date(now.getFullYear(), 0, 0);
     var diff = now - start;
     var oneDay = 1000 * 60 * 60 * 24;
     var day = Math.floor(diff / oneDay);
+    var com = ":";
 
+    let nIntervId;
+    nIntervId = setInterval(com, 1000);
+    
     s = checkTime(s);
     //document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s + " am/pm";
     document.getElementById('min').innerHTML =  mm + ":" + s + " minutes spent today. "+ 
-    "<br> D+" + day + " out of year" + " "+ date;
+    "<br> D+" + day + " out of year" + " "+ date + com;
     setTimeout(startTime, 1000);
+
+
     
   }
 
