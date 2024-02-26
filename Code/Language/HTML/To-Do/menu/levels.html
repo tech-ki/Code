@@ -9,9 +9,76 @@
 <h2 class="quest-open">My Levels</h4>
     <p>Here are the current levels of your skills.</p>
 
-    <p><button onclick="document.location='../to-do.html'">Home</button> 
+    
+</h2>
+<style>
+#myProgress {
+    width: 100%;
+    background-color: #f1ecec;
+  }
+  #myBar-health {
+    width: 1%;
+    height: 30px;
+    background-color: #f01c4ee6;
+    border-radius: 12px;
+  }
+  #myBar-mana {
+    width: 1%;
+    height: 30px;
+    background-color: #1c58f0e6;
+    border-radius: 12px;
+  }
+  
+  #myBar-exp {
+    width: 1%;
+    height: 30px;
+    background-color: #f0d71ce6;
+    border-radius: 12px;
+  }
+</style>
+<br>
+<div id="myProgress">Health
+  <div id="myBar-health"></div>
+</div>
+<br>
+<div id="myProgress">Mana
+    <div id="myBar-mana"></div>
+  </div>
+<br>
+  <div id="myProgress">Exp
+    <div id="myBar-exp"></div>
+  </div>
+
+<br>
+<button onclick="move()">Level Up</button> 
+
+<script>
+var i = 0;
+var a=0;
+function move() {
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar-exp");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+</script>
+
+<div class="myBar-health">80%</div>
+
+<p><button onclick="document.location='../to-do.html'">Home</button> 
         <button onclick="document.location='skill-tree.html'">Skill Tree</button>
          </p>
-</h2>
+
 </body>
 </html>
