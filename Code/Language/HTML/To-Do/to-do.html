@@ -3,10 +3,12 @@
     <head>
         <h1>To-Do</h1>
         <link rel="stylesheet" href="to-do.css">
-        <script src="to-do.js"></script> 
+        <script src=".to-do.js"></script> 
     </head>
         <body> Hello <strong>name</strong>. Welcome to <strong>skilled</strong>
-            
+          <br>
+        <body onload="startTime()">
+        <strong><div id="min"></div></strong>    
 <h1 class="quest">Quests</h2>
 
   <button type="button" class="collapsible" style="background-color:rgb(176, 154, 158);""><h2>Locked</h2></button>
@@ -17,8 +19,8 @@
     style="background-color:rgb(233, 224, 226);color:black;">Back End Developer</button>
      <div class="content">
       <p>Serve your bites.</p>
-   <li><span class="lock">Above the Clouds</span></li>
-   <li><span class="lock">Show me the Data</span></li>
+   <li class="lock">Above the Clouds</span></li>
+   <li class="lock">Show me the Data</span></li>
     </li>
 </div>
 </div>
@@ -28,7 +30,7 @@
      <div class="content">
       <p>Prepare a Meal for the Gods.</p>
    <li><span class="lock">Spagetti Monster</span></li>
-   <li><span class="lock">Going Fishing</span></li>
+   <li class="done">Going Fishing</span></li>
     </li>
 </div>
 
@@ -36,7 +38,7 @@
     style="background-color:rgb(233, 224, 226);color:black;">Fashion Designer</button>
      <div class="content">
       <p>Stretch to Express.</p>
-   <li><span class="quest-doing">The Valley of Fabric</span></li>
+   <li class="doing">The Valley of Fabric</span></li>
    <li><span class="quest">Stripes and Stiches</span></li>
    <li class="done">Good Will</span></li>
    <li><span class="lock">Summer Edition</span></li>
@@ -45,17 +47,17 @@
    <li class="done">Blue Gems</span></li>
    <li><span class="lock">Yellow Gems</span></li>
    <li><span class="lock">Red Gems</span></li>
-   <li><span class="quest-doing">Dress Up</span></li>
+   <li class="doing">Dress Up</span></li>
    <li><span class="lock">Homey Den</span></li>
-   <li class="doing">Lava Lagoon</span></li>
+   <li class="done">Lava Lagoon</span></li>
     </li>
 </div> <!--End of Sub Category-->
 <button type="button" class="collapsible2"
     style="background-color:rgb(233, 224, 226);color:black;">Business Woman</button>
      <div class="content">
       <p>Run the roles, Tag you're it.</p>
-   <li><span class="lock">Above the Clouds</span></li>
-   <li><span class="lock">Show me the Data</span></li>
+   <li><span class="lock">iPhone Home</span></li>
+   <li><span class="lock">Window to the Wall</span></li>
     </li>
 </div>
 
@@ -65,12 +67,12 @@
       <p>Dweller and Guardian of the Home.</p>
    <li><span class="lock">Phone Home</span></li>
    <li><span class="lock">Paper beats Rock</span></li>
-   <li><span class="lock">Dust Wrangler</span></li>
-   <li><span class="lock">Water Skating</span></li>
+   <li class="done">Dust Wrangler</span></li>
+   <li class="done">Water Skating</span></li>
    <li><span class="lock">Wind Funnel</span></li>
    <li><span class="lock">Metal Gobins</span></li>
     </li>
-    <li><span class="lock">Green Pastures</span></li>
+    <li class="lock">Green Pastures</span></li>
 </div> <!--End of Sub Category-->
 
 <button type="button" class="collapsible2"
@@ -116,14 +118,14 @@
 </div> <!--End of Sub Category-->
 
 <button type="button" class="collapsible2"
-    style="background-color:rgb(233, 224, 226);color:black;">Juggler</button>
+    style="background-color:rgb(233, 224, 226);color:black;">Huntress</button>
      <div class="content">
-      <p>Embark in the jungle of job hunting.</p>
+      <p>Embark in the realm of job hunting.</p>
    <li><span class="lock">Shake Hands</span></li>
    <li><span class="lock">Letters of Labor</span></li>
    <li><span class="lock">On the Hunt</span></li>
    <li><span class="lock">Adventure</span></li>
-   <li class="doing">Pop Goes the Weasel</span></li>
+   <li class="done">Pop Goes the Weasel</span></li>
    <li><span class="lock">Juggling States</span></li>
     </li>
     <li><span class="lock">Telephone</span></li>
@@ -147,11 +149,11 @@
     style="background-color:rgb(233, 224, 226);color:black;">Moveit</button>
      <div class="content">
       <p>Stretch and shake to your hearts content.</p>
-   <li><span class="lock">Push Gravity</span></li>
+   <li class="done">Push Gravity</span></li>
    <li><span class="lock">Lend a Hand</span></li>
-   <li><span class="lock">Hanging Out</span></li>
+   <li class="done">Hanging Out</span></li>
    <li><span class="lock">Adventure</span></li>
-   <li><span class="lock">Yogi</span></li>
+   <li class="done">Yogi</span></li>
    <li><span class="lock">Rolling Stone</span></li>
     </li>
     <li><span class="lock">Grounded</span></li>
@@ -163,7 +165,6 @@
       <p>Weave your website.</p>
    <li><span class="lock">Host a Party</span></li>
    <li><span class="badge">Little Spider Big Bite</span></li>
-   <li><span class="lock">Push Gravity</span></li>
 
 </div> <!--End of Locked-->
 
@@ -183,7 +184,7 @@
      <div class="content">
         <li><span class="quest">Repairing Armor</span>
          <li><span class="quest">Battling Dust</span></li>
-         <li><span class="quest">Underwater Adventure</span></li>
+         <li class="done">Underwater Adventure</span></li>
         </div> <!--End of Quest Area-->
 
         <button type="button" class="collapsible2"
@@ -191,11 +192,11 @@
          <div class="content">
           <p>Weave your websites.</p>
        <li><span class="lock">Network the thread</span></li>
-       <li><span class="lock">Ready Set Javascript</span></li>
        <li class="doing">Get me a Table</span></li>
         </li>
         <li><span class="lock">Talk to Me</span></li>
         <li><span class="lock">Attack & Defend</span></li>
+        <li class=""><a href="./quests/cass/cat-cass.html">Cat Cassandra</a></li>
     </div> <!--End of Sub Category-->
 
       </div> <!--End of Avaliable-->
@@ -209,31 +210,25 @@
     <button type="button" class="collapsible2">Tutorial</button>
      <div class="content">
         <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
-      </div>
-
-      <button type="button" class="collapsible2">Important</button>
-      <div class="content">
-         <li class="none"><a href="./quests/taxes/taxes.html">ADP Taxes</a></li>
-         <li class="next"><a href="./quests/restore/restore.html">Dentist Friendship</a></li>
-         <li class="none"><a href="./quests/restore/restore.html">Pop in - Data</a></li>
-       </div>
+</div>
 
 <button type="button" class="collapsible2">Web Weaver</button>
          <div class="content">
           <p>Weave your websites.</p>
+
+          Front Stack
+          <li class="pause">Ready Set Javascript</span></li>
           <ul class="doing">Full Stack</span>
             <p>Can I have a burger with a server of fries.</p>
         
           <button style="background-color:rgb(52, 122, 252);" class="collapsible2">Show me the Data</span></button>
-            <div class="content">
-            <li class="pause"><a href="./quests/diet-sql.html"> Diet SQL</a></li>
-            <li class="doing"><a href="./quests/cass/cat-cass.html">Cat Cassandra</a></li>
-           </div>
-       
-            <ul class="doing">Show me the Data</span>
-                <li class="doing"><a href="./quests/diet-sql.html"> Diet SQL</a></li></ul>
-        </ul> </ul>
-          <li><span class="lock">Pythasaurus</span></li>
+     <div class="content">
+            <li class="doing"><a href="./quests/diet-sql.html"> Diet SQL</a></li>
+            <li class="doing">Do the Django</li>
+           </div><li class="doing">Pythasaurus</li>
+     </ul>  
+    </ul>
+         
         </div>
       </div>
     </div>
@@ -279,14 +274,67 @@
 }
 </style>
 
-<h2 class="quest-open"style=")">Menu</h2>
-<button class="01" onclick="document.location='./menu/character.html'">Character</button> 
-<button class="01" onclick="document.location='./menu/habit.html'">Habit</button>  
-<button onclick="document.location='./menu/inventory.html'">Inventory</button> 
-<button onclick="document.location='./menu/stats.html'">Stats</button>
-<button class="01" onclick="document.location='./menu/skills.html'">Skills</button>    
-<button class="01" onclick="document.location='./menu/dump.html'">Dump</button>    
-</html>
+<h2>Character</h2>
+  <table> 
+   
+    <tr>
+      <td>Name</td>
+      <td>Ki</td>
+    </tr>
+    <tr>
+      <td>Class</td>
+      <td>Mage</td>
+    </tr>
+    <tr>
+      <td>Level</td>
+      <td>08</td>
+    </tr>
+    </table>
+
+    <h2>Time</h2>
+    <table>
+    <tr>
+      <td style="background-color:rgba(7, 145, 90, 0.76);">Time</td>
+      <td>12:43 am</td>
+      <tr>
+        <tr>
+          <td style="background-color:rgba(7, 145, 90, 0.76);">Day</td>
+          <td>23</td>
+          <tr> 
+            <tr>
+              <td style="background-color:rgba(32, 180, 121, 0.76);">DayWeek</td>
+              <td>02 (Tue)</td>
+              <tr>
+                <tr>
+                  <tr>
+                    <td style="background-color:rgba(32, 180, 121, 0.76);">Week</td>
+                    <td>02</td>
+                    <tr>
+                      <td style="background-color:rgba(7, 145, 90, 0.76);">Month</td>
+                  <td>01 (Jan)</td>
+                  <tr>
+                    <tr>
+                      <td style="background-color:rgba(7, 145, 90, 0.76);">Year</td>
+                      <td>2023</td>
+                      <tr> 
+    <tr>
+    </table>
+      <h3>Stats</h3>
+      <table>
+      <td style="background-color:rgba(215, 7, 59, 0.76);">HP</td>
+      <td>50/50</td>
+    </tr>
+    <tr>
+      <td>MP</td>
+      <td>50/50</td>
+      <tr>
+        <td style="background-color:rgba(231, 173, 15, 0.76);">EXP</td>
+        <td>50/50</td>
+      </tr>
+    </tr>
+  </table>
+  </ul>
+
 
 </body>
 <script src="to-do.js"></script> 

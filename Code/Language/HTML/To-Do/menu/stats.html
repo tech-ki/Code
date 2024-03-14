@@ -3,18 +3,63 @@
         <h1>My Stats</h1>
         <link rel="stylesheet" href="../to-do.css">
     </head>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px solid rgb(39, 14, 200);
+          }
+          
+          .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: rgb(250, 239, 239);
+            color: #1e1b1b;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            
+            /* Position the tooltip */
+            position: absolute;
+            z-index: 1;
+            top: 100%;
+            left: 50%;
+            margin-left: -60px;
+          }
+          
+          .tooltip:hover .tooltiptext {
+            visibility: visible;
+          }
+    </style>
         <body>
             Hello
             <strong>name</strong>. Welcome to <strong>skilled</strong>
         
-        <p>Here are my character's stats:</p>
+        <p>Here are my character's stats. Learning certain skills increases your stats.</p>
         <li>Intelligence 100</li>
         <li>Strength 10</li>
-        <li>Health 100</li>
-        <li>Mana 100</li>
         <li>Agility 20</li>
+        <li>Stamina 20/100</li>
 
-        Learn how to create a table to continue here!
+        <li><div class="tooltip">Health
+            <span class="tooltiptext">To care for the body</span>
+          </div></li>
+
+          <li><div class="tooltip">Mana
+            <span class="tooltiptext">To care for the mind</span>
+          </div></li>
+
+          <li><div class="tooltip">Stamina
+            <span class="tooltiptext">To persist despite the odds</span>
+          </div></li>
+
+          <li><div class="tooltip">Strength
+            <span class="tooltiptext">To care for the body</span>
+          </div></li>
+
+        Learn how to create progress bars to continue here!
+
+        
         </body>
         <br>
         <p><button onclick="document.location='../to-do.html'">Home</button> </p>
