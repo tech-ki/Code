@@ -177,7 +177,6 @@
      
      <button type="button" class="collapsible2">Tutorial</button>
      <div class="content">
-        <li><span class="quest">Roger's apple</span>
          <li><span class="quest">Hunting for Food</span></li>
         </div>
         <button type="button" class="collapsible2">Homestead</button>
@@ -210,7 +209,14 @@
     <button type="button" class="collapsible2">Tutorial</button>
      <div class="content">
         <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
-</div>
+      </div>
+
+      <button type="button" class="collapsible2">Important</button>
+      <div class="content">
+         <li class="none"><a href="./quests/taxes/taxes.html">ADP Taxes</a></li>
+         <li class="next"><a href="./quests/restore/restore.html">Dentist Friendship</a></li>
+         <li class="none"><a href="./quests/restore/restore.html">Pop in - Data</a></li>
+       </div>
 
 <button type="button" class="collapsible2">Web Weaver</button>
          <div class="content">
@@ -273,67 +279,14 @@
 }
 </style>
 
-<h2>Character</h2>
-  <table> 
-   
-    <tr>
-      <td>Name</td>
-      <td>Ki</td>
-    </tr>
-    <tr>
-      <td>Class</td>
-      <td>Mage</td>
-    </tr>
-    <tr>
-      <td>Level</td>
-      <td>08</td>
-    </tr>
-    </table>
-
-    <h2>Time</h2>
-    <table>
-    <tr>
-      <td style="background-color:rgba(7, 145, 90, 0.76);">Time</td>
-      <td>12:43 am</td>
-      <tr>
-        <tr>
-          <td style="background-color:rgba(7, 145, 90, 0.76);">Day</td>
-          <td>23</td>
-          <tr> 
-            <tr>
-              <td style="background-color:rgba(32, 180, 121, 0.76);">DayWeek</td>
-              <td>02 (Tue)</td>
-              <tr>
-                <tr>
-                  <tr>
-                    <td style="background-color:rgba(32, 180, 121, 0.76);">Week</td>
-                    <td>02</td>
-                    <tr>
-                      <td style="background-color:rgba(7, 145, 90, 0.76);">Month</td>
-                  <td>01 (Jan)</td>
-                  <tr>
-                    <tr>
-                      <td style="background-color:rgba(7, 145, 90, 0.76);">Year</td>
-                      <td>2023</td>
-                      <tr> 
-    <tr>
-    </table>
-      <h3>Stats</h3>
-      <table>
-      <td style="background-color:rgba(215, 7, 59, 0.76);">HP</td>
-      <td>50/50</td>
-    </tr>
-    <tr>
-      <td>MP</td>
-      <td>50/50</td>
-      <tr>
-        <td style="background-color:rgba(231, 173, 15, 0.76);">EXP</td>
-        <td>50/50</td>
-      </tr>
-    </tr>
-  </table>
-  </ul>
-
+<h2 class="quest-open"style=")">Menu</h2>
+<button class="01" onclick="document.location='./menu/character.html'">Character</button> 
+<button class="01" onclick="document.location='./menu/habit.html'">Habit</button>  
+<button onclick="document.location='./menu/inventory.html'">Inventory</button> 
+<button onclick="document.location='./menu/stats.html'">Stats</button>
+<button class="01" onclick="document.location='./menu/skills.html'">Skills</button>    
+<button class="01" onclick="document.location='./menu/dump.html'">Dump</button>    
+</html>
 
 </body>
 <script src="to-do.js"></script> 
