@@ -286,7 +286,7 @@ padding-right:8px;
 }
 
 li::after {
-content: "undone";
+content: "open";
 margin-left: 20px;
 background-color: rgb(213, 213, 207);
 padding: 02px;
@@ -307,6 +307,28 @@ padding: 02px;
           border-radius: 8px;;
           float:right;
 }
+li.next::after {
+  content: "next";
+  margin-left: 20px;
+  background-color: rgba(2, 120, 238, 0.897);
+  padding: 02px;
+            text-align: left;
+            padding-inline: 0.4em;
+            color: #fffefe;
+            border-radius: 8px;;
+            float:inline-end;
+  }
+li.lock::after {
+  content: "locked";
+  margin-left: 20px;
+  background-color: rgba(54, 49, 49, 0.897);
+  padding: 02px;
+            text-align: left;
+            padding-inline: 0.4em;
+            color: #c4c3c3;
+            border-radius: 8px;;
+            float:inline-end;
+  }
 li.doing::after {
 content: "in-progress";
 margin-left: 20px;
@@ -492,4 +514,30 @@ li.upgrade::after {
             padding-inline: 0.4em;
             border-radius: 8px;;
             float:right;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px solid rgb(39, 14, 200);
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(45, 45, 129, 0.973);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 12px 12;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
   }
