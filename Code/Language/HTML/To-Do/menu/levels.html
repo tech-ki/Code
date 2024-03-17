@@ -41,18 +41,28 @@
     background-color: #f0d71ce6;
     border-radius: 12px;
   }
+    #demo-mana{
+      float: right;
+    }
+    #demo-hp{
+      float: right;
+    }
+    #demo-exp{
+      float: right;
+    }
+  
 </style>
 <br>
-<div id="myProgress">Health<img id="image" style="float:right;width:80px;height:80px;" src="../.././image/smile/smile.gif"></img>
+<p style="background-color: rgb(250, 250, 250);"id="demo-hp">00%</p><div id="myProgress">Health<img id="image" style="float:right;width:80px;height:80px;" src="../.././image/smile/smile.gif"></img>
   <div id="myBar-health"></div>
 </div>
 <br>
-<div id="myProgress">Mana<img id="image" style="float:right;width:80px;height:80px;" src="../.././image/smile/smile.gif"></img>
-    <div id="myBar-mana"></div>
-  </div>
+<p style="background-color: rgb(250, 250, 250);"id="demo-mana">00%</p><div id="myProgress">Mana</div><img id="image" style="float:right;width:80px;height:80px;" src="../.././image/smile/smile.gif"></img>
+    <div id="myBar-mana">
+  </div> <div id="lvl"></div>
 <br>
-  <div id="myProgress">Exp<img id="image" style="float:right;width:80px;height:80px;" src="../.././image/smile/smile.gif"></img>
-    <div id="myBar-exp"></div>
+<p style="background-color: rgb(250, 250, 250);"id="demo-exp">00%</p><div id="myProgress">Exp</div><img id="image" style="float:right;width:80px;height:80px;" src="../.././image/smile/smile.gif"></img>
+    <div id="myBar-exp">
     
   </div>
 
@@ -67,24 +77,25 @@ var a=0;
 function move() {
   if (i == 0) {
     i = 1;
-    var elem = document.getElementById("myBar-health");
+    var elem = document.getElementById("myBar-mana");
     var width = 1;
-    var id = setInterval(frame, 10);
+    var lvl = 0;
+    var id = setInterval(frame, 1);
     function frame() {
       if (width >= 100) {
         clearInterval(id);
         i = 0;
+        lvl++;
+        document.getElementById("lvl").innerHTML = lvl + 1;
       } else {
-        width++;
-        elem.style.width = width + "%";
+        width++; 
+        elem.style.width = width + '%'; 
+        document.getElementById("demo-mana").innerHTML = width * 1  + '%';
       }
     }
   }
 }
 </script>
-
-
-
 
 
 <script>
