@@ -254,16 +254,46 @@ content: "o";
 list-style:none;
 
 }
+li.pause::before {
+  content: "  " url("/Code/Language/HTML/image/brown-star\(sm\).png");
+  padding-right:8px;
+  }
 li.done::before {
 content: "  " url("/Code/Language/HTML/image/gold-star(inf-sm).gif");
 padding-right:8px;
 }
 
 li.doing::before {
-content: " " url("/Code/Language/HTML/image/pink-star(sm).png");
+content: " " url("/Code/Language/HTML/image/pink-star\(sm\).png");
 padding-right:8px;
 }
-
+li.void::before {
+  content: " " url("/Code/Language/HTML/image/no-star(sm).png");
+  padding-right:8px;
+  }
+  li.cal::before {
+    content: " " url("/Code/Language/HTML/image/blue-star(sm).png");
+    }
+    li.lock::before {
+      content: " " url("/Code/Language/HTML/image/no-star(sm).png");
+      padding-right:8px;
+      }
+      li.late::before {
+        content: " " url("/Code/Language/HTML/image/red-star(sm).png");
+        padding-right:8px;
+        }
+      li.wait::before {
+        content: " " url("/Code/Language/HTML/image/purple-star(sm).png");
+        padding-right:8px;
+        }
+        li.rest::before {
+          content: " " url("/Code/Language/HTML/image/green-star\(sm\).png");
+          padding-right:8px;
+          }
+          li.review::before {
+            content: " " url("/Code/Language/HTML/image/blue-star\(sm\).png");
+            padding-right:8px;
+            }
 li.no::before {
   content: " " ;
   padding-right:8px;
@@ -299,7 +329,7 @@ padding: 02px;
 li.late::after {
 content: "due";
 margin-left: 20px;
-background-color: rgba(21, 6, 74, 0.897);
+background-color: rgb(231, 3, 3);
 padding: 02px;
           text-align: left;
           padding-inline: 0.4em;
@@ -310,18 +340,18 @@ padding: 02px;
 li.next::after {
   content: "next";
   margin-left: 20px;
-  background-color: rgba(2, 120, 238, 0.897);
+  background-color: rgba(238, 214, 2, 0.897);
   padding: 02px;
             text-align: left;
             padding-inline: 0.4em;
-            color: #fffefe;
+            color: #040404;
             border-radius: 8px;;
             float:inline-end;
   }
 li.lock::after {
   content: "locked";
   margin-left: 20px;
-  background-color: rgba(54, 49, 49, 0.897);
+  background-color: rgba(84, 7, 7, 0.897);
   padding: 02px;
             text-align: left;
             padding-inline: 0.4em;
@@ -329,6 +359,61 @@ li.lock::after {
             border-radius: 8px;;
             float:inline-end;
   }
+  li.cal::after {
+    content: "scheduled";
+    margin-left: 20px;
+    background-color: rgba(43, 133, 243, 0.981);
+    padding: 02px;
+              text-align: left;
+              padding-inline: 0.4em;
+              color: #ffffff;
+              border-radius: 8px;;
+              float:inline-end;
+    }
+    li.wait::after {
+      content: "wait";
+      margin-left: 20px;
+      background-color: rgba(159, 29, 245, 0.651);
+      padding: 02px;
+                text-align: left;
+                padding-inline: 0.4em;
+                color: #ffffff;
+                border-radius: 8px;;
+                float:inline-end;
+      }
+    li.rest::after {
+      content: "rest";
+      margin-left: 20px;
+      background-color: rgba(2, 250, 126, 0.997);
+      padding: 02px;
+                text-align: left;
+                padding-inline: 0.4em;
+                color: #000000;
+                border-radius: 8px;;
+                float:inline-end;
+      }
+      li.void::after {
+        content: "void";
+        margin-left: 20px;
+        background-color: rgba(46, 4, 53, 0.44);
+        padding: 02px;
+                  text-align: left;
+                  padding-inline: 0.4em;
+                  color: #f8e8e8;
+                  border-radius: 8px;;
+                  float:inline-end;
+        }
+        li.review::after {
+          content: "review";
+          margin-left: 20px;
+          background-color: rgb(0, 68, 255);
+          padding: 02px;
+                    text-align: left;
+                    padding-inline: 0.4em;
+                    color: #f8e8e8;
+                    border-radius: 8px;;
+                    float:inline-end;
+          }
 li.doing::after {
 content: "in-progress";
 margin-left: 20px;
@@ -355,11 +440,11 @@ padding: 02px;
 li.pause::after {
 content: "paused";
 margin-left: 20px;
-background-color: rgb(206, 214, 234);
+background-color: rgba(195, 140, 46, 0.505);
 padding: 02px;
           text-align: left;
           padding-inline: 0.4em;
-          color: #0c0c0c;
+          color: #794e4e;
           border-radius: 8px;;
           float:right;
 }
