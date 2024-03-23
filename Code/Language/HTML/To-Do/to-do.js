@@ -53,6 +53,7 @@ for (i = 0; i < coll2.length; i++) {
     var oneDay = 1000 * 60 * 60 * 24;
     var day = Math.floor(diff / oneDay);
     var com = ":";
+    var week = Math.ceil(day/7);
 
     let nIntervId;
     nIntervId = setInterval(com, 1000);
@@ -63,9 +64,13 @@ for (i = 0; i < coll2.length; i++) {
     "<br> D+" + day + " out of year" + " "+ date + com;
     setTimeout(startTime, 1000);
 
+    document.getElementById('week').innerHTML = week;
+
 
     
   }
+  var name1 = Ki;
+  document.getElementById('nm').innerHTML = name1;
 
   function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10 for seconds

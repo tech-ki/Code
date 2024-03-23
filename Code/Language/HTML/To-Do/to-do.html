@@ -8,7 +8,8 @@
         <body> Hello <strong>name</strong>. Welcome to <strong>skilled</strong>
           <br>
         <body onload="startTime()">
-        <strong><div id="min"></div></strong>    
+        <strong><div id="min"></div></strong>   
+        <body><div id="nm">q</div></body>
 <h1 class="quest">Quests</h2>
 
   <button type="button" class="collapsible" style="background-color:rgb(176, 154, 158);""><h2>Inbox</h2></button>
@@ -217,6 +218,65 @@
          <li class="done">Underwater Adventure</span></li>
         </div> <!--End of Quest Area-->
 
+        <button type="button" class="collapsible2">Socialite</button>
+        <div class="content">
+           <li class="done">Music Micheal</span>
+            <li class="done">Grandma and Grub</span></li>
+            <li class="late">Down Debbie</li>
+            <li class="late">Myracle Myracles</li>
+           </div> <!--End of Quest Area-->
+
+        <button type="button" class="collapsible2">Call of the Muse</button>
+        <div class="content">
+          <h2>Loopables</h2>
+           <li class="done">Note by Note</li>
+           <li class="done">All Ears</li>
+           <h2>01 Song</h2>
+            <li class="open">(01) Play a Chord</li>
+            <li class="open">(01) Melody</li>
+            <li class="open">(01) Harmony</li>
+            <li class="open">(01) Bass Line</li>
+            <li class="open">(01) Bridge</li>
+            <li class="open">(01) Mastering Mode</li>
+            <li class="open">Synthesize (01) Saw</li>
+            <li class="lock">Write (01) Full Song</li>
+            <h2>Methods</h2>
+            <li class="lock">New from Within</li>
+            <li class="lock">Transpose an Old Song</li>
+            <li class="lock">Write (01) Song in Genre A</li>
+            <h2>Daw or Nothing</h2>
+            <li class="open">Open (01) DAW</li>
+            <li class="open">Open the Piano Roll</li>
+
+
+            <h2>Choose your Weapon</h2>
+            <li class="void">Violin</li>
+            <li class="open">Piano</li>
+            <li class="open">Voice</li>
+
+            <h2>Choose your Arena</h2>
+            <li class="open">FL Studio Apartments</li>
+            <li class="void">Logical Rentals</li>
+            <li class="open">Bandcamp Bootcamp</li>
+
+            <h2>Choose your Party</h2>
+            <li class="open">Single Player</li>
+            <li class="open">Friend Co OP</li>
+            <li class="lock">Random Play</li>
+            <li class="lock">Hired by Design</li>
+            <li class="again">Ready to Role</li>
+
+            <h2>Bonus Round</h2>
+            <li class="again">Play on Stage</li>
+            <li class="again">Play with a Community</li>
+            <li class="open">Find a new Community</li>
+            <li class="open">Play at a Venue</li>
+            <li class="lock">Post Online</li>
+            <li class="void">Play Publically Solo</li>
+            <li class="void">Play in a band</li>
+            <li class="lock">Deploy to Bandcamp</li>
+
+           </div> <!--End of Quest Area-->
         <button type="button" class="collapsible2"
         >Web Weaver</button>
          <div class="content">
@@ -226,7 +286,7 @@
         </li>
         <li><span class="lock">Talk to Me</span></li>
         <li><span class="lock">Attack & Defend</span></li>
-        <li class=""><a href="./quests/cass/cat-cass.html">Cat Cassandra</a></li>
+        <li class="void"><a href="./quests/cass/cat-cass.html">Cat Cassandra</a></li>
     </div> <!--End of Sub Category-->
 
       </div> <!--End of Avaliable-->
@@ -240,23 +300,24 @@
  <button type="button" class="collapsible2">Daily</button>
  <div class="content">
      <li class="undone">Hunting for Food</li>
-     <li class="undone">Wash Dishes</li>
+     <li class="done">Wash Dishes</li>
      <li class="done">Walk Coco</li>
-     <li class="done">Water Bubbles</li>
-     <li class="done">Shiny Skeleton</li>
-     <li class="done">Refine Skeleton</li>
-     <li class="undone">Listerine</li>
-     <li class="undone">Move it</li>
-     <li class="undone">A Letter or Two</li>
+     <li class="late">Water Bubbles</li>
+     <li class="late">Shiny Skeleton</li>
+     <li class="late">Refine Skeleton</li>
+     <li class="late">Listerine</li>
+     <li class="late">Move it</li>
     </div>
     <button type="button" class="collapsible2">Weekly</button>
  <div class="content">
-    <li class="done">Wash Coco</span>
-     <li class="done">Water Sensation</li>
+    <li class="open">Wash Coco</span>
+      <li class="done">Timely Sheet</li>
+     <li class="open">Water Sensation</li>
      <li class="done">Homey Homestead</li>
      <li class="done">CodeaDo</span></li>
-     <li class="done">Marvelous Ice Cave</li>
-     <li class="undone">Meat the Menu</li>
+     <li class="again">Marvelous Ice Cave</li>
+     <li class="done">Meat the Menu</li>
+     <li class="again">A Letter or Two</li>
     </div> <!--End of Quest Area-->
 
     <button type="button" class="collapsible2">Monthly</button>
@@ -264,6 +325,17 @@
        <li class="done">Magic Mirror</li>
         <li class="undone">Underwater Caverns (Soak)</li>
         <li class="undone">null</span></li>
+        
+          <label for="cars">Choose a car:</label>
+          <li class="open">Drop Down<select name="cars" id="cars"></li>
+            <option value="open">Open</option>
+            <option value="done">Done</option>
+            <option value="again">Again</option>
+            <option value="pause">Pause</option>
+            <option value="doing">In Progress</option>
+            <option value="void">Void</option>
+            <option value="cal">Scheduled</option>
+          </select>
        </div> <!--End of Quest Area-->
 
     <button type="button" class="collapsible2"
@@ -282,27 +354,79 @@
 <div class="content">
   <div class="area">
     <p>Quests in-progress.<span class="badge0">09</span><span class="badge1">02</span><span class="badge2">09</span></p></span>
-
     <button type="button" class="collapsible2">Tutorial</button>
-     <div class="content">
-        <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
+    <div class="content">
+       <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
 </div>
+
+    <button type="button" class="collapsible2">Personhood</button>
+     <div class="content">
+      <h2>Outer Ring</h2>
+        <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
+        <li class="late">Drink Water</li>
+        <li class="void">Poppin Bones</li>
+        <li class="late">Spa Day</li> 
+        <li class="wait">Moon'in</li>
+        <h2>Inner Ring</h2>
+        <li class="done">Sweet & Kind</li>
+        <li class="doing">Feel the Waves</li>
+        <li class="open">Photo Albums</li>
+        <li class="doing">Reconnecting</li>
+        <li class="done">Weigh your load</li>
+        <li class="open">Pressure Check Up</li>
+        <li class="open">Rewrite</li>
+        <li class="late">In or Out?</li>
+        <li class="void">Disconnecting</li>
+        <h2>In Between</h2>
+        <li class="done">Call In</li>
+         <li class="open">Sensational</li>
+        <li class="doing">Trash Date</li>
+        <li class="late">Creative Outlet</li>
+</div>
+
+<button type="button" class="collapsible2" style="background-color:rgb(221, 25, 130);"">Lover</button>
+<div class="content">
+   <li  class="next">Game In</li>
+    <li class="done">Date Night</li>
+    <li class="done">Sweet Talks</li>
+    <li class="next">Quality Timely</li>
+    <li class="next">Foodie</li>
+    <li class="next">Green Pastures</li>
+    <li class="again">Sweet Stuff</li>
+   </div> <!--End of Quest Area-->
 
 <button type="button" class="collapsible2">Web Weaver</button>
          <div class="content">
           <p>Weave your websites.</p>
 
-          Front Stack
-          <li class="pause">Ready Set Javascript</span></li>
-          <ul class="doing">Full Stack</span>
-            <p>Can I have a burger with a server of fries.</p>
-        
-          <button style="background-color:rgb(52, 122, 252);" class="collapsible2">Show me the Data</span></button>
-     <div class="content">
-            <li class="doing"><a href="./quests/diet-sql.html"> Diet SQL</a></li>
-            <li class="doing">Do the Django</li>
-           </div><li class="doing">Pythasaurus</li>
+          <h2>Front Foot</h2>
+<li class="done">Hello HTMyLevel</li>
+<li class="done">Color me CSS</li>
+<li class="open">Pick up your Bootstrap</li>
+<li class="done">Photorama</li>
+<li class="review">Dynamic Size it</li>
+<li class="review">Pressing Buttons</li>
+<li class="done">SPAM</li>
+<li class="done">Honorary Badges</li>
+<li class="done">Friend a Friend - HTML & CSS</li>
+<li class="done">Friend a Friend - HTML & CSS & Javascript</li>
      </ul>  
+     <h2>Back Foot</h2> 
+     <li class="pause">Ready Set Javascript</li>
+  
+     <h2> Server's Up</h2>
+     <li class="doing"><a href="./quests/diet-sql.html"> Diet SQL</a></li>
+     <li class="doing">Do the Django</li>
+    
+     <h2>Hablas Code?</h2>
+     <li class="doing">Pythasaurus</li>
+     <h2>Git</h2>
+     <li class="done">Git Good</li>
+     <li class="done">Git Merge Error</li>
+     <li class="open">Git Project</li>
+     <li class="done">Git Deploy</li>
+     <li class="open">Git Clean & Organize</li>
+     <li class="lock">Git API</li>
     </ul>
          
         </div>
@@ -421,6 +545,7 @@
         <button class="01" onclick="document.location='./menu/dump.html'">Log</button>
         <button class="01" onclick="document.location='./menu/dump1.html'">All</button>
         <button class="01" onclick="document.location='./menu/char.html'">Char</button>  
+        <button class="01" onclick="document.location='./menu/habit.html'">Habit</button>  
         <button class="01" onclick="document.location='./menu/time.html'">Time</button>    
         <button class="01" onclick="document.location='./menu/act.html'">Act Log</button>  
         <p id="items">Hi</p>

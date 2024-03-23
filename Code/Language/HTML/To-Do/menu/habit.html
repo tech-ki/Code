@@ -3,12 +3,33 @@
         <h1>To-Do</h1>
         <link rel="stylesheet" href="../to-do.css">
     </head>
+<style>
+    th {
+    text-align: center;
+  }
+
+  .center { 
+    text-align: right;
+  }
+div {
+    margin: 1px;
+    background-color: #0ee140;
+    text-align: center;
+    width: 12px;
+
+}
+  #habit {
+    text-align: center;
+  }
+
+</style>
+
         <body>
             Hello
             <strong>name</strong>. Welcome to <strong>skilled</strong>
             <br><br>
 
-<table class="habit">
+<table class="center">
 <th>Habit</th>
 <th>mo</th>
 <th>tu</th>
@@ -17,11 +38,11 @@
 <th>fri</th>
 <th>sa</th>
 <th>su</th>
-<th style="background-color:rgb(57, 84, 237);"><img src="../../image/gold-star(inf-sm).gif"></a>=</th>
+<th style="background-color:rgb(91, 96, 126);"><img src="../../image/gold-star(inf-sm).gif"></a>=</th>
 
 
 
- <tr class="habit">
+ <tr class="habit" style="text-align: center;">
 <td class="habit">Date</td>
 <td class="habit">01.29</td>
 <td class="habit">01.30</td>
@@ -34,7 +55,7 @@
 
 </tr>   
 
-<tr class="habit">
+<tr class="habit"style="text-align: center;">
     <td>Zen Tea</td>
     <td><img src="../../image/gold-star(inf-sm).gif"></a></td>
     <td><div class="no-star"></div></td>
@@ -72,30 +93,32 @@
 </tr>
 </table>
 
-<table class="">
-    <th>Habit</th>
-    <th>mon</th>
-    <th>tue</th>
-    <th>wed</th>
+<table class="center"style="text-align: center;">
+    <th style="text-align: center;">Habit</th>
+    <th style="text-align: center;">mon</th>
+    <th style="text-align: center;">tue</th>
+    <th style="text-align: center;">wed</th>
     <th>thu</th>
     <th>fri</th>
     <th>sat</th>
     <th>sun</th>
-    <th style="background-color:rgb(57, 84, 237);"><img src="../../image/gold-star(inf-sm).gif"></a></th>
+    <th style="background-color:rgb(166, 173, 214);"><img src="../../image/gold-star(inf-sm).gif"></a></th>
     
     <br>
     <br>
     
-     <tr class="habit">
-     <td class="habit" style= "background-color:rgba(114, 182, 234, 0.578);"><button class="01" style="background-color:rgb(88, 117, 235);"onclick="document.location='./menu/dump.html'">Back</button> </td>
-    <td class="habit" style= "background-color:rgba(173, 214, 246, 0.578); font-weight: 800px;">01/29</td>
+     <tr class="habit"style="text-align: center;">
+     <td class="habit" style= "background-color:rgba(229, 244, 255, 0.578);"><button class="01" style="background-color:rgb(63, 71, 100);"onclick="document.location='./menu/dump.html'">Back</button> </td>
+    <td class="habit" style= "background-color:rgba(241, 245, 248, 0.578); font-weight: 800px;">01/29</td>
+
+    <div style="overflow-x:auto;">
     <td class="habit">01/30</td>
     <td class="habit">01/31</td>
     <td class="habit">02/01</td>
     <td class="habit">02/02</td>
     <td class="habit">02/03</td>
     <td class="habit">02/04</td>
-    <td class="habit" style= "background-color:rgba(114, 182, 234, 0.578)"><button class="01" onclick="document.location='./menu/dump.html'">Next</button> </td>
+    <td class="habit"><button class="01" onclick="document.location='./menu/dump.html'">Next</button> </td>
     
     </tr>   
     
@@ -105,7 +128,7 @@
         <td><div class="no-star"></div></td>
         <td><div class="no-star"></div></td>
         <td><img src="../../image/gold-star(inf-sm).gif"></td>
-        <td><div class="gold-star"></div></td>
+        <td style="text-align:center"><div class="gold-star"></div></td>
         <td><div class="gold-star"></div></td>
         <td><div class="no-star"></div></td>
         <td>04 x<div class="gold-star"></div></div></td>
@@ -135,6 +158,7 @@
         <td>192</td>
     
     </tr>
+</div>
     </table>
          </body>
 </html>
