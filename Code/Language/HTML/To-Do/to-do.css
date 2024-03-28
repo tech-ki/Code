@@ -13,6 +13,7 @@
           padding-bottom: 2;
           
       }
+      
       span.itemcount {
           color: rgb(255, 25, 132);
           font-weight: bold;
@@ -109,13 +110,14 @@
           background-color:rgb(124, 248, 155);
           color:rgb(11, 11, 11);
           padding: 02px;
-          text-align: left;
+          text-align: right;
           padding-inline: 0.4em;
             border-radius: 6px;
             font-weight: bolder;
             padding-bottom: 8px;
             margin-bottom: 8px;
             margin-top: 30px;
+            float:right;
         }
         h2.quest-progress{
           padding: 02px;
@@ -440,6 +442,87 @@ padding: 02px;
           border-radius: 8px;;
           float:inline-end;
 }
+body {
+  counter-reset: section;
+}
+h2 {
+  counter-reset:subsection;
+}
+h3 {
+  counter-reset:sub2section;
+}
+
+h2.level::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+h3::before {
+  counter-increment: subsection;
+  content: url("/Code/Language/HTML/image/brown-star\(sm\).png")" Section " counter(subsection) ": " ;
+  padding-right:2px;
+}
+h3.done::before {
+  counter-increment: subsection;
+  content: url("/Code/Language/HTML/image/gold-star\(inf-sm\).gif")" Section " counter(subsection) ": " ;
+  padding-right:2px;
+}
+h4:before {
+  counter-increment: sub2section;
+  content: url("/Code/Language/HTML/image/brown-star\(sm\).png")" Section " counter(subsection) "." counter(sub2section) ": ";
+  padding-right:2px;
+}
+h4.done::before {
+  counter-increment: subsection;
+  content: url("/Code/Language/HTML/image/gold-star\(inf-sm\).gif")" Section " counter(subsection) ": " ;
+  padding-right:2px;
+}
+
+h2.s-done::before {
+  counter-increment: section;
+  content: url("/Code/Language/HTML/image/gold-star\(inf-sm\).gif")" Area " counter(section) ": " ;
+  padding-right:2px;
+}
+h2.s::before {
+  counter-increment: section;
+  content: url("/Code/Language/HTML/image/no-star\(sm\).png")" Area " counter(section) ": " ;
+  padding-right:2px;
+}
+
+h3{
+  background-color: #f0286b;
+color: #fcfdff;
+padding: 02px;
+          text-align: left;
+          padding-inline: 0.4em;
+          border-radius: 8px;
+}
+h4{
+  background-color: #b34e84;
+color: #fcfdff;
+padding: 02px;
+          text-align: left;
+          padding-inline: 0.4em;
+          border-radius: 8px;
+          font-size: 20px;
+}
+h2.s{
+  background-color: #5668f1;
+color: #fcfdff;
+padding: 02px;
+          text-align: left;
+          padding-inline: 0.4em;
+          border-radius: 8px;
+}
+h1{
+  background-color: #485cf3;
+color: #fcfdff;
+padding: 02px;
+          text-align: left;
+          padding-inline: 0.4em;
+          border-radius: 8px;
+}
+
 li.done::after {
 content: "done";
 margin-left: 20px;
@@ -547,16 +630,19 @@ border-radius: 8px;;
 
 table,td,th{
   border-collapse: collapse;
-  padding-right: 33px;
   padding-bottom: 10px;
   padding-left: 8px;
   padding-top:5px;
   border-style:outset;
-  background-color: #eef4fd;;
+padding-right: 32px;
+text-align: center;
+}
+tr {
+  background-color: #eef4fd;
 }
 th{
-  background-color: rgba(44, 99, 249, 0.914);
-  color: #f7f1f1;
+  background-color: rgba(129, 144, 180, 0.914);
+  color: #faf2f2;
   font-weight: bolder;
 }
 th:first-of-type {
@@ -572,15 +658,14 @@ tr:last-of-type td:last-of-type {
   border-bottom-right-radius: 08px;
 }
 td:first-of-type {
-background-color: rgba(44, 99, 249, 0.914);
-color: #eef4fd;
-border-radius: 6px;
+color: #441979;
 border-style:outset;
-font-weight: 600;;
+font-weight: 600;
+padding-right: 100px;
+text-align: left;
 }
 table.habit,tr.habit,td.habit {
 padding-right: 12px;
-text-align: center;
 
 }
 div.gold-star{
@@ -647,3 +732,25 @@ ul.inv li{
     background-color: #e2d4d4;
     float:right;
   }
+  .badge {
+    clear:right;
+    float:inline-end;
+   }
+  span.lvl {
+    background-color: rgba(250, 207, 64, 0.845);
+    color: #171414;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 2px 5px;
+    margin-inline-start: 10px;
+    float: inline-end;
+      }
+      tr:nth-child(odd) {
+        background-color: #efebfc;
+      }
+      .sticky {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 0;
+      }
+
