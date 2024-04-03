@@ -665,7 +665,7 @@ padding-right: 100px;
 text-align: left;
 }
 table.habit,tr.habit,td.habit {
-padding-right: 12px;
+padding-right: 22px;
 
 }
 div.gold-star{
@@ -753,4 +753,8 @@ ul.inv li{
         position: sticky;
         top: 0;
       }
-
+      .sticky-l {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        left: 0;
+      }
