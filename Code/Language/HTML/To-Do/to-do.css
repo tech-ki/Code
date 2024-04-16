@@ -199,6 +199,24 @@
             background-color:rgba(30, 71, 255, 0.72);
             color:rgb(248, 251, 254)
         }
+
+        button.skill {
+          float:right;
+          background-color:rgb(225, 204, 222);bottom:12px;
+          position:relative;
+          width:25;
+          height:25;
+        }
+
+          input.skill {
+          /*input id="lvl2" value="0">*/
+          width:39px;
+          font-family:Nunito;
+          font-size:large;
+          float:right; 
+          border:0px;
+          background-color:rgb(245, 217, 243);border-radius:9px;}
+
         .content {
           padding: 0 18px;
           display: show;
@@ -242,6 +260,19 @@
               height: 45;
               margin: auto;
           }
+          .collapsible3{
+            content: " "url("../image/red-star.png"); 
+              font-family:"Nunito";
+              cursor: pointer;
+              text-align: left;
+              font-weight: bolder;
+              margin: auto;
+                
+            }
+            .collapsible3::before {
+              content: "  "  url("../image/level-up/F13A\ sm.png");
+              padding-right:8px;
+              }
 /* Style the list */
 ul.breadcrumb {
 padding: 10px 16px;
@@ -735,13 +766,31 @@ ul.inv li{
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
+  option {
+    padding: 2px 2px;
+    border-radius: 10px;
+    float:inline-end;
+    background-color: #0bc3fb;
+    font-size: 14px;
+  }
+  select option { background: rgb(115, 255, 0); }
 
   select {
     padding: 2px 2px;
-    border: none;
     border-radius: 10px;
-    background-color: #e2d4d4;
-    float:right;
+    float:inline-end;
+    
+    font-size: 14px;
+  }
+ #au {
+    background-color: rgb(14, 118, 187);
+  }
+
+  option.pause {
+    padding: 2px 2px;
+    border-radius: 10px;
+    float:inline-end;
+    background-color: #3CBC8D;
   }
   .badge {
     clear:right;

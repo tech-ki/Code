@@ -8,9 +8,13 @@
             Hello
             <strong>name</strong>. Welcome to <strong>skilled</strong>
         <p>Here are my character's skills:</p>
-        <div style="padding:90px;">
+
+        
+            <button onclick="document.location='../to-do.html'"style=float:right;>Save</button> 
     <ul class="no">
-    <h3>Web Weaver</h3>
+        
+    <h3 class="collapsible3">Web Weaver</h3>
+    <div class="content"> <!--Header 1 collapse content-->
                 <li class="doing">Web Weaver 
                     <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
@@ -18,7 +22,6 @@
                 <li class="doing">Ki's tea 
                     <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
-
 
                 <li class="doing">Drink Water <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
@@ -36,26 +39,43 @@
         <li class="done">Learn how to create tables to continue here.
             <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
 
-        </li>
+        </li></div>
 </ul>
+
 <ul class="doing">
-<h3>Call Centered</h3>
+<h3 class="collapsible3">Call Centered</h3>
+<div class="content"> <!--Header 1 collapse content-->
 <li class="done">Corporate Call</li>
 
-<li class="upgrade">Lend me a License</li>
+<li class="upgrade"style="right:120px;">Lend me a License</li>
     <ul>
         <li class="pause">Scavenger Hunt</li>
-    </ul>
+    </ul> </div>
 </ul>
 
 <ul class="doing">
-<h3>Homestead</h3>
+<h3 class="collapsible3">Homestead</h3>
+<div class="content"> <!--Header 1 collapse content-->
 <li class="due">Roger's Tea</li>
 <li class="done">Water the Coco</li>
+<li>
+    <select id="star" name="stars">
+    <option value="au" name="au">Pause</option>
+    <option value="ca">Open</option>
+    <span><option value="usa"style="color:red;"><span>Yellow</option></span>
+    </select>
+  </form></li>
 </ul>
+</div>
 
-<h1>0.1 What is Discrete Mathematics?</h1>
-<p class="no-read">
+
+
+
+
+<h1 class="collapsible3">0.1 What is Discrete Mathematics? </h1>
+
+<div class="content"> <!--Header 1 collapse content-->
+<p class="no-read" class="collapsible3">
 
 <br>
 dis·crete / dis'krët.
@@ -63,9 +83,10 @@ dis·crete / dis'krët.
 Adjective: Individually separate and distinct.
 <br>
 Synonyms: separate - detached - distinct - abstract.
+<img src="../../image/updown/updown.gif" style="width:25;height:35;float:right;float:inline-start;position:absolute;">
 <br>
 <br>
-<p class="no-read">Defining discrete mathematics is hard because defining mathematics is hard. What is mathematics? The study of numbers? </p>
+<p class="no-read">Defining discrete mathematics is hard because defining mathematics is hard. What is mathematics? The study of numbers? <img src="../../image/updown/updown.gif" style="width:25;height:35;float:right;float:inline-start;position:absolute;"></p>
 
 <p class="no-read">In part, but you also study functions and lines and triangles and parallelepipeds and vectors and …. </p> 
 
@@ -80,8 +101,9 @@ Synonyms: separate - detached - distinct - abstract.
     <br>
     Some math fundamentally deals with <b>stuff that is individually separate and distinct.</b></p>
 <br>
-
-<h1 style="background-color:rgb(84, 29, 139)">0.2 Alegra & Infinity</h1>
+</div> <!--collapse close-->
+<h1 class="collapsible3" style="background-color:rgb(84, 29, 139)">0.2 Alegra & Infinity</h1>
+<div class="content"> <!--Header 1 collapse content-->
 <p class="no-read">In an algebra or calculus class, you might have found a particular set of numbers (maybe the set of numbers in the range of a function).</p> 
 <p class="no-read">You would represent this set as an interval: 
 <br>
@@ -108,13 +130,15 @@ Investigate!
 Note: Throughout the text you will see Investigate! activities like this one. Answer the questions in these as best you can to give yourself a feel for what is coming next.</p>
 <p class="read" style="border-color:rgb(0, 115, 255)">
    <b>Question 01.</b> <br>
-The most popular mathematician in the world is throwing a party for all of his friends. As a way to kick things off, they decide that everyone should shake hands. Assuming all 10 people at the party each shake hands with every other person (but not themselves, obviously) exactly once, how many handshakes take place?</p>
+The most popular mathematician in the world is throwing a party for all of his friends. As a way to kick things off, they decide that everyone should shake hands. Assuming all 10 people at the party each shake hands with every other person (but not themselves, obviously) exactly once, how many handshakes take place?</p></div>
 <p class="read" style="border-color:rgb(27, 39, 214);">
+
     <b>Question 02.</b>
     <br>
 At the warm-up event for Oscar's All Star Hot Dog Eating Contest, Al ate one hot dog. Bob then showed him up by eating three hot dogs. Not to be outdone, Carl ate five. This continued with each contestant eating two more hot dogs than the previous contestant. How many hot dogs did Zeno (the 26th and final contestant) eat? How many hot dogs were eaten all together?
 </p>
-
+<h4 class="collapsible3">unformatted content</h3>
+<div class="content"> <!--Header 1 collapse content-->
 After excavating for weeks, you finally arrive at the burial chamber. The room is empty except for two large chests. On each is carved a message (strangely in English):
 
 If this chest is empty, then the other chest's message is true.
@@ -146,9 +170,14 @@ Back in the days of yore, five small towns decided they wanted to build roads di
     }
 </script>
 
+;--help
+
 
    </li>
 </ul>
 
 </body>
-<p><button onclick="document.location='../to-do.html'">Home</button> </p>
+<p><button onclick="document.location='../to-do.html'">Home</button> 
+    </p>
+    <script src="../to-do.js"></script> 
+    </html>
