@@ -15,19 +15,19 @@
         
     <h3 class="collapsible3">Web Weaver</h3>
     <div class="content"> <!--Header 1 collapse content-->
-                <li class="doing">Web Weaver 
+                <li class="doing"><span class="lvl">02</span> Web Weaver 
+                    <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" class = "skill"></input></button> 
+                </li>
+
+                <li class="doing"><span class="lvl-hard">02</span> Ki's tea 
                     <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
 
-                <li class="doing">Ki's tea 
-                    <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
-                </li>
-
-                <li class="doing">Drink Water <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
+                <li class="doing"><span class="lvl-easy">72</span> Drink Water <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
 
 
-                <li class="done">Level Up 
+                <li class="done"><span class="lvl-done">02</span> Level Up 
                     <button onclick="skillUp2()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl2" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
                     
@@ -58,13 +58,7 @@
 <div class="content"> <!--Header 1 collapse content-->
 <li class="due">Roger's Tea</li>
 <li class="done">Water the Coco</li>
-<li>
-    <select id="star" name="stars">
-    <option value="au" name="au">Pause</option>
-    <option value="ca">Open</option>
-    <span><option value="usa"style="color:red;"><span>Yellow</option></span>
-    </select>
-  </form></li>
+<li class="done"><span class="lvl-baby">00</span> Water the Coco</li>
 </ul>
 </div>
 
@@ -72,7 +66,7 @@
 
 
 
-<h1 class="collapsible3">0.1 What is Discrete Mathematics? </h1>
+<h1 class="collapsible3">0.1 What is Discrete Mathematics? </h2>
 
 <div class="content"> <!--Header 1 collapse content-->
 <p class="no-read" class="collapsible3">
@@ -101,8 +95,8 @@ Synonyms: separate - detached - distinct - abstract.
     <br>
     Some math fundamentally deals with <b>stuff that is individually separate and distinct.</b></p>
 <br>
-</div> <!--collapse close-->
-<h1 class="collapsible3" style="background-color:rgb(84, 29, 139)">0.2 Alegra & Infinity</h1>
+
+<h3 class="collapsible3" style="background-color:rgb(131, 69, 185);color:white;">0.2 Alegra & Infinity</h1>
 <div class="content"> <!--Header 1 collapse content-->
 <p class="no-read">In an algebra or calculus class, you might have found a particular set of numbers (maybe the set of numbers in the range of a function).</p> 
 <p class="no-read">You would represent this set as an interval: 
@@ -130,13 +124,14 @@ Investigate!
 Note: Throughout the text you will see Investigate! activities like this one. Answer the questions in these as best you can to give yourself a feel for what is coming next.</p>
 <p class="read" style="border-color:rgb(0, 115, 255)">
    <b>Question 01.</b> <br>
-The most popular mathematician in the world is throwing a party for all of his friends. As a way to kick things off, they decide that everyone should shake hands. Assuming all 10 people at the party each shake hands with every other person (but not themselves, obviously) exactly once, how many handshakes take place?</p></div>
+The most popular mathematician in the world is throwing a party for all of his friends. As a way to kick things off, they decide that everyone should shake hands. Assuming all 10 people at the party each shake hands with every other person (but not themselves, obviously) exactly once, how many handshakes take place?</p>
 <p class="read" style="border-color:rgb(27, 39, 214);">
 
     <b>Question 02.</b>
     <br>
 At the warm-up event for Oscar's All Star Hot Dog Eating Contest, Al ate one hot dog. Bob then showed him up by eating three hot dogs. Not to be outdone, Carl ate five. This continued with each contestant eating two more hot dogs than the previous contestant. How many hot dogs did Zeno (the 26th and final contestant) eat? How many hot dogs were eaten all together?
 </p>
+
 <h4 class="collapsible3">unformatted content</h3>
 <div class="content"> <!--Header 1 collapse content-->
 After excavating for weeks, you finally arrive at the burial chamber. The room is empty except for two large chests. On each is carved a message (strangely in English):
@@ -153,7 +148,8 @@ Back in the days of yore, five small towns decided they wanted to build roads di
 
 🔗Ultimately the best way to learn what discrete math is about is to do it. Let's get started! Before we can begin answering more complicated (and fun) problems, we must lay down some foundation. We start by reviewing mathematical statements, sets, and functions in the framework of discrete mathematics.
 </p>
-</div>
+</div></div>
+</div> <!--collapse close-->
 <script>
     var a = 0;
   
@@ -169,15 +165,101 @@ Back in the days of yore, five small towns decided they wanted to build roads di
         document.getElementById("lvl3").value = ++c;
     }
 </script>
-
+</ul>
+</h4>
 ;--help
 
+<h3 class="collapsible3">Web Weaver</h3>
+<div class="content"> <!--Header 1 collapse content-->
+            <li class="done"><span class="lvl-baby">00</span> Type paragraph "Hello World"</li>
+            <li class="done"><span class="lvl-easy">02</span> Create a span</li>
+    <li class="done"><span class="lvl-easy">02</span> Create list in html</li>
+    <h4 class="collapsible3">Lists</h3>
+        <div class="content">
+    <li class="done"><span class="lvl-easy">02</span> Create an unordered list in html</li>
+    <li class="done"><span class="lvl-easy">02</span> Create an ordered list in html</li>
+    <li class="done"><span class="lvl-easy">02</span> Create a nested list in html</li>
+    <li><span class="lvl">02</span> get from Django</li>
+    <li><span class="lvl">02</span> get list from SQLite with Django</li>
+    <li><span class="lvl">02</span> Sort by span color</li>
+    <li class="void"><span class="lvl-hard">02</span> Create Job Board</li>
+    <li class="void"><span class="lvl-hard">02</span> MongoDB Deployment</li>
 
+    <li class="lock"><span class="lvl-hard">02</span> Learn Node.js</li>
+    </div>
+    </div>
+<h3 class="collapsible3">Web Weaver</h3>
+<div class="content"> <!--Header 1 collapse content-->
+            <li class="done"><span class="lvl-baby">00</span> Type paragraph "Hello World"</li>
+            <li class="done"><span class="lvl-easy">02</span> Create a span</li>
+    <li class="done"><span class="lvl-easy">02</span> Create list in html</li>
+
+    <h4 class="collapsible3">Lists</h3>
+    <div class="content">
+    <li class="done"><span class="lvl-easy">02</span> Create an unordered list in html</li>
+    <li class="done"><span class="lvl-easy">02</span> Create an ordered list in html</li>
+    <li class="done"><span class="lvl-easy">02</span> Create a nested list in html</li>
+    </div>
+    <h4 class="collapsible3">Null</h3>
+        <div class="content">
+    <li><span class="lvl">02</span> get from Django</li>
+    <li><span class="lvl">02</span> get list from SQLite with Django</li>
+    <li><span class="lvl">02</span> Sort by span color</li>
+    <li class="void"><span class="lvl-hard">02</span> Create Job Board</li>
+    <li class="void"><span class="lvl-hard">02</span> MongoDB Deployment</li>
+
+    <li class="lock"><span class="lvl-hard">02</span> Learn Node.js</li>
    </li>
 </ul>
+</div>
+</h4>
+</h4>
+</div>
+<ul class="">
+    <h3 class="collapsible3">Homestead</h3>
+    <div class="content"> <!--Header 1 collapse content-->
+    <li class="late">Water the plant</li>
+    <li class="done"><span class="lvl-baby">02</span> Shiny Bones<span class="due-0">24 hours</span></li>
+    <li class="done"><span class="lvl-baby">00</span> Wash the Coco<span class="due-2">07 days</span></li>
+    <li class="done"><span class="lvl-baby">00</span> Wash the Dishes<span class="due-2">24 hours</span><button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="07" class = "skill"></input></button> </li>
+<div class="no">
+    <li class="no"><div class="dropdown"style="float:inline-end;">A
+        <button class="dropbtn">Status</button>
+        <div class="dropdown-content">
+          <a>Open    <img src="../../image/no-star1(sm).png" style="width:25;height:25;"></a>
+          <a>Due    <img src="../../image/red-star(sm).png" style="width:25;height:25;"></a>
+          <a>Done  <img src="../../image/gold-star(inf).gif" style="width:25;height:25;"> </a>
+          <li>Undone & Open</li>
+            <li class="next">Next do this</li>
+            <li class="pause">Paused for now</li>
+            <li class="late">Due & Late</li>
+            <li class="doing">Doing</li>
+            <li class="cal">Scheduled & Upcoming</li>
+            <li class="review">Review & Upgrade</li>
+            <li class="again">Do it again!</li>
+            <li class="rest">Rest & Recover</li>
+            <li class="done">Done iteration & completion</li>
+            <li class="wait">Wait until A (any) till B</li>
+            <li class="void">Null & Void</li>
+            <li class="lock">Locked until A (item)  is done</li>
+        </div></li>
+    </ul>
 
 </body>
 <p><button onclick="document.location='../to-do.html'">Home</button> 
+    <img src="../../image/char/skin-2.png" style="width:75;height:96;padding-top:20px;">
+
     </p>
     <script src="../to-do.js"></script> 
+    <style>
+        .content {
+          padding: 0 18px;
+          display: none;
+          overflow: hidden;
+          background-color: #f1f1f1;
+        }
+        </style>
+        
+
+    
     </html>
