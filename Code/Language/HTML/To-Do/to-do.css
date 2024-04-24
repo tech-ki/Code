@@ -6,7 +6,7 @@
           color: rgb(0, 0, 0);
           line-height: 1.4;
       }
-      strong,b {
+    strong,b {
           color: rgb(25, 121, 255);
           padding-right: 2;
           padding-left: 2;
@@ -223,7 +223,7 @@
         }
 
         .dropdown:hover .dropdown-content {
-          display:list-item;
+          display:flow-root;
 
         }
 
@@ -237,13 +237,15 @@
       
         }
 
+
         .dropdown-content a {
           color: black;
-          padding: 12px 16px;
+          padding: 10px 16px; /*adjust spacing of content*/
           text-decoration: none;
           display: block;
           border-radius: 14px;
-         
+          
+
         }
         .dropdown-content {
           display: none;
@@ -351,52 +353,52 @@ content: "o";
 list-style:none;
 
 }
-li.pause::before {
+.pause::before {
   content: "  " url("/Code/Language/HTML/image/brown-star\(sm\).png");
   padding-right:8px;
   }
-li.done::before {
+.done::before {
 content: "  " url("/Code/Language/HTML/image/gold-star(inf-sm).gif");
 padding-right:8px;
 }
 
-li.doing::before {
+a.doing::before,li.doing::before {
 content: " " url("/Code/Language/HTML/image/pink-star\(sm\).png");
 padding-right:8px;
 }
-li.void::before {
+.void::before {
   content: " " url("/Code/Language/HTML/image/no-star(sm).png");
   padding-right:8px;
   }
-  li.cal::before {
+  .cal::before {
     content: " " url("/Code/Language/HTML/image/blue-star(sm).png");
     }
-    li.lock::before {
+  .lock::before {
       content: " " url("/Code/Language/HTML/image/no-star(sm).png");
       padding-right:8px;
       }
-      li.late::before {
+      .late::before {
         content: " " url("/Code/Language/HTML/image/red-star(sm).png");
         padding-right:8px;
         }
-      li.wait::before {
+      .wait::before {
         content: " " url("/Code/Language/HTML/image/purple-star(sm).png");
         padding-right:8px;
         }
-        li.rest::before {
+        .rest::before {
           content: " " url("/Code/Language/HTML/image/green-star\(sm\).png");
           padding-right:8px;
           }
-          li.review::before {
+          .review::before {
             content: " " url("/Code/Language/HTML/image/blue-star\(sm\).png");
             padding-right:8px;
             }
-            li.again::before {
+          .again::before {
               content: " " url("/Code/Language/HTML/image/blue-star\(sm\).png");
               padding-right:8px;
               }
 
-li::before {
+a.open::before,li::before {
 content: " " url("/Code/Language/HTML/image/no-star1\(sm\).png");
 padding-right:8px;
 }
@@ -835,16 +837,28 @@ ul.inv li{
     color: #171414;
     font-weight: bold;
     border-radius: 8px;
-    padding: 2px 5px;
+    padding: 1px 5px;
     margin-inline-start: 10px;
     float: inline;
       }
+
+      span.lvl-area {
+        background-color: rgba(253, 250, 238, 0.845);
+        color: #171414;
+        font-weight: bold;
+        border-radius: 9px;
+        padding: 1px 5px;
+        margin-inline-start: 10px;
+        float:inline-end;
+        border-style:outset;
+          }
+
       span.lvl-hard {
         background-color: rgba(250, 64, 104, 0.845);
         color: #171414;
         font-weight: bold;
         border-radius: 8px;
-        padding: 2px 5px;
+        padding: 1px 5px;
         margin-inline-start: 10px;
         float: inline;
           }
@@ -853,7 +867,7 @@ ul.inv li{
             color: #f5f1f1;
             font-weight: bold;
             border-radius: 8px;
-            padding: 2px 5px;
+            padding: 1px 5px;
             float: inline;
             margin-inline-start: 10px;
             margin-right: 2px;
@@ -887,7 +901,7 @@ ul.inv li{
                         padding: 2px 5px;
                         float: inline;
                         margin-inline-start: 10px;
-                        margin-right: 72px;
+                        
                           }
               span.lvl-easy {
                 background-color: rgba(33, 243, 54, 0.845);

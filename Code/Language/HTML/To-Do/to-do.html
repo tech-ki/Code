@@ -3,13 +3,12 @@
     <head>
         <h1>To-Do</h1>
         <link rel="stylesheet" href="to-do.css">
-        <script src=".to-do.js"></script> 
     </head>
-        <body> Hello <strong>name</strong>. Welcome to <strong>skilled</strong>
+        <body> Hello <span id="nm" style="background-color:unset; color:rgb(25, 121, 255);font-weight:bold"></span>. Welcome to <strong>skilled</strong>
           <br>
         <body onload="startTime()">
         <strong><div id="min"></div></strong>   
-        <body><div id="nm">q</div></body>
+      <div id="lvl"></div>
 <h1 class="quest">Quests</h2>
 
   <button type="button" class="collapsible" style="background-color:rgb(176, 154, 158);""><h2>Inbox</h2></button>
@@ -311,9 +310,9 @@
     </div>
     <button type="button" class="collapsible2">Weekly</button>
  <div class="content">
-    <li class="open">Wash Coco</span>
+    <li class="late">Wash Coco</span>
       <li class="done">Timely Sheet</li>
-     <li class="open">Water Sensation</li>
+     <li class="done">Water Sensation</li>
      <li class="done">Homey Homestead</li>
      <li class="done">CodeaDo</span></li>
      <li class="again">Marvelous Ice Cave</li>
@@ -328,7 +327,7 @@
         <li class="undone">null</span></li>
         
           <label for="cars">Choose a car:</label>
-          <li class="open">Drop Down<select name="cars" id="cars"></li>
+          <li class="open">Drop Down<select name="cars" id="cars" class="drop"></li>
             <option value="open">Open</option>
             <option value="done">Done</option>
             <option value="again">Again</option>
@@ -357,16 +356,16 @@
     <p>Quests in-progress.<span class="badge0">09</span><span class="badge1">02</span><span class="badge2">09</span></p></span>
     <button type="button" class="collapsible2">Tutorial</button>
     <div class="content">
-       <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
+       <li class="late"><a href="./quests/restore/restore.html">Restore</a><span class="due-0">00 min</span></li>
 </div>
 
     <button type="button" class="collapsible2">Personhood</button>
      <div class="content">
       <h2>Outer Ring</h2>
         <li class="late"><a href="./quests/restore/restore.html">Restore</a></li>
-        <li class="late">Drink Water</li>
-        <li class="void">Poppin Bones</li>
-        <li class="late">Spa Day</li> 
+        <li class="late">Drink Water <span class="due-0">02 hours</span></li>
+        <li class="again">Poppin Bones <span class="due-1">04 days</span></li>
+        <li class="cal">Spa Day<span class="due-2">07 days</span></li> 
         <li class="wait">Moon'in</li>
         <h2>Inner Ring</h2>
         <li class="done">Sweet & Kind</li>
@@ -380,9 +379,9 @@
         <li class="void">Disconnecting</li>
         <h2>In Between</h2>
         <li class="done">Call In</li>
-         <li class="open">Sensational</li>
+         <li class="done">Sensational</li>
         <li class="doing">Trash Date</li>
-        <li class="late">Creative Outlet</li>
+        <li class="doing">Creative Outlet</li>
 </div>
 
 <button type="button" class="collapsible2" style="background-color:rgb(221, 25, 130);"">Lover</button>
@@ -391,8 +390,8 @@
     <li class="done">Date Night</li>
     <li class="done">Sweet Talks</li>
     <li class="next">Quality Timely</li>
-    <li class="next">Foodie</li>
-    <li class="next">Green Pastures</li>
+    <li class="done">Foodie</li>
+    <li class="done">Green Pastures</li>
     <li class="again">Sweet Stuff</li>
    </div> <!--End of Quest Area-->
 
@@ -558,8 +557,8 @@
           //Show how many listed items there are.
           const myCollection = document.getElementsByClassName("doing");
           document.getElementById("items").innerHTML = "I am doing " + myCollection.length + " things.";
+          document.getElementById("nm").innerHTML = "Ki";
           </script>
-         <!-- <img src="../../HTML/image/smiles.png"></img>-->
 </body>
 <script src="to-do.js"></script> 
 </html>

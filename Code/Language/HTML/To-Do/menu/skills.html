@@ -3,17 +3,18 @@
         
         <h1>My Skills</h1>
         <link rel="stylesheet" href="../to-do.css">
+      
     </head> 
         <body>
-            Hello
-            <strong>name</strong>. Welcome to <strong>skilled</strong>
+            <body> Hello <span id="nm" style="background-color:unset; color:rgb(25, 121, 255);font-weight:bold"></span>. Welcome to <strong>skilled</strong>
+                <br>
         <p>Here are my character's skills:</p>
 
-        
-            <button onclick="document.location='../to-do.html'"style=float:right;>Save</button> 
+        <div style="float:inline-end">
+            <button onclick="document.location='../to-do.html'";>Save</button> </div>
     <ul class="no">
         
-    <h3 class="collapsible3">Web Weaver</h3>
+    <h3 class="collapsible3">Level Up</h3>
     <div class="content"> <!--Header 1 collapse content-->
                 <li class="doing"><span class="lvl">02</span> Web Weaver 
                     <button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="0" class = "skill"></input></button> 
@@ -27,7 +28,7 @@
                 </li>
 
 
-                <li class="done"><span class="lvl-done">02</span> Level Up 
+                <li class="done"><span class="lvl">02</span> Level Up 
                     <button onclick="skillUp2()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl2" value="0" style="width:39px;font-family:Nunito;font-size:large;float:right; border:0px;background-color:rgb(245, 217, 243);border-radius:9px;"></input></button> 
                 </li>
                     
@@ -47,9 +48,9 @@
 <div class="content"> <!--Header 1 collapse content-->
 <li class="done">Corporate Call</li>
 
-<li class="upgrade"style="right:120px;">Lend me a License</li>
+<li class="doing"style="right:120px;">Lend me a License</li>
     <ul>
-        <li class="pause">Scavenger Hunt</li>
+        <li class="void">Scavenger Hunt</li>
     </ul> </div>
 </ul>
 
@@ -169,11 +170,15 @@ Back in the days of yore, five small towns decided they wanted to build roads di
 </h4>
 ;--help
 
-<h3 class="collapsible3">Web Weaver</h3>
+<h3 class="collapsible3">Web Weaver (un-categorized) </h3>
 <div class="content"> <!--Header 1 collapse content-->
             <li class="done"><span class="lvl-baby">00</span> Type paragraph "Hello World"</li>
             <li class="done"><span class="lvl-easy">02</span> Create a span</li>
     <li class="done"><span class="lvl-easy">02</span> Create list in html</li>
+    <li class="done"><span class="lvl">02</span> Create downdown</li>
+    <li class="open"><span class="lvl">02</span> Create dropdown funtion to change star</li>
+    <li class="open"><span class="lvl">02</span> Create add to list</li>
+    <li class="open"><span class="lvl">02</span> Add dynamic level colors based on date</li>
     <h4 class="collapsible3">Lists</h3>
         <div class="content">
     <li class="done"><span class="lvl-easy">02</span> Create an unordered list in html</li>
@@ -184,11 +189,10 @@ Back in the days of yore, five small towns decided they wanted to build roads di
     <li><span class="lvl">02</span> Sort by span color</li>
     <li class="void"><span class="lvl-hard">02</span> Create Job Board</li>
     <li class="void"><span class="lvl-hard">02</span> MongoDB Deployment</li>
-
     <li class="lock"><span class="lvl-hard">02</span> Learn Node.js</li>
     </div>
     </div>
-<h3 class="collapsible3">Web Weaver</h3>
+<h3 class="collapsible3">Web Weaver (categorized) <span class="lvl-area">07</span></h3>
 <div class="content"> <!--Header 1 collapse content-->
             <li class="done"><span class="lvl-baby">00</span> Type paragraph "Hello World"</li>
             <li class="done"><span class="lvl-easy">02</span> Create a span</li>
@@ -216,7 +220,7 @@ Back in the days of yore, five small towns decided they wanted to build roads di
 </h4>
 </div>
 <ul class="">
-    <h3 class="collapsible3">Homestead</h3>
+    <h3 class="collapsible3">Homestead <span class="lvl-area">17</span></h3>
     <div class="content"> <!--Header 1 collapse content-->
     <li class="late">Water the plant</li>
     <li class="done"><span class="lvl-baby">02</span> Shiny Bones<span class="due-0">24 hours</span></li>
@@ -226,31 +230,27 @@ Back in the days of yore, five small towns decided they wanted to build roads di
     <li class="no"><div class="dropdown"style="float:inline-end;">A
         <button class="dropbtn">Status</button>
         <div class="dropdown-content">
-          <a>Open    <img src="../../image/no-star1(sm).png" style="width:25;height:25;"></a>
-          <a>Due    <img src="../../image/red-star(sm).png" style="width:25;height:25;"></a>
-          <a>Done  <img src="../../image/gold-star(inf).gif" style="width:25;height:25;"> </a>
-          <li>Undone & Open</li>
-            <li class="next">Next do this</li>
-            <li class="pause">Paused for now</li>
-            <li class="late">Due & Late</li>
-            <li class="doing">Doing</li>
-            <li class="cal">Scheduled & Upcoming</li>
-            <li class="review">Review & Upgrade</li>
-            <li class="again">Do it again!</li>
-            <li class="rest">Rest & Recover</li>
-            <li class="done">Done iteration & completion</li>
-            <li class="wait">Wait until A (any) till B</li>
-            <li class="void">Null & Void</li>
-            <li class="lock">Locked until A (item)  is done</li>
+          <a class="open">Open</a>
+            <a class="pause">Paused</a>
+            <a class="late">Due & Late</a>
+            <a class="doing">Doing</a>
+            <a class="cal">Scheduled</a>
+            <a class="review">Review</a>
+            <a class="again">Again!</a>
+            <a class="rest">Rest</a>
+            <a class="done">Done</a>
+            <a class="wait">Wait </a>
+            <a class="void">Null & Void</a>
+            <a class="lock">Locked</a>
         </div></li>
     </ul>
 
 </body>
 <p><button onclick="document.location='../to-do.html'">Home</button> 
-    <img src="../../image/char/skin-2.png" style="width:75;height:96;padding-top:20px;">
 
     </p>
     <script src="../to-do.js"></script> 
+    <script>document.getElementById("nm").innerHTML = "Ki";</script>
     <style>
         .content {
           padding: 0 18px;

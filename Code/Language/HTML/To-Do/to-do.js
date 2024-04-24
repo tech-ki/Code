@@ -78,11 +78,16 @@ for (i = 0; i < coll2.length; i++) {
 
     document.getElementById('week').innerHTML = week;
 
-
-    
   }
-  var name1 = Ki;
-  document.getElementById('nm').innerHTML = name1;
+
+function name() {
+ var name1 = Ki;
+  document.getElementById('nm').innerHTML = name1 + "is the name";
+}
+ 
+
+  var level = 1;
+   document.getElementById('lvl').innerHTML = "You are currently lvl " + level;
 
   function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10 for seconds
@@ -98,3 +103,9 @@ function someOtherFunction() {
   document.getElementById("p1").innerHTML = "New text!";
 }
 
+const selectElement = document.querySelector(".ice-cream");
+const result = document.querySelector(".result");
+
+selectElement.addEventListener("change", (event) => {
+  result.textContent = `You like ${event.target.value}`;
+});
