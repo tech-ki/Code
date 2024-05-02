@@ -1064,10 +1064,105 @@ p.flash {
   font-size: 28px;
   font-weight: bold;
 }
+#nm { /*# to change element , . to change class**/
+  color: #2159f4; 
+}
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+/*Character Animation Sprites*/
+.char-idle {
+  width: 65px;
+  height: 100px;
+  background: url('../image/char/skin-1-all.png') left center;
+  animation: play 2s steps(9) infinite;
+}
+.char-move-R {
+  width: 58px;
+  height: 100px;
+  background: url('../image/char/all-move-R.png') left center;
+  animation: play-move-R 2s steps(9) infinite;
+}
+.char-move-L {
+  width: 58px;
+  height: 100px;
+  background: url('../image/char/all-move-L.png') left center;
+  animation: play-move-L 1.5s steps(9) infinite;
+}
+@keyframes play {
+  100% { 
+    background-position: -2303px; 
+  }
+}
+@keyframes play-move-R {
+  100% { 
+    background-position: 2816px; 
+  }
+}
+@keyframes play-move-L {
+  100% { 
+    background-position: -2799.4px; 
+  }
+}
+
+/*Change the color of button by status*/
+button.w:hover, button.w:active {
+  background: red;
+}
+button.a, button.a:active {
+  background: rgb(244, 218, 24);
+  color:black;
+}
+button.d:hover, button.d:active {
+  background: rgb(5, 214, 89);
+  color:black;
+}
+button.d {
+  background: rgb(18, 211, 95);
+  color:black;
+}
+button.c, button.c:active {
+  background: rgb(198, 196, 196);
+}
+button.h, button.h:active {
+  background: rgb(227, 101, 122);
+}
+
+/*Change the tooltip color*/
+span.skill {
+  display:none;
+  position: absolute;
+  position: fixed;
+  background-color: #f9e12b;
+  float:inline-end;
+}
+button.d span.skill {
+  display:none;
+  position: absolute;
+  position: fixed;
+  background-color: #6bfdb9;
+  float:inline-end;
+}
+button.c span.skill {
+  display:none;
+  position: absolute;
+  position: fixed;
+  background-color: #dbdbdb;
+  float:inline-end;
+}
+button.h span.skill {
+  display:none;
+  position: absolute;
+  position: fixed;
+  background-color: #f1c1c1;
+  float:inline-end;
+}
+
+button:hover  span.skill {
+display:block;
 }

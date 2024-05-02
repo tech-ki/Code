@@ -84,7 +84,8 @@ function name() {
  var name1 = Ki;
   document.getElementById('nm').innerHTML = name1 + "is the name";
 }
- 
+
+document.getElementById("nm").innerHTML = "Ki";
 
   var level = 1;
    document.getElementById('lvl').innerHTML = "You are currently lvl " + level;
@@ -137,4 +138,31 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+}
+
+//Character movement LR
+document.onkeydown = function(e) {
+  switch (e.key.event) {
+      case 37:
+          alert('left'); //left
+          break;
+      case 38:
+          alert('up'); //up
+          break;
+      case 39:
+          alert('right'); //right
+          break;
+      case 40:
+          alert('down'); //down
+          break;
+  }
+};
+
+
+
+
+/*Play*/
+function playAudio() {
+  var x = document.getElementById("myLevelUpAudio");
+  x.play();
 }
