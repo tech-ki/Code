@@ -4,9 +4,9 @@
         <h1>To-Do</h1>
         <link rel="stylesheet" href="to-do.css">
     </head>
-        <body> Hello <span id="nm" style="background-color:unset; color:rgb(25, 121, 255);font-weight:bold"></span>. Welcome to <strong>skilled</strong>
+        <body> Hello <span id="nm" style="background-color:unset; color:rgb(25, 121, 255);font-weight:bold"></span>. Welcome to <strong>skilled.</strong>
           <br>
-        <body onload="startTime()">
+        <body onload="startTime(),word()">
         <strong><div id="min"></div></strong>   
     
 <h1 class="quest">Quests</h2>
@@ -326,16 +326,6 @@
         <li class="undone">Underwater Caverns (Soak)</li>
         <li class="undone">null</span></li>
         
-          <label for="cars">Choose a car:</label>
-          <li class="open">Drop Down<select name="cars" id="cars" class="drop"></li>
-            <option value="open">Open</option>
-            <option value="done">Done</option>
-            <option value="again">Again</option>
-            <option value="pause">Pause</option>
-            <option value="doing">In Progress</option>
-            <option value="void">Void</option>
-            <option value="cal">Scheduled</option>
-          </select>
        </div> <!--End of Quest Area-->
 
     <button type="button" class="collapsible2"
@@ -464,8 +454,7 @@
 </div>
    </div>
 </div>
-</body>
-</html>
+
 <style>
 .content {
   padding: 0 18px;
@@ -473,6 +462,8 @@
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
+
 </style>
 
 <!--
@@ -552,14 +543,92 @@
         <button class="01" onclick="document.location='./menu/flash.html'">Flash</button>  
         <button class="01" onclick="document.location='./menu/world.html'">World Map</button>  
         <p id="items">Hi</p>
+        <div id="t1">Bye</div>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" onclick="mod()">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="description">This is a Model, change your progress status here.
+<input type="button" onclick="getOption()" value="Update!"></p>
+
+    <label for="cars">Choose a car:</label>
+         
+    <li class="open">Hello World<select name="car" id="myCar" class="drop"></li>
+      <option value="open">Open</option>
+      <option value="done">Done</option>
+      <option value="again">Again</option>
+      <option value="pause">Pause</option>
+      <option value="doing">In Progress</option>
+      <option value="void">Void</option>
+      <option value="cal">Scheduled</option>
+    </select> 
+    <span id="out"></span> <!--Text property-->
+  
+    <div id ="try0">
+   <li class id='out2'>Enter</span><!--Value property--></li>
+<div class="row">
+  <input type="text" id="input-box" class ="in" placeholder="Enter your task">
+  <button onclick="">Add</button>
+</div>
+
+<ul id="list-container">
+ <li>Hello</li>
+ <li>There</li>
+ <li>Task 3</li>
+</ul>
+</div>
+    <!--<div class="dropdown"style="float:flex;">
+        <button class="dropbtn">Status</button>
+        <div class="dropdown-content">
+          <a class="open">Open</a>
+            <a class="pause">Paused</a>
+            <a class="late">Due & Late</a>
+            <a class="doing">Doing</a>
+            <a class="cal">Scheduled</a>
+            <a class="review">Review</a>
+            <a class="again">Again!</a>
+            <a class="rest">Rest</a>
+            <a class="done">Done</a>
+            <a class="wait">Wait </a>
+            <a class="void">Null & Void</a>
+            <a class="lock">Locked</a>
+        </div> -->
+  </div>
+</div>
+</div>
+       
 
 
         <script>
           //Show how many listed items there are.
           const myCollection = document.getElementsByClassName("doing");
           document.getElementById("items").innerHTML = "I am doing " + myCollection.length + " things.";
-          document.getElementById("nm").innerHTML = "Ki";
+          document.getElementById("nm").innerHTML = "Key";
+
+
+          function getOption() {
+            var obj = document.getElementById("myCar");
+            document.getElementById("out").innerHTML = 
+            obj.options[obj.selectedIndex].text;
+
+            document.getElementById("out2").innerHTML = 
+            obj.options[obj.selectedIndex].value
+          }
+/*Add list item*/
+const para = document.createElement("li");
+const node = document.createTextNode("3 This is new.");
+para.appendChild(node);
+const element = document.getElementById("try0");
+element.appendChild(para);
           </script>
+
+
+          <button>Add</button>
 </body>
-<script src="to-do.js"></script> 
+<script src="./to-do.js"></script> 
 </html>
