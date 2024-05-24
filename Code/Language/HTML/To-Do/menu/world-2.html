@@ -1,0 +1,199 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <h1>To-Do</h1>
+        <link rel="stylesheet" href="../to-do.css">
+    </head>
+        <body> Hello <strong><span id="nm"></span></strong>. Welcome to <strong>skilled</strong>
+          <br>
+        <body onload="startTime()">
+        <strong><div id="min"></div></strong>   
+        <body></body>
+<h1 class="quest">World Map (Dynamic)</h2>
+<div style="background-color: rgb(233, 246, 250);">
+<div id="mynetwork"></div>
+
+   
+
+<div id="container-world"></div>
+
+<!--
+  In the following URLs you may want to replace @latest by @version
+  to prevent unexpected potentionally breaking updates.
+  For example vis-data@1.0.0 instead of vis-data@latest.
+-->
+<script type="text/javascript" src="https://unpkg.com/vis-data@latest/peer/umd/vis-data.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/vis-network@latest/peer/umd/vis-network.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/vis-network/styles/vis-network.min.css" />
+<!-- You may include other packages like Vis Timeline or Vis Graph3D here. -->
+
+<div id="mynetwork"></div>
+<script type="text/javascript">
+  // create an array with nodes
+  var nodes = new vis.DataSet([
+    { id: 'on', label: "Start", title: "Start here",group:'g3'},
+    { id: 2, label: "Web", title: "Web Development" ,group:'g4'},
+    { id: 'me', label: "Self", title: "Personhood",group:'g2'},
+    { id: 4, label: "Front", title: "Front-End Web Development" },
+    { id: 5, label: "Back", title: "Back-End Web Development"  },
+    { id: 'SUB', label: "Subject", title: "Subjects to learn about" },
+    { id: 7, label: "Scholar", title: "Numbers" },
+    { id: 8, label: "Scholar", title: "Numbers" },
+    { id: 9, label: "Scholar", title: "Numbers",group:'g1' },
+    { id: 12843, label: "Scholar", title: "12",group:'g2' },
+    { id: 10, label: "DatS", title: "Data Science" },
+    { id: 11, label: "Stat", title: "Statistics" },
+    { id: 'MH', label: "MATH", title: "Mathematics" },
+    { id: 13, label: "Py", title: "Python" },
+    { id: 14, label: "Dat", title: "Databases" },
+    { id: 15, label: "Scholar", title: "Numbers" },
+    {id: 'code', label: "Code", title: "Coding"},
+    {id: 'CS', label: "CompSci ", title: "Computer Science - Study of Computing"},
+    {id: 'ML', label: "ML",title: "Machine Learning"},
+    {id: 'A', label: "Theory", title: "Theory - to build understanding (Why?)",group:'g2'},
+    {id: 'act', label: "Action", title: "Action - to build the reality (Do.)",group:'g2'},
+    {id: 'in', label: "Inbox",title: "Current thoughts"},
+    {id: 't1', label: "Rein",title: "Reinforcement Schedules"},
+    {id: 'cyber', label: "CyberS",title: "Cyber Security"},
+    {id: 't3', label: "Rein",title: "Emotions"},
+    {id: 'cl', label: "Cloud",title: "Cloud"},
+    {id: 'alg', label: "ALG",title: "Algorithms"},
+    {id: 'Tech', label: "TECH",title: "Technology"},
+    {id: 'Bus', label: "BUS",title: "Business"},
+    {id: 'Nat', label: "NATURE",title: "Science"},
+    {id: 'Form', label: "FORM",title: "Formulas & Symbols"},
+    {id: 'SoSci', label: "SOCIAL",title: "Societies & People"},
+    {id: 'ASci', label: "APPLY",title: "Applied"},
+    {id: 'Sci', label: "SCIENCE",title: "Applied"},
+    {id: 'His', label: "History",title: "Humanities - to study humanity"},
+    {id: 'Lang', label: "Lang",title: "Humanities - to study humanity"},
+    {id: 'Law', label: "Law",title: "Humanities - to study humanity"},
+    {id: 'Lit', label: "Liter",title: "Humanities - to study humanity"},
+    {id: 'Philo', label: "Philo",title: "Humanities - to study humanity"},
+    {id: 'Rel', label: "Religion",title: "Humanities - to study humanity"},
+    {id: 'PArt', label: "Perform",title: "Humanities - to study humanity"},
+    {id: 'VArt', label: "VisualArt",title: "Humanities - to study humanity"},
+    {id: 'Hue', label: "HUMAN",title: "Humanities - to study humanity"},
+    {id: 'Mus', label: "Music",title: "ART"},
+    {id: 'Film', label: "Film",title: "ART"},
+    {id: 'Dan', label: "Dance",title: "ART"},
+    {id: 'The', label: "Theatre",title: "ART"},
+    {id: 'Art', label: "ART",title: "ART"},
+    {id: 'Draw', label: "Draw",title: "ART"},
+    {id: 'Paint', label: "Paint",title: "ART"},
+    {id: 'Sculpt', label: "Sculpt",title: "ART"},
+  ]);
+
+  // create an array with edges
+  var edges = new vis.DataSet([
+    { from: 'on', to: 'me' },
+    { from: 2, to: 4 },
+    { from: 2, to: 5 },
+    { from: 'me', to: 'me' },
+    {from: 'CS', to: 11},
+    {from: 'Form', to: 'MH'},
+    {from: 'CS', to: 'code'},
+    {from: 'code', to: 2},
+    {from: 11, to: 10},
+    {from: 'MH', to: 'CS'},
+    {from: 'code', to: 13},
+    {from: 13, to: 10},
+    {from: 'CS', to: 14},
+    {from: 14, to: 10},
+    {from: 'CS', to: 'ML'},
+    {from: 'ML', to: 10},
+    {from:'A', to: 'act'},
+    {from: 'on', to: 'A'},
+    {from: 'Tech', to: 'CS'},
+    {from: 'on', to: 'act'},
+    {from: 'A', to: 'in'},
+    {from: 'in', to: 't1'},
+    {from: 'CS', to: 'cyber'},
+    {from: 'CS', to: 'alg'},
+    {from: 'CS', to: 'cl'},
+    {from: 'MH', to: 'Tech'},
+    {from: 'ASci', to: 'act'},
+    {from: 'Sci', to: 'Nat'},
+    {from: 'Sci', to: 'Form'},
+    {from: 'Sci', to: 'SoSci'},
+    {from: 'Sci', to: 'ASci'},
+    {from: 'Sci', to: 'Hue'},
+    {from: 'A', to: 'Sci'},
+     {from: 'ASci', to: 'Bus'},
+     {from: 'Hue', to: 'Law'},
+     {from: 'Hue', to: 'Lang'},
+     {from: 'Hue', to: 'Lit'},
+     {from: 'Hue', to: 'Philo'},
+     {from: 'Hue', to: 'Rel'},
+     {from: 'Hue', to: 'His'},
+     {from: 'Hue', to: 'Art'},
+     {from: 'Art', to: 'PArt'},
+     {from: 'Art', to: 'VArt'},
+     {from: 'PArt', to: 'The'},
+     {from: 'PArt', to: 'Dan'},
+     {from: 'PArt', to: 'Mus'},
+     {from: 'PArt', to: 'Film'},
+     {from: 'VArt', to: 'Draw'},
+     {from: 'VArt', to: 'Paint'},
+     {from: 'VArt', to: 'Sculpt'},
+
+  ]);
+
+  // create a network
+  var container = document.getElementById("mynetwork");
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {
+    groups: {
+        g1: {color:{background:'rgb(46, 226, 130)'}, borderWidth:2},
+        g2: {color:{background:'rgb(238, 203, 27)'},
+    }, //g2 gold
+    g3: {color:{background:'red'},
+        
+
+}, //g3 red
+    
+    g4: {color:{background:'rgb(203, 27, 238)'},
+}, //g4 purple
+    },//group style
+    nodes:{
+        shape:'circle',
+
+        color: {
+            background:'rgb(98, 197, 255)',
+            highlight: {
+                border: '#2B7CE9',
+                background: 'rgb(238, 231, 27)' //selected color
+              },
+        },
+    
+    font: {
+        color: '#343434',
+        size: 14, // px
+        face: 'Nunito',
+        strokeWidth: 0.5, // px
+        strokeColor: 'rgb(25, 69, 105)', 
+        align: 'center',
+        multi: false,
+        vadjust: 0,
+    }
+},
+edges:{
+width:2,
+color:'rgb(56, 123, 217)' //color of lines
+}
+  };
+
+
+  var network = new vis.Network(container, data, options);
+  
+</script>
+
+<span style="color:rgb(203, 27, 238)">Hello</span>
+<span style="color:rgb(247, 228, 169)"></span>
+
+</body>
+<script src="../to-do.js"></script>
+</html>

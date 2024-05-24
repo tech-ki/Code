@@ -17,8 +17,29 @@
             Your browser does not support the audio element.
           </audio>
 
-
+          <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'London')">Ordered</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">By Date</button>
+          </div>
+          
+          <!-- Tab content -->
+          <div id="London" class="tabcontent">
         <div style="float:inline-end">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+          </div>
+          
+          <div id="Paris" class="tabcontent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p>
+          </div>
+          
+          <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+          </div> <!--Testing tabs-->
+
             <button onclick="document.location='../to-do.html'";>Save</button> </div>
     <ul class="no">
         
@@ -56,7 +77,7 @@
 <div class="content"> <!--Header 1 collapse content-->
 <li class="done">Corporate Call</li>
 
-<li class="doing"style="right:120px;">Lend me a License</li>
+<li class="doing"style="right:120px;">Lend me a License <span class="due-1">due 03 days</span></li>
     <ul>
         <li class="void">Scavenger Hunt</li>
     </ul> </div>
@@ -65,9 +86,9 @@
 <ul class="doing">
 <h3 class="collapsible3">Homestead</h3>
 <div class="content"> <!--Header 1 collapse content-->
-<li class="due">Roger's Tea</li>
-<li class="done">Water the Coco</li>
-<li class="done"><span class="lvl-baby">00</span> Water the Coco</li>
+<li class="done">Roger's Tea <span class="due-2">due 01 days</span></li>
+<li class="done">Repair Dishes <span class="due-1">due today</span></li>
+<li class="late"><span class="lvl-baby">00</span> Water the Coco<span class="due-0">due -05 days</span></li>
 </ul>
 </div>
 
@@ -179,6 +200,7 @@ Back in the days of yore, five small towns decided they wanted to build roads di
 ;--help
 
 <h3 class="collapsible3">Web Weaver (un-categorized) </h3>
+<!--Progression system, add levels of tasks as you go, baby-easy-normal-hard-->
 <div class="content"> <!--Header 1 collapse content-->
             <li class="done"><span class="lvl-baby">00</span> Type paragraph "Hello World"</li>
             <li class="done"><span class="lvl-easy">02</span> Create a span</li>
@@ -189,8 +211,9 @@ Back in the days of yore, five small towns decided they wanted to build roads di
     <li class="open"><span class="lvl">02</span> Add dynamic level colors based on date</li>
     <li class="open"><span class="lvl-off">--</span> Add list here when clicking plus button</li>
     <li class="open"><span class="lvl-off">--</span> Change lvl by clicking lvl</li>
-    <li class="open"><span class="lvl-off">--</span> Change star by clicking star</li>
-    <li class="doing"><span class="lvl-off">--</span> Change star by dropdown</li>
+    <li class="done"><span class="lvl">02</span> Change star by clicking button</li>
+    <li class="open"><span class="lvl">03</span> Change star by clicking star</li>
+    <li class="doing"><span class="lvl">03</span> Change star by dropdown</li>
 
 
 
@@ -237,10 +260,10 @@ Back in the days of yore, five small towns decided they wanted to build roads di
 <ul class="">
     <h3 class="collapsible3">Homestead <span class="lvl-area">17</span></h3>
     <div class="content"> <!--Header 1 collapse content-->
-    <li class="late">Water the plant</li>
-    <li class="done"><span class="lvl-baby">02</span> Shiny Bones<span class="due-0">24 hours</span></li>
-    <li class="done"><span class="lvl-baby">00</span> Wash the Coco<span class="due-2">07 days</span></li>
-    <li class="done"><span class="lvl-baby">00</span> Wash the Dishes<span class="due-2">24 hours</span><button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="07" class = "skill"></input></button> </li>
+    <li class="late">Water the plant<span class="due-0">due -32 days</span></li>
+    <li class="done"><span class="lvl-baby">02</span> Shiny Bones<span class="due-1">due 24 hours</span></li>
+    <li class="done"><span class="lvl-baby">00</span> Check Mail<span class="due-2">due 07 days</span></li>
+    <li class="done"><span class="lvl-baby">00</span> Wash the Dishes<span class="due-2">due 24 hours</span><button onclick="skillUp()" style="float:right;background-color:rgb(225, 204, 222);bottom:12px;position:relative;"><img src="../../image/level-up/F13A.png" style="width:25;height:25;"><input id="lvl" value="07" class = "skill"></input></button> </li>
 <div class="no">
     <li class="no"><div class="dropdown"style="float:inline-end;">A
         <button class="dropbtn">Status</button>

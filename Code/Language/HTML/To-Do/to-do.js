@@ -212,5 +212,59 @@ In 2003 there was a noticeable shift in how people and businesses were using the
 `;
 let sentances = message.split(/[.!?]/);
 document.getElementById("t1").innerHTML = "NO";
+//tabs
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
 
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+//Change star status
+function myChange() {
+    const element = document.getElementById("change");
+    if (element.className == "open") {
+      element.className = "doing";
+    } else {
+      element.className = "open";
+    }
+  }
+  //1. open-done, switch statement, 
+
+  //progress bar
+  var i = 0;
+function move() {
+  if (i == 0) {
+    i = 1; //start
+    var elem = document.getElementById("myBar");
+    var width = 0;
+    var bmax = 100;
+    var wmax = bmax * 0.01;
+    var id = setInterval(frame,mm); //num by count
+    function frame() {
+      if (width >= bmax) { //max 60 seconds
+        clearInterval(id);
+        i = 0; //stop
+      } else {
+        width++;
+        elem.style.width = width / wmax +"%" ; //up by
+        document.getElementById("demo-exp").innerHTML = width * 1  + ' seconds'; //show exp
+      }
+    }
+  }
+}
 

@@ -7,3 +7,9 @@ In 2003 there was a noticeable shift in how people and businesses were using the
 let sentances = message.split(/[.!?]/);
 console.log(sentances);
 document.getElementById("t1").innerHTML = sentances + "/n";
+
+function myFunction() { //01 create function
+    const list = document.getElementById("myDIV").classList;
+    list.add("myStyle");
+  }
+  
