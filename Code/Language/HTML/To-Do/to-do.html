@@ -311,10 +311,47 @@
      <li class="done"><span class="lvl-rep">x 40 000</span>Wash Dishes</li>
      <li class="done"><span class="lvl-rep">x 40 000</span>Walk Coco</li>
      <li class="late">Water Bubbles</li>
-     <li class="late"><span class="lvl-rep">x 40 000</span>Shiny Skeleton</li>
-     <li class="late">Refine Skeleton</li>
-     <li class="late">Listerine</li>
-     <li class="late">Move it</li>
+     <li class="done">Move it <span class="due-1">01 day</span><span class="due-1">05 min</span></li>
+     <li  class="collapsible3 doing">Bathroom</li>
+       <div>
+        <li  class="collapsible3 done">Start</li>
+   <ol>
+       <li id="step">Floss</li>
+       <li id="step">Brush Teeth</li>
+       <li id="step">Mouth Wash</li>
+       <li id="step">Wash Face</li>
+       <li id="step">Lotion Face</li>
+       </ol>
+       <li  class="collapsible3 doing">Showering</li>
+       <ol>
+        <li class="done">Shave?</li>
+        <li  class="collapsible3 late">Wash Hair</li>
+         <ol>
+       <li id="step">Wash</li>
+       <li id="step">Condition</li>
+       <li id="step">Rinse</li>
+        </ol>
+       <li id="step">Shower</li>
+       <li id="step">Clip Nails</li>
+       <li id="step">Lotion Body</li>
+       <li id="step">Get Dressed</li>
+       <li id="step">Oil Sheen Hair</li>
+       <li id="step">Clean Ears <span class="due-1">02 weeks</span></li>
+       <li>Clean Tub <span class="due-1">03 days</span></li>
+       </ol>
+     </ol>
+    </div> <!--End Bathroom-->
+    <li  class="collapsible3 late">Human</li>
+         <ol>
+       <li>Chapstick</li>
+       <li>Drink Water</li>
+        </ol>
+        <li  class="collapsible3 late">Kitchen</li>
+         <ol>
+       <li id="step">Cup of Tea</li>
+       <li id="step">-</li>
+       <li id="step">Rinse</li>
+        </ol>
     </div>
     <button type="button" class="collapsible2">Weekly</button>
  <div class="content">
@@ -330,9 +367,9 @@
 
     <button type="button" class="collapsible2">Monthly</button>
     <div class="content">
-       <li class="done">Magic Mirror</li>
-        <li class="undone">Underwater Caverns (Soak)</li>
-        <li class="undone">null</li>
+       <li class="open">Reflect & Update</li>
+        <li class="late">Soak</li>
+        <li class="doing">Rent Due</li>
         
        </div> <!--End of Quest Area-->
 
@@ -549,7 +586,7 @@
         <button class="01" onclick="document.location='./menu/time.html'">Time</button>    
         <button class="01" onclick="document.location='./menu/act.html'">Act Log</button>
         <button class="01" onclick="document.location='./menu/flash.html'">Flash</button>  
-        <button class="01" onclick="document.location='./menu/world.html'">World Map</button>  
+        <button class="01" onclick="document.location='./menu/world-2.html'">World Map</button>  
         <p id="items">Hi</p>
         <div id="t1">Bye</div>
 <!-- Trigger/Open The Modal -->
@@ -629,12 +666,32 @@
 <li id="change" class="done">Change from open to done</li>
 <li id="change" class="done">Change from open to in progress</li>
 <li id="change" class="open">Click to change status</li>
-<li id="change" class="doing">Update gantt char for tracking time</li>
 <li id="change" class="done">Add sub tasks with button</li>
-<li id="change" class="void">Project</li>
-<li id="change" class="void">Task</li>
-<li id="change" class="void">Steps</li>
+<li id="change" class="done">Project</li>
+<li id="change" class="done">Task</li>
+<li id="change" class="collapsible3">Task with Steps</li>
 
+<ol>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="doing">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step" class="void">Steps</li>
+  <li id="step">Steps</li>
+  <ol>
+    <li id="step" class="void">Steps</li>
+    <li id="step" class="doing">Steps</li>
+    </ol>
+</ol>
  <!--Add Project-->
  <button type="button" class="collapsible2">Create pixel game</button>
  <!--Add tasks in project-->
@@ -654,12 +711,22 @@
  <button type="button" class="collapsible2">Build To Do App</button>
  <!--Add tasks in project-->
  <div class="content">
-  <li id="change" class="open">Upgrade inventory system</li>
+  <li id="change" class="collapsible3 doing">Update gantt chart for tracking time</li>
+<ol>
+  <li>Add task</li>
+  <li id="step" class="doing">Go to Chart extension</li>
+</ol>
+  <li id="change" class="collapsible3 void">Upgrade inventory system</li>
+  <ol>
+    <p>Add steps & tasks</p>
+    <li>Task</li>
+    <li id="step">Step</li>
+  </ol>
   <li id="change" class="open">Add quick add task</li>
   <li id="change" class="open">Add quick project</li>
   <li id="change" class="lock">Add drag and drop to sort</li>
   <li id="change" class="lock">Add pre requirements to unlock tasks</li>
-  <button ondblclick="myChange()"> </button><li id="change" class="open">Add notes to task</li> 
+<li id="change" class="open">Add notes to task</li> 
 </div><!--Close project-->
 <button onclick="myChange()">Change</button> <!--02 link to event-->
 </div> 

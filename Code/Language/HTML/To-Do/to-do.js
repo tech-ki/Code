@@ -245,10 +245,10 @@ for (const button of buttons) {
 function myChange() {
     var element = document.getElementById("change");
     if (element.className == "open") {
-      element.className = "doing";
+      element.className = "done";
     } else {
       element.className = "open";
-    }
+    } 
   }
   //1. open-done, switch statement, 
 
