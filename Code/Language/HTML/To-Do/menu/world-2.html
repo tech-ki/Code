@@ -82,11 +82,16 @@
     {id: 'Draw', label: "Draw",title: "ART"},
     {id: 'Paint', label: "Paint",title: "ART"},
     {id: 'Sculpt', label: "Sculpt",title: "ART"},
+    {id: 'Person', label: "Person",title: "ART"},
+    {id: 'Other', label: "Other",title: "ART"},
+
   ]);
 
   // create an array with edges
   var edges = new vis.DataSet([
-    { from: 'on', to: 'me' },
+    { from: 'on', to: 'Person' },
+    { from: 'Person', to: 'Other' },
+    { from: 'Person', to: 'me' },
     { from: 2, to: 4 },
     { from: 2, to: 5 },
     { from: 'me', to: 'me' },
@@ -146,6 +151,16 @@
     edges: edges
   };
   var options = {
+    joinCondition:function(nodeOptions) {
+      return nodeOptions.cid === 1;
+    },
+    label: {
+      enabled: false,
+      min: 14,
+      max: 30,
+      maxVisible: 30,
+      drawThreshold: 5
+    },
     groups: {
         g1: {color:{background:'rgb(46, 226, 130)'}, borderWidth:2},
         g2: {color:{background:'rgb(238, 203, 27)'},
@@ -159,10 +174,10 @@
 }, //g4 purple
     },//group style
     nodes:{
-        shape:'circle',
+        shape:'dot', //circle for in labels
 
         color: {
-            background:'rgb(98, 197, 255)',
+            background:'rgb(98, 213, 255)',
             highlight: {
                 border: '#2B7CE9',
                 background: 'rgb(238, 231, 27)' //selected color
@@ -188,10 +203,10 @@ color:'rgb(56, 123, 217)' //color of lines
 
 
   var network = new vis.Network(container, data, options);
-  
+    network.clustering.cluster(options);
 </script>
 
-<span style="color:rgb(203, 27, 238)">Hello</span>
+<span style="color:rgb(98, 213, 255)">Hello</span>
 <span style="color:rgb(247, 228, 169)"></span>
 
 </body>

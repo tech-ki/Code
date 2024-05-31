@@ -616,17 +616,60 @@
 
   <!--03 call event-->
 </div>
+
+  <!--Open Quick Tasks-->
+<button type="button" class="collapsible" style="background-color:rgb(92, 116, 250);"><h2>Quick Tasks</h2></button>
+<div class="content">
+  <p>Add your quick tasks here.</p>
+  
+  <!--Add Project-->
+  <button type="button" class="collapsible2">Add Project</button>
+  <!--Add tasks in project-->
+  <div class="content">
 <li id="change" class="done">Change from open to done</li>
 <li id="change" class="done">Change from open to in progress</li>
-<li id="change" class="done">31</li>
+<li id="change" class="open">Click to change status</li>
+<li id="change" class="doing">Update gantt char for tracking time</li>
+<li id="change" class="done">Add sub tasks with button</li>
+<li id="change" class="void">Project</li>
+<li id="change" class="void">Task</li>
+<li id="change" class="void">Steps</li>
+
+ <!--Add Project-->
+ <button type="button" class="collapsible2">Create pixel game</button>
+ <!--Add tasks in project-->
+ <div class="content">
+  <li id="change" class="done">Choose your class (PyGame)</li>
+  <li id="change" class="done">Create a window</li>
+  <li id="change" class="open">Create a game char</li>
+  <li id="change" class="open">Create a quest system</li>
+  <li id="change" class="open">Create an inventory system</li>
+  <li id="change" class="open">Create a background parallax feature</li>
+  <li id="change" class="open">Add music by zone</li>
+</div><!--Close project-->
+<li id="change" class="open">31</li>
+</div><!--Close project-->
+
+ <!--Add Project-->
+ <button type="button" class="collapsible2">Build To Do App</button>
+ <!--Add tasks in project-->
+ <div class="content">
+  <li id="change" class="open">Upgrade inventory system</li>
+  <li id="change" class="open">Add quick add task</li>
+  <li id="change" class="open">Add quick project</li>
+  <li id="change" class="lock">Add drag and drop to sort</li>
+  <li id="change" class="lock">Add pre requirements to unlock tasks</li>
+  <button ondblclick="myChange()"> </button><li id="change" class="open">Add notes to task</li> 
+</div><!--Close project-->
 <button onclick="myChange()">Change</button> <!--02 link to event-->
-</div>
-       
-<div style="position:fixed;bottom:0;right:200;width:400;">
+</div> 
+
+</div>      <!--Close QT-->
+<!--<div style="position:fixed;bottom:0;right:200;width:400;">
   <p>
   <button onclick="document.location='../to-do.html'">Home</button> 
 <br>
-  name: Ki <br>level: 189
+  name: Ki <br>level: level up skill not character
   <div id="myProgress">
     <div id="myBar">health</div>
   </div>
@@ -638,7 +681,7 @@
     <div id="myBar">time</div>
   </div>
   </p>
-</div>
+</div>-->
 
         <script>
           //Show how many listed items there are.

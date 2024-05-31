@@ -234,9 +234,16 @@ function openCity(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
+
+const buttons = document.querySelectorAll("button");
+
+for (const button of buttons) {
+  button.addEventListener("click", myChange());
+}
+
 //Change star status
 function myChange() {
-    const element = document.getElementById("change");
+    var element = document.getElementById("change");
     if (element.className == "open") {
       element.className = "doing";
     } else {
