@@ -357,12 +357,12 @@
  <div class="content">
     <li class="late">Wash Coco</span>
       <li class="done">Timely Sheet</li>
-     <li class="done">Water Sensation</li>
+     <li class="done">Clean Bathroom</li>
      <li class="done">Homey Homestead</li>
      <li class="done">CodeaDo</li>
-     <li class="again">Marvelous Ice Cave</li>
-     <li class="done">Meat the Menu</li>
-     <li class="again">A Letter or Two</li>
+     <li class="again">Clean out Fridge</li>
+     <li class="done">Pick Weekly Menu</li>
+     <li class="late">Check the Mail <span class="lvl-baby">Mo Tu We Th Fr Sa Su</span></li>
     </div> <!--End of Quest Area-->
 
     <button type="button" class="collapsible2">Monthly</button>
@@ -728,7 +728,62 @@
   <li id="change" class="lock">Add pre requirements to unlock tasks</li>
 <li id="change" class="open">Add notes to task</li> 
 </div><!--Close project-->
+
+<!--Add Project-->
+<button type="button" class="collapsible2">Automate the Boring Stuff with Python</button>
+ <!--Add tasks in project-->
+ <div class="content">
+ <!--Add tasks in project-->
+  <li id="change" class="collapsible3 open">Part 01 - Python Programming Basics</li>
+<ol>
+  <li>Add task</li>
+  <li id="step" class="done">Download and install Python</li>
+  <li id="step" class="done">Download and install a coding editor</li>
+  <li id="step" class="done">Print Hello World</li>
+
+
+  <!--Add tasks in project-->
+  <li id="change" class="collapsible3 done">Chapter 01 - Python  Basics</li>
+  <p>Explore in the shell, go one at a time</p>
+<ol>
+</ol>
+<!--Add tasks in project-->
+<li id="change" class="collapsible3 done">Chapter 02 - Flow Control </li>
+<p>Explore in the shell, add repetion and loops. Start and end based off conditions.</p>
+ <!--Add tasks in project-->
+ <li id="change" class="collapsible3 done">Chapter 03 - Functions</li>
+ <p>Explore in the shell, go one at a time</p>
+<ol>
+</ol>
+ <!--Add tasks in project-->
+ <li id="change" class="collapsible3 done">Chapter 04 - Python  Basics</li>
+ <p>Explore in the shell, go one at a time</p>
+<ol>
+</ol>
+ <!--Add tasks in project-->
+ <li id="change" class="collapsible3 done">Chapter 05 - Python  Basics</li>
+ <p>Explore in the shell, go one at a time</p>
+<ol>
+</ol>
+</ol> <!--Close project-->
+ <!--Add tasks in project-->
+  <li id="change" class="collapsible3 open">Part 02 - Automating Tasks</li>
+<ol>
+  <li>Add task</li>
+  <li id="step" class="doing">Go to Chart extension</li>
+</ol>
+ <!--Add tasks in project-->
+  <li id="change" class="collapsible3 open">Part 03 - Appendix</li>
+<ol>
+  <li>Add task</li>
+  <li id="step" class="doing">Go to Chart extension</li>
+</ol>
+</div>
+
+
 <button onclick="myChange()">Change</button> <!--02 link to event-->
+
+
 </div> 
 
 </div>      <!--Close QT-->
@@ -772,9 +827,32 @@ para.appendChild(node);
 const element = document.getElementById("try0");
 element.appendChild(para);
           </script>
-
-          
+<br>
+<br>
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar">time</div>
+          </div>
+          <input type="number" id="input" min="0" max="100">
+          <button onclick="updateProgress()">Increase Progress</button>
+                  
     
+          <div class="progress-container">
+            <div class="progress-bar1" id="progress-bar1">exp</div>
+          </div>
+          <input type="number" id="input" min="0" max="100">
+          <button onclick="updateProgress()">Increase Progress</button>
+
+          <div class="progress-container">
+            <div class="progress-bar2" id="progress-bar2">energy</div>
+          </div>
+          <input type="number" id="input" min="0" max="100">
+          <button onclick="updateProgress()">Increase Progress</button>
+
+          <div class="progress-container">
+            <div class="progress-bar3" id="progress-bar3">health</div>
+          </div>
+          <input type="number" id="input3" min="0" max="900">
+          <button onclick="updateProgress3()">Increase Progress</button>
 </body>
 <script src="./to-do.js"></script> 
 </html>

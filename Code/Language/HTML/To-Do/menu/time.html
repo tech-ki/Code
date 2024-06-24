@@ -8,38 +8,91 @@
         <script src="vis/dist/vis.js"></script>
 <link href="vis/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
 
-    </head>
         <body> Hello <strong>name</strong>. Welcome to <strong>skilled.</strong> <br>
             <strong><div id="min"></div></strong>
 <h1 class="quest" style="background-color:rgb(255, 0, 93)">Time</h2>
 <body onload="startTime()">
-
-  <script src="../../dist/vis.js"></script>
-  <link href="../../dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
+  <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    #visualization {
+      width: 600px;
+      height: 400px;
+      border: 1px solid lightgray;
+    }
+  </style>
 </head>
 <body>
 <div id="visualization"></div>
-
 <script type="text/javascript">
   // DOM element where the Timeline will be attached
   var container = document.getElementById('visualization');
 
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet([
-    {id: 1, content: 'item 1', start: '2013-04-20'},
-    {id: 2, content: 'item 2', start: '2013-04-14'},
-    {id: 3, content: 'item 3', start: '2013-04-18'},
-    {id: 4, content: 'item 4', start: '2013-04-16', end: '2013-04-19'},
-    {id: 5, content: 'item 5', start: '2013-04-25'},
-    {id: 6, content: 'item 6', start: '2013-04-27'}
+    {id: 1, content: 'Hello World', start: '1995-01-01',type:'point',title:'Hello World'},
+    {id: 2, content: 'Bye?', start: '2080-01-01',type:'point',title:'Good Night'},
+    {id: 3, content: 'item 3', start: '2023-04-18'},
+    {id: 4, content: 'item 4', start: '2014-04-16', end: '2014-04-19'},
+    {id: 5, content: 'item 5', start: '2014-04-25'},
+    {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'},
+    {id: 'c0', content: 'Computer', start: '1852', type: 'point',className:'blue'},
+    {id: '9', content: 'Computer Science', start: '1991', type: 'point',className:'blue'},
+    {id: '10', content: 'Internet', start: '1993-1-1', type: 'point',className:'blue'},
+    {id: 7, content: 'item 7', start: '2024-06-14', end: '2024-07-01 13:00'},
+    {id: 'w', content: 'Monies', start: '2024-06-17 07:00 am', end: '2024-06-17 04:00 pm', className:'mint'},
+     {id: 'l', content: 'Lunch', start: '2024-06-17 11:00 am', end: '2024-06-17 12:00 pm', className:'red'},
+     {id: 'br1', content: 'Break', start: '2024-06-17 08:45 am', end: '2024-06-17 9:00 am', className:'yellow'},
+     {id: 'br2', content: 'Break', start: '2024-06-17 01:45 pm', end: '2024-06-17 2:00 pm', className:'yellow'},
+     {id: 'c1', content: 'Call', start: '2024-06-17 12:10 pm', end: '2024-06-17 12:20 pm', className:'blue'},
+     {id: 'th1', content: 'Thought', start: '2024-06-17 12:54 pm', end: '2024-06-17 01:00 pm', className:'blue',type:'point',title: 'add a duration button'},
   ]);
-
+ 
   // Configuration for the Timeline
-  var options = {};
-
+  var options = {
+    stack: true,
+    horizontalScroll: true,
+    zoomKey: "ctrlKey",
+    maxHeight: 400,
+    start: new Date(),
+    end: new Date(1000 * 60 * 60 * 24 + new Date().valueOf()),
+    editable: true,
+    onUpdate: function (item, callback) {
+      item.content = prompt('Edit items text:', item.content);
+      if (item.content != null) {
+        callback(item); // send back adjusted item
+      }
+      else {
+        callback(null); // cancel updating the item
+      }
+    },
+    margin: {
+      item: 10, // minimal margin between items
+      axis: 5, // minimal margin between items and the axis
+    },
+    orientation: "top",
+  format: {
+  majorLabels: {
+    millisecond:'hh:mm:ss a',
+    second:     'D MMMM hh:mm a',
+    minute:     'ddd D MMMM',
+    hour:       'ddd D MMMM',
+    weekday:    'MMMM YYYY',
+    day:        'MMMM YYYY',
+    week:       'MMMM YYYY',
+    month:      'YYYY',
+    year:       ''
+  },
+  minorLabels: {
+    millisecond:'SSS',
+    second:     'ss',
+    minute:     'hh:mm a',
+    hour:       'hh:mm a'
+},
+}
+};
   // Create a Timeline
   var timeline = new vis.Timeline(container, items, options);
 </script>
 </body>
-
-    
+</html>

@@ -252,6 +252,49 @@ function myChange() {
   }
   //1. open-done, switch statement, 
 
+// Function to update the progress bar based on user input
+function updateProgress() {
+  const input = document.getElementById("input");
+  const progress = parseInt(input.value);
+  
+  if (isNaN(progress) || progress < 0 || progress > 100) {
+   alert("Please enter a number between 0 and 100.");
+    return;
+  }
+
+  
+  var progressBar = document.getElementById("progress-bar");
+  progressBar.style.width = progress + "%";
+
+var progressBar = document.getElementById("progress-bar1");
+progressBar.style.width = progress + "%";
+
+var progressBar = document.getElementById("progress-bar2");
+progressBar.style.width = progress + "%";
+}
+
+function updateProgress3() { /*health */
+  const input = document.getElementById("input3");
+  var progress = parseInt(input.value);
+  let count = 1;
+  if (isNaN(progress) || progress < 0 || progress < 100) {
+    /*alert("Please enter a number between 0 and 100.");
+    return; */
+  }
+  else if (progress > 99 && count == 1) {
+    progress %= 100;
+    alert("You have leveled up! Your level is "+count);
+    count++;
+  }
+  else if (progress > 99 && count > 0) {
+    progress %= 100;
+    alert("Your level is "+count);
+  }
+  
+  var progressBar = document.getElementById("progress-bar3");
+  progressBar.style.width = progress + "%";
+}
+
   //progress bar
   var i = 0;
 function move() {
@@ -274,4 +317,5 @@ function move() {
     }
   }
 }
+
 

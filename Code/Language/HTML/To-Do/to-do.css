@@ -1300,3 +1300,99 @@ display:block;
   ol div {counter-reset: count;
   }
   li#step {counter-increment: count;}
+
+  .progress-container {
+    width: 90%;
+    background-color: #edecec;
+    border-radius: 8px;
+    border: #665656;
+    border-style:inset;
+  }
+  
+  .progress-bar {
+    height: 20px;
+    /*background-color: #52e157; green*/
+    /*background-color: #e6dd3b; yellow*/
+    background-color: #b852e1;
+    border-radius: 4px;
+    width: 00%;
+  }
+
+  .progress-bar1 {
+    height: 20px;
+    /*background-color: #52e157; green*/
+    background-color: #e6dd3b;
+    border-radius: 4px;
+    width: 0%;
+  }
+
+  .progress-bar2 {
+    height: 20px;
+    /*background-color: #52e157; green*/
+    background-color: #3b9fe6;
+    border-radius: 4px;
+    width: 0%;
+  }
+
+  .progress-bar3 {
+    height: 20px;
+    /*background-color: #52e157; green*/
+    background-color: #e63b4c;
+    border-radius: 4px;
+    width: 0%;
+  }
+
+  /*Change color of timeline items*/
+  .vis-item.red {
+    color: white;
+    background-color: rgb(255, 0, 85);
+    border-color: darkred;
+  }
+
+  .vis-item.yellow {
+    background-color: rgb(255, 225, 0);
+    border-color: darkred;
+  }
+
+  .vis-item.mint {
+    color: rgb(29, 19, 19);
+    background-color: rgb(0, 255, 132);
+    border-color: darkred;
+  }
+  .vis-item.blue {
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 170, 255);
+    border-color: rgb(26, 112, 224);
+  }
+  .vis-item {
+    border-color: rgb(255, 0, 51);
+    background-color: rgb(169, 169, 159);
+    color:#2063ff;
+  }
+
+    /* alternating column backgrounds */
+    .vis-time-axis .vis-grid.vis-odd {
+      background: #f3efef;
+    }
+  
+    /* gray background in weekends, white text color */
+    .vis-time-axis .vis-grid.vis-saturday,
+    .vis-time-axis .vis-grid.vis-sunday {
+      background: rgb(231, 230, 230);
+    }
+    .vis-time-axis .vis-text.vis-saturday,
+    .vis-time-axis .vis-text.vis-sunday {
+      color: rgb(48, 37, 37);
+    }
+    .vis-time-axis .vis-text.vis-today {
+      background-color: rgba(246, 58, 149, 0.147);
+      color:rgb(9, 5, 5);
+    }
+    .vis-time-axis .vis-text.vis-tomorrow {
+      background-color: rgba(215, 246, 58, 0.299);
+      color:rgb(9, 5, 5);
+    }
+    .vis-time-axis .vis-text.vis-current-week {
+      background-color: rgba(58, 224, 246, 0.299);
+      color:rgb(9, 5, 5);
+    }
