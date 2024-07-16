@@ -57,7 +57,7 @@ for (i = 0; i < coll2.length; i++) {
     let month = today.getMonth() +1;
     //m = checkTime(m);
     mm = m +(h *60);
-    
+
     //current day of year
     var now = new Date();
     var start = new Date(now.getFullYear(), 0, 0);

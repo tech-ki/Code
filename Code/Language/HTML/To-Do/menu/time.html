@@ -25,6 +25,13 @@
 <body>
 <div id="visualization"></div>
 <script type="text/javascript">
+    // Get today
+d = new Date();
+hour = d.getHours();
+tday = d.getDate();
+weekday = d.getDay();
+month = d.getMonth();
+year = d.getFullYear();
   // DOM element where the Timeline will be attached
   var container = document.getElementById('visualization');
 
@@ -34,20 +41,26 @@
     {id: 2, content: 'Bye?', start: '2080-01-01',type:'point',title:'Good Night'},
     {id: 3, content: 'item 3', start: '2023-04-18'},
     {id: 4, content: 'item 4', start: '2014-04-16', end: '2014-04-19'},
+    {id: 'j1', content: 'UPS Job', start: '2024-06-26', end: '2024-07-02',className:'job'},
     {id: 5, content: 'item 5', start: '2014-04-25'},
     {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'},
     {id: 'c0', content: 'Computer', start: '1852', type: 'point',className:'blue'},
     {id: '9', content: 'Computer Science', start: '1991', type: 'point',className:'blue'},
     {id: '10', content: 'Internet', start: '1993-1-1', type: 'point',className:'blue'},
     {id: 7, content: 'item 7', start: '2024-06-14', end: '2024-07-01 13:00'},
-    {id: 'w', content: 'Monies', start: '2024-06-17 07:00 am', end: '2024-06-17 04:00 pm', className:'mint'},
-     {id: 'l', content: 'Lunch', start: '2024-06-17 11:00 am', end: '2024-06-17 12:00 pm', className:'red'},
-     {id: 'br1', content: 'Break', start: '2024-06-17 08:45 am', end: '2024-06-17 9:00 am', className:'yellow'},
-     {id: 'br2', content: 'Break', start: '2024-06-17 01:45 pm', end: '2024-06-17 2:00 pm', className:'yellow'},
+    {id: 'w', content: 'Monies', start: '2024-07-02 07:00 am', end: '2024-07-02 04:00 pm', className:'mint'},
+    {id: 'e1', content: 'Chick', start: '2024-07-01 05:00 pm', end: '2024-07-01 08:00 pm', className:'red'},
+     {id: 'l', content: 'Lunch', start: '2024-07-02 11:00 am', end: '2024-07-02 12:00 pm', className:'red'},
+     {id: 'br1', content: 'Break', start: '2024-07-02 08:45 am', end: '2024-07-01 9:00 am', className:'yellow'},
+     {id: 'br0', content: 'Huddle', start: '2024-07-02 09:30 am', end: '2024-07-02 9:40 am', className:'red'},
+     {id: 'br2', content: 'Break', start: '2024-07-02 01:45 pm', end: '2024-07-02 2:00 pm', className:'yellow'},
      {id: 'c1', content: 'Call', start: '2024-06-17 12:10 pm', end: '2024-06-17 12:20 pm', className:'blue'},
      {id: 'th1', content: 'Thought', start: '2024-06-17 12:54 pm', end: '2024-06-17 01:00 pm', className:'blue',type:'point',title: 'add a duration button'},
+     {id: 'ta1', content: 'item 6', start: "2024-07-03"}, 
   ]);
+ //
  
+
   // Configuration for the Timeline
   var options = {
     stack: true,
@@ -93,6 +106,8 @@
 };
   // Create a Timeline
   var timeline = new vis.Timeline(container, items, options);
+
+
 </script>
 </body>
 </html>

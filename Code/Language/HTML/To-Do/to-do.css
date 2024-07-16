@@ -352,6 +352,7 @@
               content: "  "  url("../image/level-up/F13A\ sm.png");
               padding-right:8px;
               }
+              
 /* Style the list */
 ul.breadcrumb {
 padding: 10px 16px;
@@ -409,7 +410,7 @@ padding-right:8px;
       padding-right:8px;
       }
       .late::before {
-        content: " " url("/Code/Language/HTML/image/red-star(sm).png");
+        content: " " url("/Code/Language/HTML/image/red-star\(sm\).png");
         padding-right:8px;
         }
       .wait::before {
@@ -445,7 +446,7 @@ padding: 02px;
           border-radius: 8px;;
           float:right;
 }
-li.late::after {
+li.late::after, li.due::after {
 content: "due";
 margin-left: 20px;
 background-color: rgb(231, 3, 3);
@@ -954,15 +955,53 @@ ul.inv li{
                 margin-inline-start: 10px;
                 float: inline;
                   }
+                  span.lvl-rep:before {
+                    content:"";
+                    background-image: url("/Code/Language/HTML/image/fireA.png");
+                    background-size: 25px 25px;
+                    display: inline-block;
+
+                    /*size of your image*/
+                    height: 25px;
+                    width:25px;
+                  
+                    /*if you want to change the position you can use margins or:*/
+                    position:relative;
+                    top:5px;}
+
+                    span.lvl0-rep:before {
+                      content:"";
+                      background-image: url("/Code/Language/HTML/image/fireB.png");
+                      background-size: 25px 25px;
+                      display: inline-block;
+  
+                      /*size of your image*/
+                      height: 25px;
+                      width:25px;
+                    
+                      /*if you want to change the position you can use margins or:*/
+                      position:relative;
+                      top:5px;}
+
                   span.lvl-rep {
-                    background-color: rgba(218, 182, 229, 0.86);
-                    color: #302828;
+                    background-color: rgb(255, 223, 158);
+                    color: #250a0a;
                     font-weight: bold;
                     border-radius: 8px;
                     padding: 2px 5px;
                     margin-inline-start: 10px;
                     float: right;
                       }
+
+                      span.lvl0-rep {
+                        background-color: rgb(192, 192, 192);
+                        color: #787373;
+                        font-weight: bold;
+                        border-radius: 8px;
+                        padding: 2px 5px;
+                        margin-inline-start: 10px;
+                        float: right;
+                          }
       tr:nth-child(odd) {
         background-color: #efebfc;
       }
@@ -1364,6 +1403,11 @@ display:block;
     background-color: rgb(0, 170, 255);
     border-color: rgb(26, 112, 224);
   }
+  .vis-item.job {
+    color: rgb(0, 0, 0);
+    background-color: rgb(225, 142, 255);
+    border-color: rgb(26, 112, 224);
+  }
   .vis-item {
     border-color: rgb(255, 0, 51);
     background-color: rgb(169, 169, 159);
@@ -1372,7 +1416,7 @@ display:block;
 
     /* alternating column backgrounds */
     .vis-time-axis .vis-grid.vis-odd {
-      background: #f3efef;
+      background: #e8e5e5;
     }
   
     /* gray background in weekends, white text color */
@@ -1385,11 +1429,11 @@ display:block;
       color: rgb(48, 37, 37);
     }
     .vis-time-axis .vis-text.vis-today {
-      background-color: rgba(246, 58, 149, 0.147);
+      background-color: rgba(173, 137, 155, 0.147);
       color:rgb(9, 5, 5);
     }
     .vis-time-axis .vis-text.vis-tomorrow {
-      background-color: rgba(215, 246, 58, 0.299);
+      background-color: rgba(166, 196, 214, 0.299);
       color:rgb(9, 5, 5);
     }
     .vis-time-axis .vis-text.vis-current-week {

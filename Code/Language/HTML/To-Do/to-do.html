@@ -307,36 +307,36 @@
  
  <button type="button" class="collapsible2">Daily</button>
  <div class="content">
-     <li class="undone"><span class="lvl-rep">x 40 000 000</span> Hunting for Food</li>
-     <li class="done"><span class="lvl-rep">x 40 000</span>Wash Dishes</li>
-     <li class="done"><span class="lvl-rep">x 40 000</span>Walk Coco</li>
+     <li class="undone"><span class="lvl-rep">x 10 585</span> Hunting for Food</li>
+     <li class="done"><span class="lvl-rep">x 03 650</span>Wash Dishes</li>
+     <li class="done"><span class="lvl-rep">x 10 950</span>Walk Coco</li>
      <li class="late">Water Bubbles</li>
      <li class="done">Move it <span class="due-1">01 day</span><span class="due-1">05 min</span></li>
      <li  class="collapsible3 doing">Bathroom</li>
        <div>
         <li  class="collapsible3 done">Start</li>
    <ol>
-       <li id="step">Floss</li>
-       <li id="step">Brush Teeth</li>
-       <li id="step">Mouth Wash</li>
-       <li id="step">Wash Face</li>
-       <li id="step">Lotion Face</li>
+       <li id="step" class="due">Floss</li>
+       <li id="step" class="done">Brush Teeth</li>
+       <li id="step"class="due">Mouth Wash</li>
+       <li id="step"class="done">Wash Face</li>
+       <li id="step"class="done">Lotion Face</li>
        </ol>
        <li  class="collapsible3 doing">Showering</li>
        <ol>
         <li class="done">Shave?</li>
-        <li  class="collapsible3 late">Wash Hair</li>
+        <li  class="collapsible3 done">Wash Hair</li>
          <ol>
        <li id="step">Wash</li>
        <li id="step">Condition</li>
        <li id="step">Rinse</li>
         </ol>
-       <li id="step">Shower</li>
-       <li id="step">Clip Nails</li>
-       <li id="step">Lotion Body</li>
-       <li id="step">Get Dressed</li>
-       <li id="step">Oil Sheen Hair</li>
-       <li id="step">Clean Ears <span class="due-1">02 weeks</span></li>
+       <li id="step"class="due">Shower</li>
+       <li id="step" class="due">Clip Nails</li>
+       <li id="step"class="due">Lotion Body</li>
+       <li id="step"class="due">Get Dressed</li>
+       <li id="step"class="due">Oil Sheen Hair</li>
+       <li id="step"class="due">Clean Ears <span class="due-1">02 weeks</span></li>
        <li>Clean Tub <span class="due-1">03 days</span></li>
        </ol>
      </ol>
@@ -434,7 +434,9 @@
          <div class="content">
           <p>Weave your websites.</p>
 
-          <h2>Front Foot</h2>
+          <li id="change" class="collapsible3 doing">Front Foot</li>
+          <ol>
+            <p>Add steps & tasks</p>
 <li class="done">Hello HTMyLevel</li>
 <li class="done">Color me CSS</li>
 <li class="open">Pick up your Bootstrap</li>
@@ -445,24 +447,42 @@
 <li class="done">Honorary Badges</li>
 <li class="done">Friend a Friend - HTML & CSS</li>
 <li class="done">Friend a Friend - HTML & CSS & Javascript</li>
-<li class="doing"><a href="./quests/job.html">Jobit Forms</a></li>
-     </ul>  
-     <h2>Back Foot</h2> 
-     <li class="pause">Ready Set Javascript</li>
-  
-     <h2> Server's Up</h2>
+<li class="void"><a href="./quests/job.html">Jobit Forms <span class="lvl0-rep">x 10</span></a></li>
+     </ul>  </ol>
+
+     <li id="change" class="collapsible3 doing">Back Foot</li>
+  <ol>
+    <p>Tasks for the back end</p>
+    <li class="next">Ready Set Javascript</li>
+  </ol>
+
+  <li id="change" class="collapsible3 doing"> Server's Up </li>
+  <ol>
+    <p>Add steps & tasks</p>
      <li class="doing"><a href="./quests/diet-sql.html"> Diet SQL</a></li>
      <li class="doing">Do the Django</li>
+     <li class="next">PHPin</li>
+  </ol>
     
-     <h2>Hablas Code?</h2>
-     <li class="doing">Pythasaurus</li>
-     <h2>Git</h2>
-     <li class="done">Git Good</li>
+  <li id="change" class="collapsible3 void">Hablas Code?</li>
+  <ol>
+    <p>What programming languages are you working on?</p>
+    <li class="doing">Pythasaurus</li>
+    <li class="next">C#</li>
+    <li class="open">Lisp</li>
+    <li class="next">PHP</li>
+  </ol>
+
+  <li id="change" class="collapsible3 void">Git</li>
+  <ol>
+    <p>Add steps & tasks</p>
+    <li class="done">Git Good</li>
      <li class="done">Git Merge Error</li>
      <li class="open">Git Project</li>
      <li class="done">Git Deploy</li>
      <li class="open">Git Clean & Organize</li>
      <li class="lock">Git API</li>
+  </ol>     
     </ul>
          
         </div>
@@ -696,12 +716,13 @@
  <button type="button" class="collapsible2">Create pixel game</button>
  <!--Add tasks in project-->
  <div class="content">
-  <li id="change" class="done">Choose your class (PyGame)</li>
+  <li id="change" class="done">Choose your class (GoDot)</li>
   <li id="change" class="done">Create a window</li>
-  <li id="change" class="open">Create a game char</li>
-  <li id="change" class="open">Create a quest system</li>
-  <li id="change" class="open">Create an inventory system</li>
-  <li id="change" class="open">Create a background parallax feature</li>
+  <li id="change" class="done">Create a game char</li>
+  <li id="change" class="done">Move a game char</li>
+  <li id="change" class="next">Pick up coin</li>
+  <li id="change" class="open">Talk to someone</li>
+  <li id="change" class="open">Add a clock function</li>
   <li id="change" class="open">Add music by zone</li>
 </div><!--Close project-->
 <li id="change" class="open">31</li>
