@@ -1,8 +1,17 @@
 {
-    "editor.fontFamily": "\"Lexie Readable\"",
-    "editor.codeLensFontFamily": "Lexie Readable",
+    "editor.fontFamily": "Comic Mono",
+    "editor.codeLensFontFamily": "Comic Mono",
     "notebook.output.fontFamily": "Comic Mono",
     "terminal.integrated.fontFamily": "Comic Code",
     "dotnet.defaultSolution": "Clear.sln",
-    "python.analysis.typeCheckingMode": "off"
+    "python.analysis.typeCheckingMode": "off",
+    "editor.experimentalInlineEdit.fontFamily": "Nunito",
+    "editor.inlayHints.fontFamily": "Nunito",
+    "editor.inlineSuggest.fontFamily": "Nunito",
+    "debug.console.fontFamily": "Comic Mono",
+    "scm.inputFontFamily": "Nunito",
+    "chat.editor.fontFamily": "Nunito",
+    "gitlens.currentLine.fontFamily": "Nunito",
+    "markdown.preview.fontFamily": "Nunito",
+    "gitlens.blame.fontFamily": "Nunito"
 }

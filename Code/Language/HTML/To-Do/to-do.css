@@ -668,6 +668,7 @@ color: black;
 content:url("/Code/Language/HTML/gold-star(inf-sm).gif");
 padding-right:8px;
 }
+
 ul.no li:before {
 padding: 4px;
 padding-right:8px;
@@ -746,15 +747,17 @@ table,td,th{
   padding-top:5px;
   border-style:outset;
 padding-right: 32px;
-text-align: center;
 }
 tr {
-  background-color: #eef4fd;
+  background-color: #ecf3fd;
 }
 th{
-  background-color: rgba(129, 144, 180, 0.914);
+  background-color: rgba(22, 99, 243, 0.815);
   color: #faf2f2;
   font-weight: bolder;
+}
+table.skill, thead.skill, th {
+  background-color: rgb(238, 21, 104);
 }
 th:first-of-type {
   border-top-left-radius: 08px;
@@ -769,10 +772,10 @@ tr:last-of-type td:last-of-type {
   border-bottom-right-radius: 08px;
 }
 td:first-of-type {
-color: #441979;
+color: #231979;
 border-style:outset;
 font-weight: 600;
-padding-right: 100px;
+padding-right: 20px;
 text-align: left;
 }
 table.habit,tr.habit,td.habit {
@@ -1003,7 +1006,7 @@ ul.inv li{
                         float: right;
                           }
       tr:nth-child(odd) {
-        background-color: #efebfc;
+        background-color: #f8fbff;
       }
       .sticky {
         position: -webkit-sticky; /* Safari */
@@ -1440,3 +1443,22 @@ display:block;
       background-color: rgba(58, 224, 246, 0.299);
       color:rgb(9, 5, 5);
     }
+
+  #increment-btn,
+  #decrement-btn,
+  #reset {
+      font-size: 12px;
+      margin: 1px;
+  }
+  
+  #reset {
+      font-size: 20px;
+  }
+  
+  #counter-value {
+      height: 2px;
+      border-radius: 10px;
+    
+      font-size: 17px;
+  
+  }
