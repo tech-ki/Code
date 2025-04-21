@@ -1,7 +1,7 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <head>
-        <h1>To-Do (Tabbed)</h1>
+        <h1>To-Do2</h1>
         <link rel="stylesheet" href="./to-do.css">
 
     </head>
@@ -12,23 +12,91 @@
          Hello <span id="item" style="background-color:unset; color:rgb(25, 121, 255);font-weight:bold">12</span>. Welcome to <strong>skilled.</strong>
 
         <strong><div id="min"></div></strong>   
-    
-        <div id="myProgress">
-          <div id="myBar">time</div>
-        </div>
-        
-        
-        <div id="demo-exp">0%</div>
+         <h1>To - Do</h1>
+          <!-- Item List Starts <new)-->
+          <div class="wrapper">
+            <form>
+                <input id="todo-input" type="text" placeholder="item" autocomplete="off">
+                <button id="add-button">Add</button>
+            </form>
 
-        <div id="item">item</div>
+            <ul id="todo-list">
+                <li class="todo done">
+                    <!--Checkbox-->
+                    <input type="checkbox" id="todo-1">
+                    <label class="custom-checkbox" for="todo-1">
+                       <!-- <img src= "/Code/Language/HTML/image/gold-star(inf-sm).gif"> -->
+                    </label>
+                    <label for="todo-1"" class="todo-text">
+                    Apple 
+                    </label>
 
+                    <!--Trash button-->
+                    <button class="delete-button">
+                        <img src= "/Code/Language/HTML/image/bin.png" width="20" height="20">
+                    </button>
+                    
+
+                </li>
+            </ul>
+
+         </div>
+
+         <!--Item List Starts b4-->
+         <h1>To - Dos</h1>
         <ul id="mylist">
-           <li>JavaScript</li>
+           
+          <li class="todo next">
+            <!--Checkbox-->
+            <input type="checkbox" id="todo-1">
+            <label class="custom-checkbox" for="todo-1">
+               <!-- <img src= "/Code/Language/HTML/image/gold-star(inf-sm).gif"> -->
+            </label>
+            <label for="todo-1"" class="todo-text">
+            Apple 
+            </label>
+
+            <!--Project button-->
+            <button class="delete-button">
+              <img src= "/Code/Language/HTML/image/open-folder.png" width="20" height="20">
+          </button>
+
+           <!--Project button-->
+           <button class="delete-button">
+            <img src= "/Code/Language/HTML/image/tasks-up.png" width="20" height="20">
+        </button>
+
+          <!--Area button-->
+          <button class="delete-button">
+            <img src= "/Code/Language/HTML/image/folder.png" width="20" height="20">
+        </button>
+
+
+        <!--Type button-->
+        <button class="type-button">
+          <img src= "/Code/Language/HTML/image/colour.png" width="20" height="20">
+      </button>
+
+            <!--SubTask button-->
+            <button class="delete-button">
+              <img src= "/Code/Language/HTML/image/tasks.png" width="20" height="20">
+          </button>
+
+            
+            <!--Trash button-->
+            <button class="delete-button">
+                <img src= "/Code/Language/HTML/image/bin.png" width="20" height="20">
+            </button>
+        </li>
+
+
+
         </ul>
         <button onclick="myAdd()">Append</button>
         <button onclick="myColor()">Color</button>
         <button onclick="move()">Click Me</button> 
 
+<!--Quest List Begins-->
 <h1 class="quest">Quests</h2>
 
   <button type="button" class="collapsible" style="background-color:rgb(176, 154, 158);""><h2>Inbox</h2></button>

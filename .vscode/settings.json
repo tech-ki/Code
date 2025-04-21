@@ -13,5 +13,8 @@
     "chat.editor.fontFamily": "Nunito",
     "gitlens.currentLine.fontFamily": "Nunito",
     "markdown.preview.fontFamily": "Nunito",
-    "gitlens.blame.fontFamily": "Nunito"
+    "gitlens.blame.fontFamily": "Nunito",
+    "pgsql.resultsFontFamily": "Nunito",
+    "workbench.fontAliasing": "default",
+    "workbench.editor.highlightModifiedTabs": true
 }

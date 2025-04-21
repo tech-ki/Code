@@ -1,4 +1,3 @@
-
 var coll = document.getElementsByClassName("collapsible");
 var coll2 = document.getElementsByClassName("collapsible2");
 var coll3 = document.getElementsByClassName("collapsible3");
@@ -317,5 +316,4 @@ function move() {
     }
   }
 }
-
 

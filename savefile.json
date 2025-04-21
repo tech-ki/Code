@@ -1,0 +1,8 @@
+{
+"name": "Ki", 
+"health": 79, 
+"attack": 15, 
+"defense": 8, 
+"inventory": ["Potion", "Gold", "Potion", "Potion", "Gold", "Gold"], 
+"level": 2, "xp": 23, "xp_to_next_level": 150
+}

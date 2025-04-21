@@ -1,0 +1,102 @@
+{
+    "charname": "Ki",
+    "age": "29",
+    "startdate": "2025.03.10",
+    "active": true,
+    "quest": 
+    [
+      {
+        "name": "Luke the Security Guard",
+        "level": 20,
+        "task": "Get me 1 salad and kill 10 Strige Wings and 100 Junior Necki so I can make a present for my mother.",
+        "steps": ["Salad 0/1", "Stirge Wings 0/10", " Junior Necki 00/100"],
+        "monster": {
+            "Salad":1,
+            "Stirge Wings":0,
+            "Junior Necki":0
+        }
+      },
+      {
+        "name": "Madame Uppercut",
+        "age": 39,
+        "secretIdentity": "Jane Wilson",
+        "powers": [
+          "Million tonne punch",
+          "Damage resistance",
+          "Superhuman reflexes"
+        ]
+      },
+      {
+        "name": "Eternal Flame",
+        "age": 1000000,
+        "secretIdentity": "Unknown",
+        "powers": [
+          "Immortality",
+          "Heat Immunity",
+          "Inferno",
+          "Teleportation",
+          "Interdimensional travel"
+        ]
+      }
+    ],
+    "skill": [
+      {
+        "name": "Molecule Man",
+        "age": 29,
+        "secretIdentity": "Dan Jukes",
+        "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+      },
+      {
+        "name": "Madame Uppercut",
+        "age": 39,
+        "secretIdentity": "Jane Wilson",
+        "powers": [
+          "Million tonne punch",
+          "Damage resistance",
+          "Superhuman reflexes"
+        ]
+      },
+      {
+        "name": "Eternal Flame",
+        "age": 1000000,
+        "secretIdentity": "Unknown",
+        "powers": [
+          "Immortality",
+          "Heat Immunity",
+          "Inferno",
+          "Teleportation",
+          "Interdimensional travel"
+        ]
+      }
+    ],
+    "step": [
+      {
+        "name": "Molecule Man",
+        "age": 29,
+        "secretIdentity": "Dan Jukes",
+        "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+      },
+      {
+        "name": "Madame Uppercut",
+        "age": 39,
+        "secretIdentity": "Jane Wilson",
+        "powers": [
+          "Million tonne punch",
+          "Damage resistance",
+          "Superhuman reflexes"
+        ]
+      },
+      {
+        "name": "Eternal Flame",
+        "age": 1000000,
+        "secretIdentity": "Unknown",
+        "powers": [
+          "Immortality",
+          "Heat Immunity",
+          "Inferno",
+          "Teleportation",
+          "Interdimensional travel"
+        ]
+      }
+    ]
+  }

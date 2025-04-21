@@ -327,12 +327,13 @@
               cursor: pointer;
               text-align: left;
               font-weight: bolder;
-              margin: auto;
+              /*margin: auto;*/
               margin-bottom: 4px;
               border: #000000;
               border-style:inset;
               background-color: #f2535b;
               color:whitesmoke;
+              width:100%;
                 
             }
             .collapsible3-1{
@@ -350,7 +351,7 @@
               }
             .collapsible3::before {
               content: "  "  url("../image/level-up/F13A\ sm.png");
-              padding-right:8px;
+             /* padding-right:8px;*/
               }
               
 /* Style the list */
@@ -389,10 +390,10 @@ list-style:none;
   content: "  " url("/Code/Language/HTML/image/brown-star\(sm\).png");
   padding-right:8px;
   }
- .done::before {
+ /* .done::before {
 content: "  " url("/Code/Language/HTML/image/gold-star(inf-sm).gif");
 padding-right:8px;
-}
+} */
 
 a.doing::before,li.doing::before {
 content: " " url("/Code/Language/HTML/image/pink-star\(sm\).png");
@@ -430,7 +431,7 @@ padding-right:8px;
               padding-right:8px;
               }
 
-a.open::before,li::before {
+a.open::before {
 content: " " url("/Code/Language/HTML/image/no-star1\(sm\).png");
 padding-right:8px;
 }
@@ -1463,3 +1464,78 @@ display:block;
   
   }
 
+#todo-input{
+  flex-grow: 4px;
+  background-color:rgb(242, 249, 252);
+  padding: 11px;
+  text-align: left;
+  padding-inline: 0.9em;
+    color: #1448f0;
+    padding-right: 50%;
+}
+.todo{
+  display:flex;
+  align-items: center;
+  padding: 2px;
+
+}
+.todo .todo-text {
+  padding-right: 0;
+  flex-grow: 1;
+
+  background-color:rgb(242, 249, 252);
+  padding: 12px;
+  text-align: left;
+  padding-inline: 0.4em;
+    color: #191313;
+    border-radius: 2px;
+}
+
+button.delete-button{
+  background-color: rgba(255, 255, 255, 0.372);
+  cursor: pointer;
+}
+
+button.sub-button{
+  background-color: rgba(255, 255, 255, 0.372);
+  cursor: pointer;
+}
+
+button.project-button{
+  background-color: rgba(255, 255, 255, 0.372);
+  cursor: pointer;
+}
+
+button.area-button{
+  background-color: rgba(255, 255, 255, 0.372);
+  cursor: pointer;
+}
+
+button.type-button{
+  background-color: rgba(255, 255, 255, 0.372);
+  cursor: pointer;
+}
+
+.custom-checkbox{
+  background-image:url('../image/no-star1\(sm\).png');
+  padding: 12.4px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+  background-image:url('../image/gold-star\(inf-sm\).gif');
+  padding: 12.4px;
+  background-repeat: no-repeat;
+}
+
+input[type="checkbox"]:checked ~ .todo-text{
+  color:rgb(2, 97, 10);
+  background-color: rgb(80, 254, 135);
+  padding: 5px;
+}
+
+input[type="checkbox"]{
+  display: none;;
+
+}
