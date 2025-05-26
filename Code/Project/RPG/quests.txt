@@ -1,0 +1,12 @@
+Explore the cave,2
+Find the lost sword,10
+Save the village from goblins,20
+Retrieve the magic amulet,15
+Wash the dishes,20
+Brush Teeth,10
+Explore your temple,8
+Shower,20
+Call a friend,10
+Listen to Music,20
+Bask in the Sun,9
+Draw anything, 10
