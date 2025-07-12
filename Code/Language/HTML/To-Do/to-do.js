@@ -52,7 +52,7 @@ for (i = 0; i < coll2.length; i++) {
     let h = today.getHours();
     let m = today.getMinutes();
     let s = today.getSeconds();
-   let date = today.getFullYear();
+    let date = today.getFullYear();
     let month = today.getMonth() +1;
     //m = checkTime(m);
     mm = m +(h *60);
@@ -203,12 +203,7 @@ function word(){
   var a = document.getElementById("t1").innerHTML;
   return a;
 }
-let message = `
-In October 1994, Tim Berners-Lee founded an organization—the World Wide Web Consortium (W3C)—devoted to developing nonproprietary, interoperable technologies for the World Wide Web. One of the W3C’s primary goals is to make the web universally accessible—regardless of disability, language or culture. The W3C home page (www.w3.org) provides extensive resources on Internet and web technologies.
-The W3C is also a standards organization. Web technologies standardized by the W3C are called Recommendations. Current and forthcoming W3C Recommendations include the HyperText Markup Language 5 (HTML5), Cascading Style Sheets 3 (CSS3) and the Extensible Markup Language (XML). A recommendation is not an actual software product but a document that specifies a technology’s role, syntax rules and so forth.
-1.10 Web 2.0: Going Social
-In 2003 there was a noticeable shift in how people and businesses were using the web and developing web-based applications. The term Web 2.0 was coined by Dale Dougherty of O’Reilly Media4 in 2003 to describe this trend. Generally, Web 2.0 companies use the web as a platform to create collaborative, community-based sites (e.g., social networking sites, blogs, wikis).
-`;
+let message = `In October 1994,`;
 let sentances = message.split(/[.!?]/);
 document.getElementById("t1").innerHTML = "NO";
 //tabs
@@ -317,3 +312,45 @@ function move() {
   }
 }
 
+//Progress bar
+
+const progressBar = document.getElementById("progress");
+ let currentProgress = 50;
+
+function increaseProgress() {
+  if (currentProgress < 100) {
+    currentProgress += 5;
+   document.getElementById("progress").style.width = currentProgress + "px";
+  }
+}
+
+function resetProgress() {
+  currentProgress = 0;
+  document.getElementById("progress").style.width = 0;
+}
+var d = 0;
+var lvl = 1;
+function pro() {
+  /* construct manually */
+  d = 1;
+  var bar1 = new ldBar("#myItem1");
+  /* ldBar stored in the element */
+  var bar2 = document.getElementById('myItem1').ldBar;
+  bar1.set(d); 
+}
+function add() {
+  var bar2 = document.getElementById('myItem2').ldBar;
+  var lvl = document.getElementById('mylvl');
+  
+  bar2.set(d); 
+  if  (d < 100) {
+   d += 5;
+   bar2.set(d);
+   lvl = 1; 
+  }
+  else {
+    d -= 99;
+    bar2.set(d);
+    lvl = 2;
+  }
+}
