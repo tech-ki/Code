@@ -292,37 +292,6 @@
         div.area,div.content{
           background-color: rgba(228, 231, 235, 0.578);
         }
-
-        div.home {
-          background-color: #e8f1f4;
-          width: 1200px;
-        }
-
-    #main {
-    min-width: 800px;
-    max-width: 800px;
-    border: 1px solid #9b9494;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px; 
-  }
-
-  body {
-    background-color: #f9f5f9;
-}
-
-  #container {
-   position: relative;
-   padding-left: 10px;
-   padding-right: 10px;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   display: grid; 
-   justify-items: center;
-  } 
-       
-
-
         .collapsible{
         content: '+'; 
           font-size:16px;

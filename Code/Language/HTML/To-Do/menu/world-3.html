@@ -9,13 +9,33 @@
         <body onload="startTime()">
         <strong><div id="min"></div></strong>   
         <body></body>
-<h1 class="quest">World Map (Dynamic)</h2>
-<div style="background-color: rgb(250, 250, 233);">
+<h1 class="quest">Action Map (Dynamic)</h2>
+<div style="background-color: rgb(249, 240, 248);">
+
+<input
+  type="button"
+  onclick="clusterByCid()"
+  value="Cluster all nodes with CID = 1"
+/>
+<br />
+<input type="button" onclick="clusterByColor()" value="Cluster by color" />
+<br />
+<input
+  type="button"
+  onclick="clusterByConnection()"
+  value="Cluster 'node 1' by connections"
+/>
+<br />
+<input type="button" onclick="clusterOutliers()" value="Cluster outliers" />
+<br />
+<input type="button" onclick="clusterByHubsize()" value="Cluster by hubsize" />
+<br />
+
 <div id="mynetwork"></div>
 
 <style>
   .vis-tooltip {
-    background-color: rgba(253, 243, 152, 0.973) !important;
+    background-color: rgba(231, 229, 215, 0.973) !important;
     color: #070f0f !important;
     border-color: blue;
     font-family: "Nunito" !important;
@@ -39,118 +59,330 @@
 <div id="mynetwork"></div>
 <script type="text/javascript">
   // create an array with nodes
+  /*
+  g1 - done green
+  g2 - next yellow
+  g5 - area
+  g4 - milestone
+  g0 - open light blue
+  g18 - business
+  g8 - sense, feel
+  */
   var nodes = new vis.DataSet([
-    { id: 'on', label: "Start", title: "Start here",group:'g3'},
-    { id: 2, label: "Web", title: "Web Development" ,group:'g4'},
-    { id: 'me', label: "Self", title: "Personhood",group:'g2'},
-    { id: 4, label: "Front", title: "Front-End Web Development" },
-    { id: 5, label: "Back", title: "Back-End Web Development"  },
-    { id: 'SUB', label: "Subject", title: "Subjects to learn about" },
-    { id: 7, label: "Scholar", title: "Numbers" },
-    { id: 8, label: "Scholar", title: "Numbers" },
-    { id: 9, label: "Scholar", title: "Numbers",group:'g1' },
-    { id: 12843, label: "Scholar", title: "12",group:'g2' },
-    { id: 10, label: "DatS", title: "Data Science" },
-    { id: 11, label: "Stat", title: "Statistics" },
-    { id: 'MH', label: "MATH", title: "Mathematics" },
-    { id: 13, label: "Py", title: "Python" },
-    { id: 14, label: "Dat", title: "Databases" },
-    { id: 15, label: "Scholar", title: "Numbers" },
-    {id: 'code', label: "Code", title: "Coding"},
-    {id: 'CS', label: "CompSci ", title: "Computer Science - Study of Computing",group:'g4'},
-    {id: 'ML', label: "ML",title: "Machine Learning"},
-    {id: 'A', label: "Theory", title: "Theory - to build understanding (Why?)",group:'g2'},
-    {id: 'act', label: "Action", title: "Action - to build the reality (Do.)",group:'g2'},
-    {id: 'in', label: "Inbox",title: "Current thoughts"},
-    {id: 't1', label: "Rein",title: "Reinforcement Schedules"},
-    {id: 'cyber', label: "CyberS",title: "Cyber Security"},
-    {id: 't3', label: "Rein",title: "Emotions"},
-    {id: 'cl', label: "Cloud",title: "Cloud"},
-    {id: 'alg', label: "ALG",title: "Algorithms"},
-    {id: 'Tech', label: "TECH",title: "Technology"},
-    {id: 'Bus', label: "BUS",title: "Business"},
-    {id: 'Nat', label: "NATURE",title: "Science"},
-    {id: 'Form', label: "FORM",title: "Formulas & Symbols"},
-    {id: 'SoSci', label: "SOCIAL",title: "Societies & People"},
-    {id: 'ASci', label: "APPLY",title: "Applied"},
-    {id: 'Sci', label: "SCIENCE",title: "Applied"},
-    {id: 'His', label: "History",title: "To study the before"},
-    {id: 'Lang', label: "Lang",title: "Humanities - to study humanity"},
-    {id: 'Law', label: "Law",title: "Humanities - to study humanity"},
-    {id: 'Lit', label: "Liter",title: "The Art of the written form"},
-    {id: 'Philo', label: "Philo",title: "Humanities - to study humanity"},
-    {id: 'Rel', label: "Religion",title: "To connect with the Gods"},
-    {id: 'PArt', label: "Perform",title: "To perform on a stage"},
-    {id: 'VArt', label: "VisualArt",title: "The Visual Arts"},
-    {id: 'Hue', label: "HUMAN",title: "Humanities - to study humanity",group:'g4'},
-    {id: 'Mus', label: "Music",title: "The Artist and sound"},
-    {id: 'Film', label: "Film",title: "Tell a vision"},
-    {id: 'Dan', label: "Dance",title: "The art form with the body"},
-    {id: 'The', label: "Theatre",title: "ART"},
-    {id: 'Art', label: "ART",title: "ART",group:'g4'},
-    {id: 'Draw', label: "Draw",title: "ART"},
-    {id: 'Paint', label: "Paint",title: "ART"},
-    {id: 'Sculpt', label: "Sculpt",title: "ART"},
-    {id: 'Person', label: "Person",title: "ART"},
-    {id: 'Other', label: "Other",title: "ART"},
-
-  ]);
+    { id: 'on', label: "Start", title: "Start here",color:{background:'white'}, cid:1},
+    { id: 2, label: "Area", title: "Area",group:'g5', cid:1},
+    { id: 3, label: "Done task", title: "Done",group:'g1', cid:1},
+    { id: 4, label: "Milestone task", title: "Done",group:'g4', cid:1},
+    { id: 5, label: "Next task", title: "Done",group:'g2', cid:1},
+    { id: 'open', label: "Open task", title: "Avaliable task" ,group:'g0', cid:1},
+    { id: 'bathroom', label: "Bathroom", title: "Start here",group:'g5'},
+    { id: 'bedroom', label: "Bedroom", title: "Start here",group:'g5',cid:1},
+    { id: 'bed', label: "Bed", title: "Start here",group:'g5'},
+    { id: 'later', label: "later", title: "Start here",group:'g10'},
+    { id: 'doctor app', label: "set up doctor appointment", title: "Start here",group:'g2'},
+    { id: 'dentist app', label: "set up dentist appointment", title: "Start here",group:'g2'},
+    { id: 'vision app', label: "set up vision appointment", title: "Start here",group:'g2'},
+    { id: 'buy car', label: "buy car", title: "Start here",group:'g10'},
+    { id: 'rent house', label: "rent house", title: "Start here",group:'g10'},
+    { id: 'rent apartment', label: "rent apartment", title: "Start here",group:'g10'},
+    { id: 'home', label: "Home", title: "Start here",color:{background:'black'},},
+    { id: 'personal care', label: "personal care", title: "practices performed by a person to care for their bodily health and well-being.",group:'g5'},
+    { id: 'nails', label: "nails", title: "Start here",group:'g5'},
+    { id: 'clip nails', label: "clip nails", title: "Start here",group:'g0'},
+    { id: 'spread bed', label: "spread bed", title: "Start here",group:'g1'},
+    { id: 'clean bedsheet', label: "clean bedsheet", title: "Start here",group:'g2'},
+    { id: 'clean pillows', label: "clean pillows", title: "Start here",group:'g0'},
+    { id: 'clear bed', label: "clear bed", title: "Start here",group:'g1'},
+    { id: 'ears', label: "ears", title: "Start here",group:'g5'},
+    { id: 'clean ears', label: "clean ears", title: "Start here",group:'g0'},
+    { id: 'area', label: "Areas", title: "Area",group:'g5',color:{background:'white'},},
+    { id: 'social', label: "Social", title: "Area",group:'g5',color:{background:'black'},},
+    { id: 'social media', label: "social media", title: "Start here",group:'g5'},
+    { id: 'people', label: "people", title: "Start here",group:'g5'},
+    { id: 'post on social media', label: "post on social media", title: "Start here",group:'g1'},
+    { id: 'surf on social media', label: "surf on social media", title: "Start here",group:'g0'},
+    { id: 'brush teeth', label: "brush teeth", title: "Start here",group:'g1'},
+    { id: 'floss', label: "floss", title: "Floss",group:'g1'},
+    { id: 'listerine', label: "listerine", title: "Floss",group:'g1'},
+    { id: 'self', label: "Self", title: "Self",color:{background:'black'},},
+    { id: 'work', label: "Work", title: "to fund the things",color:{background:'black'},},
+    { id: 'hobby', label: "Hobby", title: "Hobby",color:{background:'black'},},
+    { id: 'job', label: "Job", title: "Job",group:'g5'},
+    { id: 'job search', label: "Job Search", title: "Job Search",group:'g5', cid:1},
+    { id: 'call center', label: "Call Center Representative", title: "Job",group:'g5', cid:1},
+    { id: 'phone call', label: "take a phone call", title: "phone call",group:'g0', cid:1},
+    { id: 'ticket', label: "create a ticket", title: "salesforce ticket",group:'g0', cid:1},
+    { id: 'business', label: "Business", title: "to fund the things",group:'g18',color:{background:'black'},},
+    { id: 'clean tub', label: "clean tub", title: "Start here",group:'g1'},
+    { id: 'clean toilet', label: "clean toilet", title: "Start here",group:'g1'},
+    { id: 'clean sink', label: "clean sink", title: "Start here",group:'g1'},
+    { id: 'clean mirror', label: "clean mirror", title: "Start here",group:'g1'},
+    { id: 'ein', label: "ein", title: "Start here",group:'g1'},
+    { id: 'closet', label: "Closet", title: "Start here",group:'g5', cid:1},
+    { id: 'vaccum', label: "vaccum your carpet", title: "Start here",group:'g0'},
+    { id: 'autovaccum', label: "run robot vaccum", title: "Start here",group:'g0'},
+    { id: 'steamvaccum', label: "steam vaccum", title: "Start here",group:'g0'},
+    { id: 'office', label: "Office", title: "Start here",group:'g5'},
+    { id: 'clear paperwork', label: "clear paperwork", title: "Start here",group:'g4'},
+    { id: 'clean closet', label: "clean closet", title: "Start here",group:'g4'},
+    { id: 'clear clothes off floor', label: "clear clothes off floor", title: "0",group:'g0'},
+    { id: 'clean out fridge', label: "clean out fridge", title: "0",group:'g0'},
+    { id: 'wash dishes', label: "wash dishes", title: "0",group:'g0'},
+    { id: 'clean counter', label: "clean counter", title: "0",group:'g0'},
+    { id: 'trash out', label: "trash out", title: "0",group:'g0'},
+    { id: 'trash in', label: "trash in", title: "0",group:'g1'},
+    { id: 'empty dishwasher', label: "empty dishwasher", title: "0",group:'g0'},
+    { id: 'check mail', label: "check mail", title: "0",group:'g0'},
+    { id: 'sort clothes by type', label: "sort clothes by type", title: "0",group:'g0'},
+    { id: 'hang up clothes', label: "hang up clothes", title: "0",group:'g0'},
+    { id: 'transfer to goodwill', label: "transfer to goodwill", title: "0",group:'g0'},
+    { id: 'clear desk', label: "clear desk", title: "Start here",group:'g1'},
+    { id: 'clear nightstand', label: "clear nightstand", title: "Start here",group:'g1'},
+    { id: 'clear dressor', label: "clear dressor", title: "Start here",group:'g0'},
+    { id: 'laundry', label: "Laundry", title: "Start here",group:'g5'},
+    { id: 'kitchen', label: "Kitchen", title: "Start here",group:'g5'},
+    { id: 'color clothes', label: "color clothes", title: "Start here",group:'g5'},
+    { id: 'white clothes', label: "white clothes", title: "Start here",group:'g5'},
+    { id: 'dark clothes', label: "dark clothes", title: "Start here",group:'g5'},
+    { id: 'wash color clothes', label: "wash color clothes", title: "Start here",group:'g1'},
+    { id: 'dry color clothes', label: "dry color clothes", title: "Start here",group:'g1'},
+    { id: 'take out dry color clothes', label: "take out dry color clothes", title: "Start here",group:'g1'},
+    { id: 'put away color clothes', label: "put away color clothes", title: "Start here",group:'g2'},
+    { id: 'wash white clothes', label: "wash white clothes", title: "Start here",group:'g0'},
+    { id: 'dry white clothes', label: "dry white clothes", title: "Start here",group:'g0'},
+    { id: 'take out dry white clothes', label: "take out dry white clothes", title: "Start here",group:'g0'},
+    { id: 'put away white clothes', label: "put away white clothes", title: "Start here",group:'g0'},
+    { id: 'wash dark clothes', label: "wash dark clothes", title: "Start here",group:'g0'},
+    { id: 'dry dark clothes', label: "dry dark clothes", title: "Start here",group:'g0'},
+    { id: 'take out dry dark clothes', label: "take out dry dark clothes", title: "Start here",group:'g0'},
+    { id: 'put away dark clothes', label: "put away dark clothes", title: "Start here",group:'g0'},
+    { id: 'body', label: "body", title: "Hobby",group:'g5'},
+    { id: 'art', label: "art", title: "art",group:'g5'},
+    { id: 'blender', label: "blender", title: "blender",group:'g5'},
+    { id: 'godot0', label: "limeaid", title: "limeaid",group:'g4'},
+    { id: 'fix quest', label: "fix quest system", title: "fix when char hits npc loop",group:'g0'},
+    { id: 'add level', label: "add level up system", title: "add level up system",group:'g4'},
+    { id: 'create web', label: "create website", title: "create website",group:'g4'},
+    { id: 'buy email', label: "buy business email", title: "Start here",group:'g0'},
+    { id: 'business bank account', label: "business bank account", title: "Start here",group:'g0'},
+    { id: 'sos', label: "register with sos", title: "Start here",group:'g1'},
+    { id: 'begin peopling', label: "begin peopling", title: "Start here",group:'g0'},
+    { id: 'buy domain', label: "buy domain", title: "Start here",group:'g0'},
+    { id: 'buy hosting', label: "buy hosting", title: "Start here",group:'g0'},
+    { id: 'design web', label: "design web", title: "Start here",group:'g0'},
+    { id: 'blend0', label: "play cubes", title: "play cubes",group:'g4'},
+    { id: 'blend1', label: "donut tutorial", title: "donut tutorial",group:'g4'},
+    { id: 'blend2', label: "animate ball", title: "animate ball",group:'g4'},
+    { id: 'create cube', label: "create cube", title: "Start here",group:'g0'},
+    { id: 'color cube', label: "color cube", title: "Start here",group:'g0'},
+    { id: 'add gravity', label: "add gravity", title: "Start here",group:'g0'},
+    { id: 'export to GoDot', label: "export to GoDot", title: "Start here",group:'g0'},
+    { id: 'fl studio', label: "fl studio", title: "blender",group:'g5'},
+    { id: 'fl0', label: "happy birthday", title: "happy birthday",group:'g4'},
+    { id: 'godot', label: "go dot", title: "blender",group:'g5'},
+    { id: 'teeth', label: "teeth", title: "Hobby",group:'g5'},
+    { id: 'skin', label: "skin", title: "Hobby",group:'g5'},
+    { id: 'hair', label: "hair", title: "Hobby",group:'g5'},
+    { id: 'wash hair', label: "wash hair", title: "Hobby",group:'g1'},
+    { id: 'condition hair', label: "condition hair", title: "Hobby",group:'g1'},
+    { id: 'oil hair', label: "oil hair", title: "Hobby",group:'g1'},
+    { id: 'mind', label: "mind", title: "Mind",group:'g5'},
+    { id: 'lips', label: "lips", title: "lips",group:'g5'},
+    { id: 'lipgloss', label: "apply lipgloss", title: "lips",group:'g1'},
+    { id: 'spirit', label: "spirit (o)", title: "Spirit",group:'g5'},
+    { id: 'unlabel', label: "unlabel mind", title: "disconnect the nodes from your edges",group:'g8'},
+    { id: 'relabel', label: "relabel mind", title: "reconnect the nodes from your edges",group:'g8'},
+    { id: 'seer', label: "sense others spaces", title: "sense others spaces",group:'g8'},
+    { id: 'fitness', label: "fitness", title: "Spirit",group:'g5'},
+    { id: 'yoga', label: "yoga for 5 min", title: "turn on yoga with adriane",group:'g1'},
+    { id: 'yoga10', label: "yoga for 10 min", title: "turn on yoga with adriane",group:'g0'},
+    { id: 'stretch', label: "stretch your body", title: "Spirit",group:'g0'},
+    { id: 'nutrition', label: "nutrition", title: "Spirit",group:'g5'},
+    { id: 'eat food', label: "eat food", title: "Spirit",group:'g1'},
+    { id: 'drink water', label: "drink water", title: "Spirit",group:'g1'},
+    { id: 'emotion', label: "emotion", title: "Sense environment",group:'g5'},
+    { id: 'shave', label: "shave", title: "shave",group:'g0'},
+    { id: 'lotion', label: "lotion", title: "shave",group:'g2'},
+    { id: 'sun screen', label: "sun screen", title: "shave",group:'g0'},
+    { id: 'shower', label: "shower", title: "shave",group:'g0'},
+    { id: 'deoderant', label: "deoderant", title: "shave",group:'g1'},
+    { id: 'get dressed', label: "get dressed", title: "shave",group:'g0'},
+    { id: 'bath', label: "bath", title: "shave",group:'g0'},
+    { id: 'note', label: "notate thoughts", title: "externalize and organize thoughts",group:'g1'},
+    { id: 'talk', label: "talk thoughts", title: "externalize and organize thoughts using language",group:'g0'},
+    { id: 'name emotion', label: "name emotion", title: "name emotion",group:'g8'},
+    { id: 'sense', label: "sense", title: "feel",group:'g8'},
+    { id: 'tight fog in head', label: "tight fog in head", title: "tight fog in head",group:'g8'},
+    { id: 'ringing in ears', label: "ringing in ears", title: "ringing in ears",group:'g8'},
+    { id: 'roam your body', label: "roam your body", title: "roam your body",group:'g8'},
+    { id: 'spend time with o', label: "spend time with o", title: "spend time with",group:'g8'},
+    { id: 'sense o', label: "sense o", title: "sense o",group:'g8'},
+    { id: 'sense spaces', label: "sense spaces", title: "sense o",group:'g8'},
+    { id: 'interact spaces', label: "interact spaces", title: "sense o",group:'g8'},
+    { id: 'animate spaces', label: "animate spaces", title: "sense o",group:'g0'},
+    { id: 'create art', label: "create art", title: "sense o",group:'g0'},
+    { id: 'communicate with o', label: "communicate with o", title: "communicate with o",group:'g8'},
+    ]);
+    
 
   // create an array with edges
   var edges = new vis.DataSet([
-    { from: 'on', to: 'Person' },
-    { from: 'Person', to: 'Other' },
-    { from: 'Person', to: 'me' },
-    { from: 2, to: 4 },
-    { from: 2, to: 5 },
-    { from: 'me', to: 'me' },
-    {from: 'CS', to: 11},
-    {from: 'Form', to: 'MH'},
-    {from: 'CS', to: 'code'},
-    {from: 'code', to: 2},
-    {from: 11, to: 10},
-    {from: 'MH', to: 'CS'},
-    {from: 'code', to: 13},
-    {from: 13, to: 10},
-    {from: 'CS', to: 14},
-    {from: 14, to: 10},
-    {from: 'CS', to: 'ML'},
-    {from: 'ML', to: 10},
-    {from:'A', to: 'act'},
-    {from: 'on', to: 'A'},
-    {from: 'Tech', to: 'CS'},
-    {from: 'on', to: 'act'},
-    {from: 'A', to: 'in'},
-    {from: 'in', to: 't1'},
-    {from: 'CS', to: 'cyber'},
-    {from: 'CS', to: 'alg'},
-    {from: 'CS', to: 'cl'},
-    {from: 'MH', to: 'Tech'},
-    {from: 'ASci', to: 'act'},
-    {from: 'Sci', to: 'Nat'},
-    {from: 'Sci', to: 'Form'},
-    {from: 'Sci', to: 'SoSci'},
-    {from: 'Sci', to: 'ASci'},
-    {from: 'Sci', to: 'Hue'},
-    {from: 'A', to: 'Sci'},
-     {from: 'ASci', to: 'Bus'},
-     {from: 'Hue', to: 'Law'},
-     {from: 'Hue', to: 'Lang'},
-     {from: 'Hue', to: 'Lit'},
-     {from: 'Hue', to: 'Philo'},
-     {from: 'Hue', to: 'Rel'},
-     {from: 'Hue', to: 'His'},
-     {from: 'Hue', to: 'Art'},
-     {from: 'Art', to: 'PArt'},
-     {from: 'Art', to: 'VArt'},
-     {from: 'PArt', to: 'The'},
-     {from: 'PArt', to: 'Dan'},
-     {from: 'PArt', to: 'Mus'},
-     {from: 'PArt', to: 'Film'},
-     {from: 'VArt', to: 'Draw'},
-     {from: 'VArt', to: 'Paint'},
-     {from: 'VArt', to: 'Sculpt'},
-
+    { from: 'on', to: 'open' },
+    { from: 'on', to: 2 },
+    { from: 'on', to: 3 },
+    { from: 'on', to: 4 },
+    { from: 'on', to: 5 },
+    { from: 'on', to: 'later' },
+    { from: 'buy car', to: 'later' },
+    { from: 'rent house', to: 'later' },
+    { from: 'rent apartment', to: 'later' },
+    { from: 'area', to: 'home' },
+    { from: 'check mail', to: 'home' },
+    { from: 'area', to: 'social' },
+    { from: 'people', to: 'social' },
+    { from: 'social media', to: 'social' },
+    { from: 'surf on social media', to: 'social media' },
+    { from: 'post on social media', to: 'social media' },
+    { from: 'vaccum', to: 'bedroom' },
+    { from: 'bed', to: 'bedroom' },
+    { from: 'bed', to: 'spread bed' },
+    { from: 'bed', to: 'clean bedsheet' },
+    { from: 'bed', to: 'clean pillows' },
+    { from: 'bed', to: 'clear bed' },
+    { from: 'autovaccum', to: 'bedroom' },
+    { from: 'steamvaccum', to: 'vaccum' },
+    { from: 'area', to: 'self' },
+    { from: 'area', to: 'work' },
+    { from: 'work', to: 'job' },
+    { from: 'work', to: 'job search' },
+    { from: 'call center', to: 'job' },
+    { from: 'call center', to: 'phone call' },
+    { from: 'call center', to: 'ticket' },
+    { from: 'phone call', to: 'ticket' },
+    { from: 'area', to: 'hobby' },
+    { from: 'art', to: 'hobby' },
+    { from: 'blender', to: 'art' },
+    { from: 'blend0', to: 'blender' },
+    { from: 'blend1', to: 'blender' },
+    { from: 'blend2', to: 'blender' },
+    { from: 'blend0', to: 'create cube' },
+    { from: 'create cube', to: 'color cube' },
+    { from: 'color cube', to: 'add gravity' },
+    { from: 'export to GoDot', to: 'add gravity' },
+    { from: 'godot', to: 'art' },
+    { from: 'godot0', to: 'godot' },
+    { from: 'godot0', to: 'fix quest' },
+    { from: 'godot0', to: 'add level' },
+    { from: 'fl studio', to: 'art' },
+    { from: 'fl0', to: 'fl studio' },
+    { from: 'area', to: 'on' },
+    { from: 'area', to: 'business' },
+    { from: 'buy email', to: 'business' },
+    { from: 'sos', to: 'business' },
+    { from: 'sos', to: 'ein' },
+    { from: 'business bank account', to: 'ein' },
+    { from: 'begin peopling', to: 'business bank account' },
+    { from: 'create web', to: 'business' },
+    { from: 'create web', to: 'buy hosting' },
+    { from: 'create web', to: 'buy domain' },
+    { from: 'create web', to: 'design web' },
+    { from: 'home', to: 'bathroom' },
+    { from: 'home', to: 'bedroom' },
+    { from: 'home', to: 'laundry' },
+    { from: 'laundry', to: 'color clothes' },
+    { from: 'laundry', to: 'white clothes' },
+    { from: 'laundry', to: 'dark clothes' },
+    { from: 'color clothes', to: 'wash color clothes' },
+    { from: 'wash color clothes', to: 'dry color clothes' },
+    { from: 'dry color clothes', to: 'take out dry color clothes' },
+    { from: 'take out dry color clothes', to: 'put away color clothes' },
+    { from: 'white clothes', to: 'wash white clothes' },
+    { from: 'wash white clothes', to: 'dry white clothes' },
+    { from: 'take out dry white clothes', to: 'put away white clothes' },
+    { from: 'dry white clothes', to: 'take out dry white clothes' },
+    { from: 'dark clothes', to: 'wash dark clothes' },
+    { from: 'wash dark clothes', to: 'dry dark clothes' },
+    { from: 'take out dry dark clothes', to: 'put away dark clothes' },
+    { from: 'dry dark clothes', to: 'take out dry dark clothes' },
+    { from: 'home', to: 'office' },
+    { from: 'home', to: 'kitchen' },
+    { from: 'wash dishes', to: 'kitchen' },
+    { from: 'trash out', to: 'kitchen' },
+    { from: 'trash in', to: 'kitchen' },
+    { from: 'clean counter', to: 'wash dishes' },
+    { from: 'empty dishwasher', to: 'kitchen' },
+    { from: 'clear nightstand', to: 'bedroom' },
+    { from: 'clear dressor', to: 'bedroom' },
+    { from: 'clear desk', to: 'office' },
+    { from: 'clear paperwork', to: 'office' },
+    { from: 'bedroom', to: 'closet' },
+    { from: 'transfer to goodwill', to: 'closet' },
+    { from: 'clean closet', to: 'closet' },
+    { from: 'clean out fridge', to: 'kitchen' },
+    { from: 'clear clothes off floor', to: 'clean closet' },
+    { from: 'sort clothes by type', to: 'clean closet' },
+    { from: 'hang up clothes', to: 'clean closet' },
+    { from: 'trash clothes', to: 'clean closet' },
+    { from: 'body', to: 'personal care' },
+    { from: 'personal care', to: 'skin' },
+    { from: 'lotion', to: 'shower' },
+    { from: 'lotion', to: 'deoderant' },
+    { from: 'get dressed', to: 'deoderant' },
+    { from: 'sun screen', to: 'skin' },
+    { from: 'shower', to: 'skin' },
+    { from: 'bath', to: 'shower' },
+    { from: 'body', to: 'self' },
+    { from: 'body', to: 'dentist app' },
+    { from: 'body', to: 'vision app' },
+    { from: 'body', to: 'doctor app' },
+    { from: 'body', to: 'mind' },
+    { from: 'note', to: 'mind' },
+    { from: 'talk', to: 'mind' },
+    { from: 'name emotion', to: 'mind' },
+    { from: 'body', to: 'spirit' },
+    { from: 'spend time with o', to: 'communicate with o' },
+    { from: 'spend time with o', to: 'spirit' },
+    { from: 'seer', to: 'spirit' },
+    { from: 'sense spaces', to: 'spirit' },
+    { from: 'interact spaces', to: 'sense spaces' },
+    { from: 'animate spaces', to: 'interact spaces' },
+    { from: 'interact spaces', to: 'create art' },
+    { from: 'unlabel', to: 'spirit' },
+    { from: 'relabel', to: 'unlabel' },
+    { from: 'sense o', to: 'spend time with o' },
+    { from: 'personal care', to: 'hair' },
+    { from: 'wash hair', to: 'hair' },
+    { from: 'wash hair', to: 'condition hair' },
+    { from: 'condition hair', to: 'hair' },
+    { from: 'oil hair', to: 'hair' },
+    { from: 'personal care', to: 'nails' },
+    { from: 'personal care', to: 'ears' },
+    { from: 'clean ears', to: 'ears' },
+    { from: 'clip nails', to: 'nails' },
+    { from: 'paint nails', to: 'nails' },
+    { from: 'personal care', to: 'lips' },
+    { from: 'lipgloss', to: 'lips' },
+    { from: 'shave', to: 'shower' },
+    { from: 'body', to: 'fitness' },
+    { from: 'stretch', to: 'fitness' },
+    { from: 'yoga', to: 'fitness' },
+    { from: 'yoga10', to: 'yoga' },
+    { from: 'body', to: 'emotion' },
+    { from: 'sense', to: 'emotion' },
+    { from: 'sense', to: 'tight fog in head' },
+    { from: 'sense', to: 'ringing in ears' },
+    { from: 'sense', to: 'roam your body' },
+    { from: 'body', to: 'nutrition' },
+    { from: 'eat food', to: 'nutrition' },
+    { from: 'drink water', to: 'nutrition' },
+    { from: 'personal care', to: 'teeth' },
+    { from: 'floss', to: 'brush teeth' },
+    { from: 'floss', to: 'listerine' },
+    { from: 'brush teeth', to: 'teeth' },
+    { from: 'clean tub', to: 'bathroom' },
+    { from: 'clean toilet', to: 'clean mirror' },
+    { from: 'clean sink', to: 'clean tub' },
+    { from: 'clean mirror', to: 'clean sink' },
   ]);
 
   // create a network
@@ -164,36 +396,36 @@
       return nodeOptions.cid === 1;
     },
     label: {
-      enabled: false,
+      enabled: true,
       min: 14,
       max: 30,
       maxVisible: 30,
-      drawThreshold: 5,
-    },
-    title: {
-      color:{background:'blue'}
+      drawThreshold: 5
     },
     groups: {
-        g1: {color:{background:'rgb(46, 226, 130)'}, borderWidth:2},
-        g2: {color:{background:'rgb(238, 203, 27)'},
-    }, //g2 gold
-    g3: {color:{background:'red'},
-        
-
-}, //g3 red
-    
-    g4: {color:{background:'rgb(45, 100, 252)'},
-}, //g4 blue
+        g0: {color:{background:'#00c3ff'},}, //g09 green
+        g1: {color:{background:'rgb(16, 234, 52)'}}, //g1 green
+        g2: {color:{background:'#F9D54E'},}, //g2 gold
+        g3: {color:{background:'red'},}, //g3 red
+        g4: {color:{background:'rgb(203, 27, 238)'},}, //g4 purple
+        g5: {color:{background:'rgb(249, 12, 151)'},}, //g5 magenta
+        g6: {color:{background:'#FB96F0'},}, //g06 pink
+        g8: {color:{background:'#65D7D5'},}, //g08 psy green
+        g9: {color:{background:'#7BE142'},}, //g09 green
+        g10: {color:{background:'#C4BAC5'},}, //g10 muddy
+        g11: {color:{background:'#AD85E4'},}, //g10 dark purple
+        g14: {color:{background:'#FB7E81'},}, //g14 light pink
+        g15: {color:{background:'#38E9A4'},}, //g15 light green
+        g18: {color:{background:'#0A61FF'},}, //g10 dark blue
     },//group style
     nodes:{
         shape:'dot', //circle for in labels
-
+        size: 12,
         color: {
-            background:'rgb(250, 242, 175)',
-            highlight: { //when selected
-                border: 'rgb(248, 64, 64)',//selected circle color
-                background: 'rgb(253, 235, 67)', //selected color
-                
+            background:'rgb(98, 213, 255)', //default color
+            highlight: {
+                border: '#2B7CE9',
+                background: 'rgb(148, 58, 82)' //selected color
               },
         },
     
@@ -206,26 +438,129 @@
         align: 'center',
         multi: false,
         vadjust: 0,
-        
     }
 },
 edges:{
-  width:4,
-   //color of lines
-  color:{
-    color:'rgb(98, 153, 255)',
-    highlight:'rgb(248, 64, 64)',
-    },
+width:1,
+color:'#EB7DF4' //color of lines
+}
+  };
+
+
+ var network = new vis.Network(container, data, options);
+network.on("selectNode", function (params) {
+  if (params.nodes.length == 1) {
+    if (network.isCluster(params.nodes[0]) == true) {
+      network.openCluster(params.nodes[0]);
+    }
   }
- };
+});
+
+function clusterByCid() {
+  network.setData(data);
+  var clusterOptionsByData = {
+    joinCondition: function (childOptions) {
+      return childOptions.cid == 1;
+    },
+    clusterNodeProperties: {
+      id: "cidCluster",
+      borderWidth: 1,
+      shape: "database",//database
+      color:'rgb(249, 12, 151)',
+      label: "area" 
+    },
+  };
+  network.cluster(clusterOptionsByData);
+}
+//color by cluster
+function clusterByColor() {
+  network.setData(data);
+  var colors = ["orange","#00c3ff","rgb(16, 234, 52)","#F9D54E","rgb(249, 12, 151)","rgb(203, 27, 238)","#65D7D5","#C4BAC5"];
+  /* colors
+  ~ - Inactive
+  #F9D54E - yellow @
+  rgb(16, 234, 52) - done @
+  
+  @ - Active
+  #00c3ff - main blue @
+  rgb(249, 12, 151) - area @
+  rgb(203, 27, 238) - purple @
+  #65D7D5 - psy mint @
+  #C4BAC5 - later muddy
+  */
 
 
-  var network = new vis.Network(container, data, options);
-    network.clustering.cluster(options);
+  var clusterOptionsByData;
+  for (var i = 0; i < colors.length; i++) {
+    var color = colors[i];
+    clusterOptionsByData = {
+      joinCondition: function (childOptions) {
+        return childOptions.color.background == color; // the color is fully defined in the node.
+      },
+      processProperties: function (clusterOptions, childNodes, childEdges) {
+        var totalMass = 0;
+        for (var i = 0; i < childNodes.length; i++) {
+          totalMass += childNodes[i].mass;
+        }
+        clusterOptions.mass = totalMass;
+        return clusterOptions;
+      },
+      clusterNodeProperties: {
+        id: "cluster:" + color,
+        borderWidth: 3,
+        shape: "database",//database
+        color: color,
+        label: "color: " + color,
+      },
+    };
+    network.cluster(clusterOptionsByData);
+  }
+}
+function clusterByConnection() {
+  network.setData(data);
+  network.clusterByConnection(6);
+}
+function clusterOutliers() {
+  network.setData(data);
+  network.clusterOutliers();  
+}
+function clusterByHubsize() {
+  network.setData(data);
+  var clusterOptionsByData = {
+    processProperties: function (clusterOptions, childNodes) {
+      clusterOptions.label = "hub[" + childNodes.length + "]";
+      return clusterOptions;
+    },
+    clusterNodeProperties: {
+      borderWidth: 3,
+      shape: "box",
+      face: 'Nunito',
+      font: { size: 30 },
+      color: '#00c3ff',//blueish
+    },
+  };
+  network.clusterByHubsize(undefined, clusterOptionsByData);
+}
+
 </script>
-
-<span style="color:rgb(45, 100, 252)">Hello</span>
-<span style="color:rgb(250, 242, 175)"></span>
+<!--Styling Options-->
+<span style="color:rgb(98, 213, 255)">Hello</span>
+<span style="color:#00c3ff"></span> <!--18-->
+<span style="color:#2A7CE8"></span> <!--18-->
+<span style="color:#6D6DFD"></span> <!--13-->
+<span style="color:#FF6000"></span> <!--17-->
+<span style="color:#FFA804"></span> <!--12-->
+<span style="color:#EB7DF4"></span> <!--10-->
+<span style="color:#AD85E4"></span> <!--11-->
+<span style="color:#FEBFCB"></span> <!--14-->
+<span style="color:#38E9A4"></span> <!--15-->
+<span style="color:#DF183E"></span> <!--16-->
+<span style="color:#0C4837"></span> <!--19-->
+<span style="color:#FF017F"></span> <!--20-->
+<span style="color:#eaff01"></span> <!--06-->
+<span style="color:#FF017F"></span> <!--07-->
+<span style="color:#b6fb7e"></span> <!--08-->
+<span style="color:#7BE142"></span> <!--09-->
 
 </body>
 <script src="../to-do.js"></script>
